@@ -1,9 +1,9 @@
 __author__ = 'Raul'
 
 from Tkinter import *
-from Sucursal import *
+from Empresa import *
 
-sucursalList = []
+
 
 
 def whichSelected () :
