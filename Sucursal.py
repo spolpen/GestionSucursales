@@ -1,5 +1,6 @@
 __author__ = 'Raul'
 
+
 class Sucursal():
 
     def __init__(self, nombre_sucursal, direccion, id):
@@ -10,6 +11,7 @@ class Sucursal():
         self.lista_emp = []
         self.lista_productos = []
         self.lista_incidencias = []
+
 
     def aniadirEmpleado(self,empleado):
         self.lista_emp.append(empleado)
@@ -55,3 +57,4 @@ class Sucursal():
         for i in self.lista:
             num += i.get_salario_mensual()
         return num
+
