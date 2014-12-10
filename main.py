@@ -18,13 +18,11 @@ listaSucursales.append(sucursal2)
 
 #Metodos productos
 def whichProductoSelected () :
-    #print "At %s of %d" % (select.curselection(), len(lista))
     return int(select.curselection()[0])
 
 def addProducto () :
     sucursal = sucursalSeleccionada
     producto = Producto(idProd.get(),nameProd.get(),priceProd.get())
-    #listaProductos.append (producto)
     sucursal.aniadirProducto(producto)
 
     setSelectProducto ()
@@ -58,7 +56,6 @@ def loadProducto() :
 
 #Metodos sucursales
 def whichSucursalSelected () :
-    print "At %s of %d" % (selectSucursal.curselection(), len(listaSucursales))
     return int(selectSucursal.curselection()[0])
 
 def addSucursal() :
