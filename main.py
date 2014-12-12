@@ -200,7 +200,6 @@ def makeWindow () :
     id2= Entry(frame1, textvariable=idSuc)
     id2.grid(row=3, column=1, sticky=W)
 
-
     frame2 = Frame(frameSucursal)       # Row of buttons
     frame2.pack()
     b5 = Button(frame2,text=" Agregar",command=addSucursal)
