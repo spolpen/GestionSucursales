@@ -5,6 +5,7 @@ from Producto import *
 from Sucursal import *
 from Empleado import *
 from Proveedor import *
+import ttk
 
 #PRODUCTOS
 producto = Producto("Producto1","Televisor",200)
@@ -178,12 +179,11 @@ def makeWindow () :
     global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, idPro, dniPro, namePro, telEmp, dirEmp, selectProducto, selectSucursal, selectEmpleado, selectProveedor
     win = Tk()
 
-    frameSucursal = Frame(win)
+    frameSucursal = ttk.Labelframe(win, text="Lista de Sucursales")
 
     frame1 = Frame(frameSucursal)
     frameSucursal.pack()
     frame1.pack()
-    Label(frame1, text="Lista de sucursales").grid(row=0, column=0, sticky=W)
     Label(frame1, text="Nombre").grid(row=1, column=0, sticky=W)
     nameSuc = StringVar()
     name2 = Entry(frame1, textvariable=nameSuc)
@@ -219,11 +219,11 @@ def makeWindow () :
 
     #PRODUCTOS
 
-    frameProducto = Frame(win)
+    frameProducto = ttk.Labelframe(win, text="Lista de Productos")
     frameProducto.pack(side = LEFT)
+
     frame4 = Frame(frameProducto)
     frame4.pack()
-    Label(frame4, text="Lista de productos").grid(row=4, column=0, sticky=W)
     Label(frame4, text="Nombre").grid(row=5, column=0, sticky=W)
     nameProd = StringVar()
     name = Entry(frame4, textvariable=nameProd)
@@ -258,11 +258,11 @@ def makeWindow () :
     selectProducto.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #Empleados
-    frameEmpleado = Frame(win)
+
+    frameEmpleado = ttk.Labelframe(win, text="Lista de Empleados")
     frameEmpleado.pack(side = LEFT)
     frame7 = Frame(frameEmpleado)
     frame7.pack()
-    Label(frame7, text="Lista de empleados").grid(row=0, column=4, sticky=W)
     Label(frame7, text="Nombre empleado").grid(row=1, column=4, sticky=W)
     nameEmp = StringVar()
     name3 = Entry(frame7, textvariable=nameEmp)
@@ -306,11 +306,11 @@ def makeWindow () :
     selectEmpleado.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #Proveedores
-    frameProveedor = Frame(win)
-    frameProveedor.pack(side = BOTTOM)
+
+    frameProveedor = ttk.Labelframe(win, text="Lista de Proveedores")
+    frameProveedor.pack(side = LEFT)
     frame10 = Frame(frameProveedor)
     frame10.pack()
-    Label(frame10, text="Lista de proveedores").grid(row=5, column=4, sticky=W)
     Label(frame10, text="Nombre proveedores").grid(row=6, column=4, sticky=W)
     namePro = StringVar()
     name4 = Entry(frame10, textvariable=namePro)
