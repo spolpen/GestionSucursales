@@ -17,5 +17,5 @@ class Empleado(Persona):
     def set_salario(self,salario):
         self.salario=salario
 
-    def set_salaro(self,horario):
+    def set_horario(self,horario):
         self.horario=horario

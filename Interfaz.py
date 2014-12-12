@@ -5,12 +5,13 @@ from Producto import *
 from Sucursal import *
 from Empleado import *
 from Proveedor import *
+from Incidencia import *
 import ttk
 
 #PRODUCTOS
 producto = Producto("Producto1","Televisor",200)
 #EMPLEADO
-empleado = Empleado("Empleado1","29808123F","Juan Perez",954951289,"Sevilla")
+empleado = Empleado("Empleado1","29808123F","Juan Perez",954951289,"Sevilla",1200,"8:00-15:00")
 #PROVEEDOR
 proveedor = Proveedor("Proveedor1","48102981A","Manuel Garcia",912018391,"Madrid")
 
@@ -23,6 +24,29 @@ sucursal2 = Sucursal("Malaga","Malaga","Sucursal2")
 listaSucursales =[]
 listaSucursales.append(sucursal)
 listaSucursales.append(sucursal2)
+
+def limpiarVariables () :
+    nameProd.set("")
+    priceProd.set("")
+    idProd.set("")
+    idEmp.set("")
+    dniEmp.set("")
+    nameEmp.set("")
+    telEmp.set("")
+    dirEmp.set("")
+    salEmp.set("")
+    horEmp.set("")
+    idPro.set("")
+    dniPro.set("")
+    namePro.set("")
+    telPro.set("")
+    dirPro.set("")
+    telEmp.set("")
+    dirEmp.set("")
+    idInc.set("")
+    asuInc.set("")
+    desInc.set("")
+    estInc.set("")
 
 
 #Metodos productos
@@ -95,10 +119,11 @@ def loadSucursal() :
     nameSuc.set(sucursal.get_nombre())
     dirSuc.set(sucursal.get_direccion())
     idSuc.set(sucursal.get_ID())
-
+    limpiarVariables()
     setSelectProducto ()
     setSelectEmpleado()
     setSelectProveedor()
+    setSelectIncidencia()
 
 #Metodos empleados
 def whichEmpleadoSelected() :
@@ -106,7 +131,7 @@ def whichEmpleadoSelected() :
 
 def addEmpleado() :
     sucursal = sucursalSeleccionada
-    empleado = Empleado(idEmp.get(),dniEmp.get(),nameEmp.get(),telEmp.get(),dirEmp.get())
+    empleado = Empleado(idEmp.get(),dniEmp.get(),nameEmp.get(),telEmp.get(),dirEmp.get(),salEmp.get(),horEmp.get())
     sucursal.aniadirEmpleado(empleado)
     setSelectEmpleado ()
 
@@ -117,6 +142,8 @@ def updateEmpleado() :
     empleado.set_direccion(dirEmp.get())
     empleado.set_DNI(dniEmp.get())
     empleado.set_telefono(telEmp.get())
+    empleado.set_salario(salEmp.get())
+    empleado.set_horario(horEmp.get())
     setSelectEmpleado ()
 
 def deleteEmpleado() :
@@ -137,6 +164,8 @@ def loadEmpleado() :
     nameEmp.set(empleado.get_nombre())
     telEmp.set(empleado.get_telefono())
     dirEmp.set(empleado.get_direccion())
+    salEmp.set(empleado.get_salario())
+    horEmp.set(empleado.get_horario())
 
 #Metodos proveedores
 def whichProveedorSelected() :
@@ -176,10 +205,53 @@ def loadProveedor() :
     telPro.set(proveedor.get_telefono())
     dirPro.set(proveedor.get_direccion())
 
-def makeWindow () :
-    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, idPro, dniPro, namePro,telPro,dirPro, telEmp, dirEmp, selectProducto, selectSucursal, selectEmpleado, selectProveedor
-    win = Tk()
+#INCIDENCIA
+def whichIncidenciaSelected() :
+    return int(selectIncidencia.curselection()[0])
 
+def addIncidencia() :
+    sucursal = sucursalSeleccionada
+    incidencia = Incidencia(idInc.get(),asuInc.get(),desInc.get())
+    sucursal.aniadirIncidencia(incidencia)
+    setSelectIncidencia ()
+
+def updateIncidencia() :
+    incidencia = incidenciaSeleccionada
+    incidencia.set_ID(idInc.get())
+    incidencia.set_asunto(asuInc.get())
+    incidencia.set_descripcion(desInc.get())
+    setSelectIncidencia()
+
+def deleteIncidencia() :
+    sucursal = sucursalSeleccionada
+    lista = sucursal.get_listaIncidencias()
+    incidencia = lista[whichIncidenciaSelected()]
+    sucursal.eliminarIncidencia(incidencia)
+    setSelectIncidencia ()
+
+def loadIncidencia() :
+    global incidenciaSeleccionada
+    sucursal = sucursalSeleccionada
+    lista = sucursal.get_listaIncidencias()
+    incidencia  = lista[whichIncidenciaSelected()]
+    incidenciaSeleccionada = incidencia
+    idInc.set(incidencia.get_ID())
+    asuInc.set(incidencia.get_asunto())
+    desInc.set(incidencia.get_descripcion())
+    estInc.set(incidencia.get_estado())
+
+def resolverIncidencia() :
+    sucursal = sucursalSeleccionada
+    lista = sucursal.get_listaIncidencias()
+    incidencia = lista[whichIncidenciaSelected()]
+    incidencia.resolver()
+    estInc.set(incidencia.get_estado())
+    setSelectIncidencia ()
+
+def makeWindow () :
+    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, salEmp, horEmp, idPro, dniPro, namePro,telPro,dirPro, telEmp, dirEmp, idInc, asuInc, desInc, estInc, selectIncidencia, selectProducto, selectSucursal, selectEmpleado, selectProveedor
+    win = Tk()
+    win.title("Gestion de Sucursales")
     frameSucursal = ttk.Labelframe(win, text="Lista de Sucursales")
 
     frame1 = Frame(frameSucursal)
@@ -293,6 +365,16 @@ def makeWindow () :
     tel= Entry(frame7, textvariable=telEmp)
     tel.grid(row=5, column=5, sticky=W)
 
+    Label(frame7, text="Salario").grid(row=6, column=4, sticky=W)
+    salEmp= StringVar()
+    sal= Entry(frame7, textvariable=salEmp)
+    sal.grid(row=6, column=5, sticky=W)
+
+    Label(frame7, text="Horario").grid(row=7, column=4, sticky=W)
+    horEmp= StringVar()
+    hor= Entry(frame7, textvariable=horEmp)
+    hor.grid(row=7, column=5, sticky=W)
+
     frame8 = Frame(frameEmpleado)       # Row of buttons
     frame8.pack()
     b9 = Button(frame8,text=" Agregar",command=addEmpleado)
@@ -309,6 +391,11 @@ def makeWindow () :
     scroll.config (command=selectEmpleado.yview)
     scroll.pack(side=RIGHT, fill=Y)
     selectEmpleado.pack(side=LEFT,  fill=BOTH, expand=1)
+
+    #salTotal= Entry(frame9, textvariable=estInc, state=DISABLED)
+
+
+
 
     #Proveedores
 
@@ -359,6 +446,50 @@ def makeWindow () :
     scroll.pack(side=RIGHT, fill=Y)
     selectProveedor.pack(side=LEFT,  fill=BOTH, expand=1)
 
+    #Incidencias
+    frameIncidencia = ttk.Labelframe(n, text="Lista de Incidencias")
+    frameIncidencia.pack(side = LEFT)
+    n.add(frameIncidencia, text="Incidencia")
+    frame13 = Frame(frameIncidencia)
+    frame13.pack()
+    Label(frame13, text="ID").grid(row=6, column=4, sticky=W)
+    idInc = StringVar()
+    id5 = Entry(frame13, textvariable=idInc)
+    id5.grid(row=6, column=5, sticky=W)
+
+    Label(frame13, text="Asunto").grid(row=7, column=4, sticky=W)
+    asuInc = StringVar()
+    asu= Entry(frame13, textvariable=asuInc)
+    asu.grid(row=7, column=5, sticky=W)
+
+    Label(frame13, text="Descripcion").grid(row=8, column=4, sticky=W)
+    desInc= StringVar()
+    des= Entry(frame13, textvariable=desInc)
+    des.grid(row=8, column=5, sticky=W)
+
+    Label(frame13, text="Estado").grid(row=9, column=4, sticky=W)
+    estInc= StringVar()
+    est= Entry(frame13, textvariable=estInc, state=DISABLED)
+    est.grid(row=9, column=5, sticky=W)
+
+    frame14 = Frame(frameIncidencia)       # Row of buttons
+    frame14.pack()
+    b17 = Button(frame14,text=" Agregar",command=addIncidencia)
+    b18 = Button(frame14,text="Modificar",command=updateIncidencia)
+    b19 = Button(frame14,text="Eliminar",command=deleteIncidencia)
+    b20 = Button(frame14,text="Consultar",command=loadIncidencia)
+    b21 = Button(frame14,text="Resolver",command=resolverIncidencia)
+
+    b17.pack(side=LEFT); b18.pack(side=LEFT);
+    b19.pack(side=LEFT); b20.pack(side=LEFT);b21.pack(side=LEFT)
+
+    frame15 = Frame(frameIncidencia)       # select of names
+    frame15.pack()
+    scroll = Scrollbar(frame15, orient=VERTICAL)
+    selectIncidencia = Listbox(frame15, yscrollcommand=scroll.set, height=6)
+    scroll.config (command=selectIncidencia.yview)
+    scroll.pack(side=RIGHT, fill=Y)
+    selectIncidencia.pack(side=LEFT,  fill=BOTH, expand=1)
 
     return win
 
@@ -391,6 +522,12 @@ def setSelectProveedor() :
     for proveedor in lista :
         selectProveedor.insert(END, proveedor.get_ID())
 
+def setSelectIncidencia() :
+    sucursal = sucursalSeleccionada
+    selectIncidencia.delete(0,END)
+    lista = sucursal.get_listaIncidencias()
+    for incidencia in lista :
+        selectIncidencia.insert(END, incidencia.get_ID())
 
 win = makeWindow()
 setSelectSucursal ()

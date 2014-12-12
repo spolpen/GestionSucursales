@@ -11,7 +11,7 @@ class Sucursal():
         self.lista_emp = []
         self.lista_productos = [] # tiene que trabajar con la lista de los productos de la sucursal que estamos tratando
         self.lista_proveedores = []
-        #self.lista_incidencias = []
+        self.lista_incidencias = []
 
 
     def aniadirEmpleado(self,empleado):
@@ -59,6 +59,9 @@ class Sucursal():
 
     def get_listaProveedores(self):
         return self.lista_proveedores
+
+    def get_listaIncidencias(self):
+        return self.lista_incidencias
 
     def set_nombre (self,nombre) :
         self.nombre=nombre
