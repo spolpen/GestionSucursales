@@ -26,7 +26,7 @@ listaSucursales.append(sucursal2)
 
 #Metodos productos
 def whichProductoSelected () :
-    return int(select.curselection()[0])
+    return int(selectProducto.curselection()[0])
 
 def addProducto () :
     sucursal = sucursalSeleccionada
@@ -175,10 +175,13 @@ def loadProveedor() :
     dirPro.set(proveedor.get_direccion())
 
 def makeWindow () :
-    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, idPro, dniPro, namePro, telEmp, dirEmp, select, selectSucursal, selectEmpleado, selectProveedor
+    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, idPro, dniPro, namePro, telEmp, dirEmp, selectProducto, selectSucursal, selectEmpleado, selectProveedor
     win = Tk()
 
-    frame1 = Frame(win)
+    frameSucursal = Frame(win)
+
+    frame1 = Frame(frameSucursal)
+    frameSucursal.pack()
     frame1.pack()
     Label(frame1, text="Lista de sucursales").grid(row=0, column=0, sticky=W)
     Label(frame1, text="Nombre").grid(row=1, column=0, sticky=W)
@@ -197,7 +200,7 @@ def makeWindow () :
     id2.grid(row=3, column=1, sticky=W)
 
 
-    frame2 = Frame(win)       # Row of buttons
+    frame2 = Frame(frameSucursal)       # Row of buttons
     frame2.pack()
     b5 = Button(frame2,text=" Agregar",command=addSucursal)
     b6 = Button(frame2,text="Modificar2",command=updateSucursal)
@@ -206,7 +209,7 @@ def makeWindow () :
     b5.pack(side=LEFT); b6.pack(side=LEFT)
     b7.pack(side=LEFT); b8.pack(side=LEFT)
 
-    frame3 = Frame(win)       # select of names
+    frame3 = Frame(frameSucursal)       # select of names
     frame3.pack()
     scroll = Scrollbar(frame3, orient=VERTICAL)
     selectSucursal = Listbox(frame3, yscrollcommand=scroll.set, height=6)
@@ -215,7 +218,10 @@ def makeWindow () :
     selectSucursal.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #PRODUCTOS
-    frame4 = Frame(win)
+
+    frameProducto = Frame(win)
+    frameProducto.pack(side = LEFT)
+    frame4 = Frame(frameProducto)
     frame4.pack()
     Label(frame4, text="Lista de productos").grid(row=4, column=0, sticky=W)
     Label(frame4, text="Nombre").grid(row=5, column=0, sticky=W)
@@ -234,7 +240,7 @@ def makeWindow () :
     id.grid(row=7, column=1, sticky=W)
 
 
-    frame5 = Frame(win)       # Row of buttons
+    frame5 = Frame(frameProducto)       # Row of buttons
     frame5.pack()
     b1 = Button(frame5,text=" Agregar",command=addProducto)
     b2 = Button(frame5,text="Modificar",command=updateProducto)
@@ -243,16 +249,18 @@ def makeWindow () :
     b1.pack(side=LEFT); b2.pack(side=LEFT)
     b3.pack(side=LEFT); b4.pack(side=LEFT)
 
-    frame6 = Frame(win)       # select of names
+    frame6 = Frame(frameProducto)       # select of names
     frame6.pack()
     scroll = Scrollbar(frame6, orient=VERTICAL)
-    select = Listbox(frame6, yscrollcommand=scroll.set, height=6)
-    scroll.config (command=select.yview)
+    selectProducto = Listbox(frame6, yscrollcommand=scroll.set, height=6)
+    scroll.config (command=selectProducto.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    select.pack(side=LEFT,  fill=BOTH, expand=1)
+    selectProducto.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #Empleados
-    frame7 = Frame(win)
+    frameEmpleado = Frame(win)
+    frameEmpleado.pack(side = LEFT)
+    frame7 = Frame(frameEmpleado)
     frame7.pack()
     Label(frame7, text="Lista de empleados").grid(row=0, column=4, sticky=W)
     Label(frame7, text="Nombre empleado").grid(row=1, column=4, sticky=W)
@@ -280,7 +288,7 @@ def makeWindow () :
     tel= Entry(frame7, textvariable=telEmp)
     tel.grid(row=5, column=5, sticky=W)
 
-    frame8 = Frame(win)       # Row of buttons
+    frame8 = Frame(frameEmpleado)       # Row of buttons
     frame8.pack()
     b9 = Button(frame8,text=" Agregar3",command=addEmpleado)
     b10 = Button(frame8,text="Modificar3",command=updateEmpleado)
@@ -289,7 +297,7 @@ def makeWindow () :
     b9.pack(side=LEFT); b10.pack(side=LEFT)
     b11.pack(side=LEFT); b12.pack(side=LEFT)
 
-    frame9 = Frame(win)       # select of names
+    frame9 = Frame(frameEmpleado)       # select of names
     frame9.pack()
     scroll = Scrollbar(frame9, orient=VERTICAL)
     selectEmpleado = Listbox(frame9, yscrollcommand=scroll.set, height=6)
@@ -298,7 +306,9 @@ def makeWindow () :
     selectEmpleado.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #Proveedores
-    frame10 = Frame(win)
+    frameProveedor = Frame(win)
+    frameProveedor.pack(side = BOTTOM)
+    frame10 = Frame(frameProveedor)
     frame10.pack()
     Label(frame10, text="Lista de proveedores").grid(row=5, column=4, sticky=W)
     Label(frame10, text="Nombre proveedores").grid(row=6, column=4, sticky=W)
@@ -326,7 +336,7 @@ def makeWindow () :
     tel2= Entry(frame10, textvariable=telPro)
     tel2.grid(row=10, column=5, sticky=W)
 
-    frame11 = Frame(win)       # Row of buttons
+    frame11 = Frame(frameProveedor)       # Row of buttons
     frame11.pack()
     b13 = Button(frame11,text=" Agregar4",command=addProveedor)
     b14 = Button(frame11,text="Modificar4",command=updateProveedor)
@@ -335,7 +345,7 @@ def makeWindow () :
     b13.pack(side=LEFT); b14.pack(side=LEFT)
     b15.pack(side=LEFT); b16.pack(side=LEFT)
 
-    frame12 = Frame(win)       # select of names
+    frame12 = Frame(frameProveedor)       # select of names
     frame12.pack()
     scroll = Scrollbar(frame12, orient=VERTICAL)
     selectProveedor = Listbox(frame12, yscrollcommand=scroll.set, height=6)
@@ -356,10 +366,10 @@ def setSelectSucursal () :
 def setSelectProducto () :
 
     sucursal = sucursalSeleccionada
-    select.delete(0,END)
+    selectProducto.delete(0,END)
     lista = sucursal.get_listaProductos()
     for producto in lista :
-        select.insert (END, producto.get_ID())
+        selectProducto.insert (END, producto.get_ID())
 
 def setSelectEmpleado() :
     sucursal = sucursalSeleccionada
