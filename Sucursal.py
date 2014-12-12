@@ -8,8 +8,9 @@ class Sucursal():
         self.nombre = nombre_sucursal
         self.direccion = direccion
         self.id = id
-        #self.lista_emp = []
+        self.lista_emp = []
         self.lista_productos = [] # tiene que trabajar con la lista de los productos de la sucursal que estamos tratando
+        self.lista_proveedores = []
         #self.lista_incidencias = []
 
 
@@ -21,6 +22,9 @@ class Sucursal():
 
     def aniadirIncidencia(self,incidencia):
         self.lista_incidencias.append(incidencia)
+
+    def aniadirProveedor(self,proveedor):
+        self.lista_proveedores.append(proveedor)
 
     def eliminarEmpleado(self,empleado):
         ubicacion = self.lista_emp.index(empleado)
@@ -34,8 +38,9 @@ class Sucursal():
         ubicacion = self.lista_incidencias.index(incidencia)
         del self.lista_incidencias[ubicacion]
 
-    def eliminarIncidencia(self,incidencia):
-        self.lista_incidencias.remove(incidencia)
+    def eliminarProveedor(self,empleado):
+        ubicacion = self.lista_proveedores.index(empleado)
+        del self.lista_proveedores[ubicacion]
 
     def get_nombre(self):
         return self.nombre
@@ -48,6 +53,12 @@ class Sucursal():
 
     def get_listaProductos(self):
         return self.lista_productos
+
+    def get_listaEmpleados(self):
+        return self.lista_emp
+
+    def get_listaProveedores(self):
+        return self.lista_proveedores
 
     def set_nombre (self,nombre) :
         self.nombre=nombre
