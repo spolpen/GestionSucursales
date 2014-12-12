@@ -5,13 +5,14 @@ from Producto import *
 from Sucursal import *
 from Empleado import *
 from Proveedor import *
+import ttk
 
 #PRODUCTOS
 producto = Producto("Producto1","Televisor",200)
 #EMPLEADO
-empleado = Empleado(1,"29808123F","Juan Perez",954951289,"Sevilla")
+empleado = Empleado("Empleado1","29808123F","Juan Perez",954951289,"Sevilla")
 #PROVEEDOR
-proveedor = Proveedor(1,"48102981A","Manuel Garcia",912018391,"Madrid")
+proveedor = Proveedor("Proveedor1","48102981A","Manuel Garcia",912018391,"Madrid")
 
 #SUCURSALES
 sucursal = Sucursal("Sevilla","Pino Montano","Sucursal1")
@@ -97,6 +98,7 @@ def loadSucursal() :
 
     setSelectProducto ()
     setSelectEmpleado()
+    setSelectProveedor()
 
 #Metodos empleados
 def whichEmpleadoSelected() :
@@ -175,15 +177,14 @@ def loadProveedor() :
     dirPro.set(proveedor.get_direccion())
 
 def makeWindow () :
-    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, idPro, dniPro, namePro, telEmp, dirEmp, selectProducto, selectSucursal, selectEmpleado, selectProveedor
+    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, idPro, dniPro, namePro,telPro,dirPro, telEmp, dirEmp, selectProducto, selectSucursal, selectEmpleado, selectProveedor
     win = Tk()
 
-    frameSucursal = Frame(win)
+    frameSucursal = ttk.Labelframe(win, text="Lista de Sucursales")
 
     frame1 = Frame(frameSucursal)
     frameSucursal.pack()
     frame1.pack()
-    Label(frame1, text="Lista de sucursales").grid(row=0, column=0, sticky=W)
     Label(frame1, text="Nombre").grid(row=1, column=0, sticky=W)
     nameSuc = StringVar()
     name2 = Entry(frame1, textvariable=nameSuc)
@@ -203,9 +204,9 @@ def makeWindow () :
     frame2 = Frame(frameSucursal)       # Row of buttons
     frame2.pack()
     b5 = Button(frame2,text=" Agregar",command=addSucursal)
-    b6 = Button(frame2,text="Modificar2",command=updateSucursal)
-    b7 = Button(frame2,text="Eliminar2",command=deleteSucursal)
-    b8 = Button(frame2,text=" Consultar2 ",command=loadSucursal)
+    b6 = Button(frame2,text="Modificar",command=updateSucursal)
+    b7 = Button(frame2,text="Eliminar",command=deleteSucursal)
+    b8 = Button(frame2,text=" Consultar ",command=loadSucursal)
     b5.pack(side=LEFT); b6.pack(side=LEFT)
     b7.pack(side=LEFT); b8.pack(side=LEFT)
 
@@ -217,13 +218,17 @@ def makeWindow () :
     scroll.pack(side=RIGHT, fill=Y)
     selectSucursal.pack(side=LEFT,  fill=BOTH, expand=1)
 
+    n = ttk.Notebook(win)
+    n.pack()
+
     #PRODUCTOS
 
-    frameProducto = Frame(win)
-    frameProducto.pack(side = LEFT)
+    frameProducto = ttk.Labelframe(n, text="Lista de Productos")
+    frameProducto.pack(fill = BOTH)
+    n.add(frameProducto, text="Productos")
+
     frame4 = Frame(frameProducto)
     frame4.pack()
-    Label(frame4, text="Lista de productos").grid(row=4, column=0, sticky=W)
     Label(frame4, text="Nombre").grid(row=5, column=0, sticky=W)
     nameProd = StringVar()
     name = Entry(frame4, textvariable=nameProd)
@@ -258,11 +263,12 @@ def makeWindow () :
     selectProducto.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #Empleados
-    frameEmpleado = Frame(win)
-    frameEmpleado.pack(side = LEFT)
+
+    frameEmpleado = ttk.Labelframe(n, text="Lista de Empleados")
+    frameEmpleado.pack(fill = BOTH)
+    n.add(frameEmpleado, text="Empleados")
     frame7 = Frame(frameEmpleado)
     frame7.pack()
-    Label(frame7, text="Lista de empleados").grid(row=0, column=4, sticky=W)
     Label(frame7, text="Nombre empleado").grid(row=1, column=4, sticky=W)
     nameEmp = StringVar()
     name3 = Entry(frame7, textvariable=nameEmp)
@@ -290,10 +296,10 @@ def makeWindow () :
 
     frame8 = Frame(frameEmpleado)       # Row of buttons
     frame8.pack()
-    b9 = Button(frame8,text=" Agregar3",command=addEmpleado)
-    b10 = Button(frame8,text="Modificar3",command=updateEmpleado)
-    b11 = Button(frame8,text="Eliminar3",command=deleteEmpleado)
-    b12 = Button(frame8,text=" Consultar3 ",command=loadEmpleado)
+    b9 = Button(frame8,text=" Agregar",command=addEmpleado)
+    b10 = Button(frame8,text="Modificar",command=updateEmpleado)
+    b11 = Button(frame8,text="Eliminar",command=deleteEmpleado)
+    b12 = Button(frame8,text=" Consultar",command=loadEmpleado)
     b9.pack(side=LEFT); b10.pack(side=LEFT)
     b11.pack(side=LEFT); b12.pack(side=LEFT)
 
@@ -306,11 +312,12 @@ def makeWindow () :
     selectEmpleado.pack(side=LEFT,  fill=BOTH, expand=1)
 
     #Proveedores
-    frameProveedor = Frame(win)
-    frameProveedor.pack(side = BOTTOM)
+
+    frameProveedor = ttk.Labelframe(n, text="Lista de Proveedores")
+    frameProveedor.pack(side = LEFT)
+    n.add(frameProveedor, text="Proveedores")
     frame10 = Frame(frameProveedor)
     frame10.pack()
-    Label(frame10, text="Lista de proveedores").grid(row=5, column=4, sticky=W)
     Label(frame10, text="Nombre proveedores").grid(row=6, column=4, sticky=W)
     namePro = StringVar()
     name4 = Entry(frame10, textvariable=namePro)
@@ -338,10 +345,10 @@ def makeWindow () :
 
     frame11 = Frame(frameProveedor)       # Row of buttons
     frame11.pack()
-    b13 = Button(frame11,text=" Agregar4",command=addProveedor)
-    b14 = Button(frame11,text="Modificar4",command=updateProveedor)
-    b15 = Button(frame11,text="Eliminar4",command=deleteProveedor)
-    b16 = Button(frame11,text=" Consultar4 ",command=loadProveedor)
+    b13 = Button(frame11,text=" Agregar",command=addProveedor)
+    b14 = Button(frame11,text="Modificar",command=updateProveedor)
+    b15 = Button(frame11,text="Eliminar",command=deleteProveedor)
+    b16 = Button(frame11,text=" Consultar",command=loadProveedor)
     b13.pack(side=LEFT); b14.pack(side=LEFT)
     b15.pack(side=LEFT); b16.pack(side=LEFT)
 
