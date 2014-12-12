@@ -1,39 +1,21 @@
 __author__ = 'Polo'
+from Persona import *
 
-class Empleado:
-    def __init__(self, ID, DNI, nombre, telefono, direccion):
-        self.ID=ID
-        self.DNI=DNI
-        self.nombre=nombre
-        self.telefono=telefono
-        self.direccion=direccion
+class Empleado(Persona):
+    def __init__(self, ID, DNI, nombre, telefono, direccion, salario, horario):
+        #super.__init__()
+        Persona.__init__(self,ID, DNI, nombre, telefono, direccion)
+        self.salario=salario
+        self.horario=horario
 
-    def get_ID(self):
-        return self.ID
+    def get_salario(self):
+        return self.salario
 
-    def get_DNI(self):
-        return self.DNI
+    def get_horario(self):
+        return self.horario
 
-    def get_nombre(self):
-        return self.nombre
+    def set_salario(self,salario):
+        self.salario=salario
 
-    def get_telefono(self):
-        return self.telefono
-
-    def get_direccion(self):
-        return self.direccion
-
-    def set_ID(self,ID):
-        self.ID=ID
-
-    def set_DNI(self,DNI):
-        self.DNI=DNI
-
-    def set_nombre(self,nombre):
-        self.nombre=nombre
-
-    def set_telefono(self,telefono):
-        self.telefono=telefono
-
-    def set_direccion(self,direccion):
-        self.direccion=direccion
+    def set_salaro(self,horario):
+        self.horario=horario
