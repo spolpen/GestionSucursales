@@ -29,7 +29,6 @@ class TestSucursal(TestCase):
         self.assertEqual(suc.get_salario_total(), 3000)
 
 
-class TestSucursal(TestCase):
     def test_aniadirEmpleado(self):
         # Creamos mocks de Empleado
         Emp1 = mock(Empleado)
@@ -47,7 +46,6 @@ class TestSucursal(TestCase):
         self.assertEqual(lista[0].get_ID(), 1)
 
 
-class TestSucursal(TestCase):
     def test_aniadirProducto(self):
         # Creamos mocks de Producto
         Prod1 = mock(Producto)
@@ -65,7 +63,6 @@ class TestSucursal(TestCase):
         self.assertEqual(lista[0].get_ID(), 1)
 
 
-class TestSucursal(TestCase):
     def test_aniadirIncidencia(self):
         # Creamos mocks de Incidencia
         Inc1 = mock(Incidencia)
@@ -83,7 +80,6 @@ class TestSucursal(TestCase):
         self.assertEqual(lista[0].get_ID(), 1)
 
 
-class TestSucursal(TestCase):
     def test_aniadirProveedor(self):
         # Creamos mocks de Proveedor
         Pro1 = mock(Proveedor)
@@ -101,7 +97,6 @@ class TestSucursal(TestCase):
         self.assertEqual(lista[0].get_ID(), 1)
 
 
-class TestSucursal(TestCase):
     def test_eliminarEmpleado(self):
         # Creamos mocks de Empleado
         Emp1 = mock(Empleado)
@@ -120,7 +115,6 @@ class TestSucursal(TestCase):
         self.assertEqual(len(lista), 1)
 
 
-class TestSucursal(TestCase):
     def test_eliminarProducto(self):
         # Creamos mocks de Producto
         Pro1 = mock(Producto)
@@ -139,7 +133,6 @@ class TestSucursal(TestCase):
         self.assertEqual(len(lista), 1)
 
 
-class TestSucursal(TestCase):
     def test_eliminarIncidencia(self):
         # Creamos mocks de Incidencia
         Inc1 = mock(Incidencia)
@@ -158,7 +151,6 @@ class TestSucursal(TestCase):
         self.assertEqual(len(lista), 1)
 
 
-class TestSucursal(TestCase):
     def test_eliminarProveedor(self):
          # Creamos mocks de Proveedor
         Pro1 = mock(Proveedor)
