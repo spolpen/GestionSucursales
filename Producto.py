@@ -1,6 +1,11 @@
 __author__ = 'Polo'
 
 class Producto:
+    """Clase producto
+
+    Define un producto con sus atributos de ID, nombre y precio.
+
+    """
     def __init__(self,ID, nombre, precio):
         """Constructor producto
 

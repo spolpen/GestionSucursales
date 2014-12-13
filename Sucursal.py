@@ -2,7 +2,11 @@ __author__ = 'Polo'
 
 
 class Sucursal():
+    """Clase sucursal
 
+    Esta clase define una sucursal, con listas de empleados, productos, proveedores e incidencias, y metodos para agregar y eliminar de dichas listas.
+    
+    """
     def __init__(self, nombre_sucursal, direccion, id):
         """Constructor sucursal
 

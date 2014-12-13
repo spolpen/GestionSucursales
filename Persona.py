@@ -1,6 +1,11 @@
 __author__ = 'Polo'
 
 class Persona(object):
+    """Clase persona
+
+    De esta clase heredan sus atributos las clases "Empleado" y "Proveedor"
+
+    """
     def __init__(self, ID, DNI, nombre, telefono, direccion):
         """Constructor persona
 

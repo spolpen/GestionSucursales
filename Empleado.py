@@ -2,6 +2,11 @@ __author__ = 'Polo'
 from Persona import *
 
 class Empleado(Persona):
+    """Clase empleado
+
+    Esta clase hereda de persona y ademas tiene varios atributos propios como el salario y el horario.
+
+    """
     def __init__(self, ID, DNI, nombre, telefono, direccion, salario, horario):
         """Constructor empleado
 

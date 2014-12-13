@@ -10,7 +10,18 @@ __author__ = 'Polo'
 
 
 class TestSucursal(TestCase):
+    """Clase TestSucursal
+
+    Esta clase contiene los tests unitarios para algunos metodos de la clase sucursal.
+
+    """
     def test_get_salario_total(self):
+        """Test get salario total
+
+        Este test comprueba el correcto funcionamiento del metodo Get_salario_total de la clase sucursal.
+
+        :return:
+        """
         # Creamos mocks de Empleado
         Emp1 = mock(Empleado)
         Emp2 = mock(Empleado)
@@ -30,6 +41,12 @@ class TestSucursal(TestCase):
 
 
     def test_aniadirEmpleado(self):
+        """Test aniadir empleado
+
+        Este test comprueba que los empleados se agregan correctamente a la lista de empleados de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Empleado
         Emp1 = mock(Empleado)
 
@@ -47,6 +64,12 @@ class TestSucursal(TestCase):
 
 
     def test_aniadirProducto(self):
+        """Test aniadir producto
+
+        Este test comprueba que los productos se agregan correctamente a la lista de productos de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Producto
         Prod1 = mock(Producto)
 
@@ -64,6 +87,12 @@ class TestSucursal(TestCase):
 
 
     def test_aniadirIncidencia(self):
+        """Test aniadir incidencia
+
+        Este test comprueba que las incidencias se agregan correctamente a la lista de incidencias de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Incidencia
         Inc1 = mock(Incidencia)
 
@@ -81,6 +110,12 @@ class TestSucursal(TestCase):
 
 
     def test_aniadirProveedor(self):
+        """Test aniadir proveedor
+
+        Este test comprueba que los proveedores se agregan correctamente a la lista de proveedores de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Proveedor
         Pro1 = mock(Proveedor)
 
@@ -98,6 +133,12 @@ class TestSucursal(TestCase):
 
 
     def test_eliminarEmpleado(self):
+        """Test eliminar empleado
+
+        Este test comprueba que los empleados se eliminan correctamente de la lista de empleados de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Empleado
         Emp1 = mock(Empleado)
         Emp2 = mock(Empleado)
@@ -116,6 +157,12 @@ class TestSucursal(TestCase):
 
 
     def test_eliminarProducto(self):
+        """Test eliminar producto
+
+        Este test comprueba que los productos se eliminan correctamente de la lista de productos de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Producto
         Pro1 = mock(Producto)
         Pro2 = mock(Producto)
@@ -134,6 +181,12 @@ class TestSucursal(TestCase):
 
 
     def test_eliminarIncidencia(self):
+        """Test eliminar incidencia
+
+        Este test comprueba que las incidencias se eliminan correctamente de la lista de incidencias de la sucursal.
+
+        :return:
+        """
         # Creamos mocks de Incidencia
         Inc1 = mock(Incidencia)
         Inc2 = mock(Incidencia)
@@ -152,6 +205,12 @@ class TestSucursal(TestCase):
 
 
     def test_eliminarProveedor(self):
+        """Test eliminar proveedor
+
+        Este test comprueba que los proveedores se eliminan correctamente de la lista de proveedores de la sucursal.
+
+        :return:
+        """
          # Creamos mocks de Proveedor
         Pro1 = mock(Proveedor)
         Pro2 = mock(Proveedor)

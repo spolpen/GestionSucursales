@@ -1,6 +1,11 @@
 __author__ = 'Luzu'
 
 class Incidencia:
+    """Clase incidencia
+
+    Esta clase representa una incidencia de la sucursal y automaticamente se inicializa como "Abierta" pudiendo resolverse mediante la interfaz de usuario.
+
+    """
     def __init__(self,ID,asunto,descripcion):
         """Constructor incidencia
 

@@ -2,6 +2,11 @@ __author__ = 'Polo'
 from Persona import *
 
 class Proveedor(Persona):
+    """Clase proveedor
+
+    Hereda de persona, pero no tiene atributos propios, de esta forma se distingue de empleado, que si tiene otros atributos.
+
+    """
     def __init__(self, ID, DNI, nombre, telefono, direccion):
         """Constructor proveedor
 
