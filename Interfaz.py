@@ -424,7 +424,7 @@ def resolverIncidencia() :
 def makeWindow () :
     """Crear ventana
 
-    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones, campos, pestañas, etc de la ventana de la aplicacion.
+    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones, campos, etc de la ventana de la aplicacion.
 
     :return:
     """
@@ -453,10 +453,10 @@ def makeWindow () :
 
     frame2 = Frame(frameSucursal)       # Row of buttons
     frame2.pack()
-    b5 = Button(frame2,text=" Agregar",command=addSucursal)
+    b5 = Button(frame2,text="Agregar",command=addSucursal)
     b6 = Button(frame2,text="Modificar",command=updateSucursal)
     b7 = Button(frame2,text="Eliminar",command=deleteSucursal)
-    b8 = Button(frame2,text=" Consultar ",command=loadSucursal)
+    b8 = Button(frame2,text="Consultar ",command=loadSucursal)
     b5.pack(side=LEFT); b6.pack(side=LEFT)
     b7.pack(side=LEFT); b8.pack(side=LEFT)
 
@@ -497,10 +497,10 @@ def makeWindow () :
 
     frame5 = Frame(frameProducto)       # Row of buttons
     frame5.pack()
-    b1 = Button(frame5,text=" Agregar",command=addProducto)
+    b1 = Button(frame5,text="Agregar",command=addProducto)
     b2 = Button(frame5,text="Modificar",command=updateProducto)
     b3 = Button(frame5,text="Eliminar",command=deleteProducto)
-    b4 = Button(frame5,text=" Consultar ",command=loadProducto)
+    b4 = Button(frame5,text="Consultar ",command=loadProducto)
     b1.pack(side=LEFT); b2.pack(side=LEFT)
     b3.pack(side=LEFT); b4.pack(side=LEFT)
 
@@ -545,7 +545,7 @@ def makeWindow () :
     tel.grid(row=5, column=5, sticky=W)
 
     Label(frame7, text="Salario").grid(row=6, column=4, sticky=W)
-    salEmp= StringVar()
+    salEmp= IntVar()
     sal= Entry(frame7, textvariable=salEmp)
     sal.grid(row=6, column=5, sticky=W)
 
@@ -556,7 +556,7 @@ def makeWindow () :
 
     frame8 = Frame(frameEmpleado)       # Row of buttons
     frame8.pack()
-    b9 = Button(frame8,text=" Agregar",command=addEmpleado)
+    b9 = Button(frame8,text="Agregar",command=addEmpleado)
     b10 = Button(frame8,text="Modificar",command=updateEmpleado)
     b11 = Button(frame8,text="Eliminar",command=deleteEmpleado)
     b12 = Button(frame8,text="Consultar",command=loadEmpleado)
@@ -616,10 +616,10 @@ def makeWindow () :
 
     frame11 = Frame(frameProveedor)       # Row of buttons
     frame11.pack()
-    b13 = Button(frame11,text=" Agregar",command=addProveedor)
+    b13 = Button(frame11,text="Agregar",command=addProveedor)
     b14 = Button(frame11,text="Modificar",command=updateProveedor)
     b15 = Button(frame11,text="Eliminar",command=deleteProveedor)
-    b16 = Button(frame11,text=" Consultar",command=loadProveedor)
+    b16 = Button(frame11,text="Consultar",command=loadProveedor)
     b13.pack(side=LEFT); b14.pack(side=LEFT)
     b15.pack(side=LEFT); b16.pack(side=LEFT)
 
@@ -659,7 +659,7 @@ def makeWindow () :
 
     frame14 = Frame(frameIncidencia)       # Row of buttons
     frame14.pack()
-    b17 = Button(frame14,text=" Agregar",command=addIncidencia)
+    b17 = Button(frame14,text="Agregar",command=addIncidencia)
     b18 = Button(frame14,text="Modificar",command=updateIncidencia)
     b19 = Button(frame14,text="Eliminar",command=deleteIncidencia)
     b20 = Button(frame14,text="Consultar",command=loadIncidencia)
