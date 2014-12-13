@@ -9,23 +9,29 @@ from Incidencia import *
 import ttk
 
 #PRODUCTOS
-producto = Producto("Producto1","Televisor",200)
+producto1 = Producto("Producto1","Televisor",200)
 #EMPLEADO
-empleado = Empleado("Empleado1","29808123F","Juan Perez",954951289,"Sevilla",1200,"8:00-15:00")
+empleado1 = Empleado("Empleado1","29808123F","Juan Perez",954951289,"Sevilla",1200,"8:00-15:00")
 #PROVEEDOR
-proveedor = Proveedor("Proveedor1","48102981A","Manuel Garcia",912018391,"Madrid")
+proveedor1 = Proveedor("Proveedor1","48102981A","Manuel Garcia",912018391,"Madrid")
 
 #SUCURSALES
-sucursal = Sucursal("Sevilla","Pino Montano","Sucursal1")
-sucursal.aniadirProducto(producto)
-sucursal.aniadirEmpleado(empleado)
-sucursal.aniadirProveedor(proveedor)
+sucursal1 = Sucursal("Sevilla","Pino Montano","Sucursal1")
+sucursal1.aniadirProducto(producto1)
+sucursal1.aniadirEmpleado(empleado1)
+sucursal1.aniadirProveedor(proveedor1)
 sucursal2 = Sucursal("Malaga","Malaga","Sucursal2")
 listaSucursales =[]
-listaSucursales.append(sucursal)
+listaSucursales.append(sucursal1)
 listaSucursales.append(sucursal2)
 
 def limpiarVariables () :
+    """Limpieza de variables
+
+    Metodo que elimina los datos de los campos de producto, empleado, proveedor e incidencia.
+
+    :return:
+    """
     nameProd.set("")
     priceProd.set("")
     idProd.set("")
@@ -51,9 +57,21 @@ def limpiarVariables () :
 
 #Metodos productos
 def whichProductoSelected () :
+    """Producto seleccionado
+
+    Metodo que nos devuelve el producto que tenemos seleccionado en la lista de productos.
+
+    :return: producto seleccionado
+    """
     return int(selectProducto.curselection()[0])
 
 def addProducto () :
+    """Agregar producto
+
+    Metodo que crea un nuevo producto con los datos que hay en los campos y lo agrega a la lista de productos de la sucursal
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     producto = Producto(idProd.get(),nameProd.get(),priceProd.get())
     sucursal.aniadirProducto(producto)
@@ -61,6 +79,12 @@ def addProducto () :
     setSelectProducto ()
 
 def updateProducto() :
+    """Modificar producto
+
+    Metodo que actualiza el producto con los datos que hay en los campos.
+
+    :return:
+    """
     producto = productoSeleccionado
     producto.set_ID(idProd.get())
     producto.set_nombre(nameProd.get())
@@ -69,6 +93,12 @@ def updateProducto() :
     setSelectProducto ()
 
 def deleteProducto() :
+    """Eliminar producto
+
+    Metodo que elimina el producto seleccionado en la lista de productos.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaProductos()
     producto = lista[whichProductoSelected()]
@@ -77,6 +107,12 @@ def deleteProducto() :
     setSelectProducto ()
 
 def loadProducto() :
+    """Consultar producto
+
+    Metodo que lee el producto seleccionado y coloca sus datos en los campos.
+
+    :return:
+    """
     global productoSeleccionado
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaProductos()
@@ -89,9 +125,21 @@ def loadProducto() :
 
 #Metodos sucursales
 def whichSucursalSelected () :
+    """Sucursal seleccionada
+
+    Metodo que nos devuelve la sucursal que tenemos seleccionada en la lista de sucursales.
+
+    :return: sucursal seleccionada
+    """
     return int(selectSucursal.curselection()[0])
 
 def addSucursal() :
+    """Agregar sucursal
+
+    Metodo que crea una sucursal con los datos que hay en los campos y la agrega a la lista de sucursales.
+
+    :return:
+    """
     sucursal = Sucursal(nameSuc.get(),dirSuc.get(),idSuc.get())
     listaSucursales.append(sucursal)
 
@@ -99,6 +147,12 @@ def addSucursal() :
 
 
 def updateSucursal() :
+    """Modificar sucursal
+
+    Metodo que actualiza la sucursal con los datos que hay en los campos.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     sucursal.set_nombre(nameSuc.get())
     sucursal.set_direccion(dirSuc.get())
@@ -108,11 +162,24 @@ def updateSucursal() :
 
 
 def deleteSucursal() :
+    """Eliminar sucursal
+
+    Metodo que elimina la sucursal seleccionada en la lista de sucursales.
+
+    :return:
+    """
     del listaSucursales[whichSucursalSelected()]
     setSelectSucursal ()
 
 
 def loadSucursal() :
+    """Consultar sucursal
+
+    Metodo que lee la sucursal seleccionada y coloca sus datos en los campos.
+    Este metodo ademas muestra las listas de productos, empleados, proveedores e incidencias de la sucursal.
+
+    :return:
+    """
     global sucursalSeleccionada
     sucursal = listaSucursales[whichSucursalSelected()]
     sucursalSeleccionada = sucursal
@@ -127,15 +194,33 @@ def loadSucursal() :
 
 #Metodos empleados
 def whichEmpleadoSelected() :
+    """Empleado seleccionado
+
+    Metodo que nos devuelve el empleado que tenemos seleccionado en la lista de empleados.
+
+    :return: empleado seleccionado
+    """
     return int(selectEmpleado.curselection()[0])
 
 def addEmpleado() :
+    """Agregar empleado
+
+    Metodo que crea un nuevo empleado con los datos que hay en los campos y lo agrega a la lista de empleados de la sucursal
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     empleado = Empleado(idEmp.get(),dniEmp.get(),nameEmp.get(),telEmp.get(),dirEmp.get(),salEmp.get(),horEmp.get())
     sucursal.aniadirEmpleado(empleado)
     setSelectEmpleado ()
 
 def updateEmpleado() :
+    """Modificar empleado
+
+    Metodo que actualiza el empleado con los datos que hay en los campos.
+
+    :return:
+    """
     empleado = empleadoSeleccionado
     empleado.set_nombre(nameEmp.get())
     empleado.set_ID(idEmp.get())
@@ -147,6 +232,12 @@ def updateEmpleado() :
     setSelectEmpleado ()
 
 def deleteEmpleado() :
+    """Eliminar empleado
+
+    Metodo que elimina el empleado seleccionado en la lista de empleados.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaEmpleados()
     empleado = lista[whichEmpleadoSelected()]
@@ -154,6 +245,12 @@ def deleteEmpleado() :
     setSelectEmpleado ()
 
 def loadEmpleado() :
+    """Consultar empleado
+
+    Metodo que lee el empleado seleccionado y coloca sus datos en los campos.
+
+    :return:
+    """
     global empleadoSeleccionado
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaEmpleados()
@@ -167,17 +264,45 @@ def loadEmpleado() :
     salEmp.set(empleado.get_salario())
     horEmp.set(empleado.get_horario())
 
+def salTotalEmpleado() :
+    """Salario total
+
+    Metodo que obtiene el salario total de los empleados de la sucursal seleccionada
+
+    :return:
+    """
+    sucursal = sucursalSeleccionada
+    salTotalEmp.set(sucursal.get_salario_total())
+
 #Metodos proveedores
 def whichProveedorSelected() :
+    """Proveedor seleccionado
+
+    Metodo que nos devuelve el proveedor que tenemos seleccionado en la lista de proveedores.
+
+    :return: proveedor seleccionado
+    """
     return int(selectProveedor.curselection()[0])
 
 def addProveedor() :
+    """Agregar proveedor
+
+    Metodo que crea un nuevo proveedor con los datos que hay en los campos y lo agrega a la lista de proveedores de la sucursal
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     proveedor = Proveedor(idPro.get(),dniPro.get(),namePro.get(),telPro.get(),dirPro.get())
     sucursal.aniadirProveedor(proveedor)
     setSelectProveedor ()
 
 def updateProveedor() :
+    """Modificar proveedor
+
+    Metodo que actualiza el proveedor con los datos que hay en los campos.
+
+    :return:
+    """
     proveedor = proveedorSeleccionado
     proveedor.set_nombre(namePro.get())
     proveedor.set_ID(idPro.get())
@@ -187,6 +312,12 @@ def updateProveedor() :
     setSelectProveedor()
 
 def deleteProveedor() :
+    """Eliminar proveedor
+
+    Metodo que elimina el proveedor seleccionado en la lista de proveedores.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaProveedores()
     proveedor = lista[whichProveedorSelected()]
@@ -194,6 +325,12 @@ def deleteProveedor() :
     setSelectProveedor ()
 
 def loadProveedor() :
+    """Consultar proveedor
+
+    Metodo que lee el proveedor seleccionado y coloca sus datos en los campos.
+
+    :return:
+    """
     global proveedorSeleccionado
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaProveedores()
@@ -207,15 +344,33 @@ def loadProveedor() :
 
 #INCIDENCIA
 def whichIncidenciaSelected() :
+    """Incidencia seleccionada
+
+    Metodo que nos devuelve la incidencia que tenemos seleccionad en la lista de incidencias.
+
+    :return: incidencia seleccionada
+    """
     return int(selectIncidencia.curselection()[0])
 
 def addIncidencia() :
+    """Agregar incidencia
+
+    Metodo que crea una nueva incidencia con los datos que hay en los campos y la agrega a la lista de incidencias de la sucursal
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     incidencia = Incidencia(idInc.get(),asuInc.get(),desInc.get())
     sucursal.aniadirIncidencia(incidencia)
     setSelectIncidencia ()
 
 def updateIncidencia() :
+    """Modificar incidencia
+
+    Metodo que actualiza la incidencia con los datos que hay en los campos.
+
+    :return:
+    """
     incidencia = incidenciaSeleccionada
     incidencia.set_ID(idInc.get())
     incidencia.set_asunto(asuInc.get())
@@ -223,6 +378,12 @@ def updateIncidencia() :
     setSelectIncidencia()
 
 def deleteIncidencia() :
+    """Eliminar incidencia
+
+    Metodo que elimina la incidencia seleccionada en la lista de incidencias.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaIncidencias()
     incidencia = lista[whichIncidenciaSelected()]
@@ -230,6 +391,12 @@ def deleteIncidencia() :
     setSelectIncidencia ()
 
 def loadIncidencia() :
+    """Consultar incidencia
+
+    Metodo que lee la incidencia seleccionada y coloca sus datos en los campos.
+
+    :return:
+    """
     global incidenciaSeleccionada
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaIncidencias()
@@ -241,6 +408,12 @@ def loadIncidencia() :
     estInc.set(incidencia.get_estado())
 
 def resolverIncidencia() :
+    """Resolver incidencia
+
+    Metodo que cambia el estado de la incidencia de "Abierta" a "Resuelta".
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     lista = sucursal.get_listaIncidencias()
     incidencia = lista[whichIncidenciaSelected()]
@@ -249,7 +422,13 @@ def resolverIncidencia() :
     setSelectIncidencia ()
 
 def makeWindow () :
-    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, salEmp, horEmp, idPro, dniPro, namePro,telPro,dirPro, telEmp, dirEmp, idInc, asuInc, desInc, estInc, selectIncidencia, selectProducto, selectSucursal, selectEmpleado, selectProveedor
+    """Crear ventana
+
+    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones, campos, pestañas, etc de la ventana de la aplicacion.
+
+    :return:
+    """
+    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, salEmp, horEmp, idPro, dniPro, namePro,telPro,dirPro, telEmp, dirEmp, salTotalEmp, idInc, asuInc, desInc, estInc, selectIncidencia, selectProducto, selectSucursal, selectEmpleado, selectProveedor
     win = Tk()
     win.title("Gestion de Sucursales")
     frameSucursal = ttk.Labelframe(win, text="Lista de Sucursales")
@@ -295,7 +474,7 @@ def makeWindow () :
     #PRODUCTOS
 
     frameProducto = ttk.Labelframe(n, text="Lista de Productos")
-    frameProducto.pack(fill = BOTH)
+    frameProducto.pack()
     n.add(frameProducto, text="Productos")
 
     frame4 = Frame(frameProducto)
@@ -380,9 +559,11 @@ def makeWindow () :
     b9 = Button(frame8,text=" Agregar",command=addEmpleado)
     b10 = Button(frame8,text="Modificar",command=updateEmpleado)
     b11 = Button(frame8,text="Eliminar",command=deleteEmpleado)
-    b12 = Button(frame8,text=" Consultar",command=loadEmpleado)
+    b12 = Button(frame8,text="Consultar",command=loadEmpleado)
+
     b9.pack(side=LEFT); b10.pack(side=LEFT)
     b11.pack(side=LEFT); b12.pack(side=LEFT)
+
 
     frame9 = Frame(frameEmpleado)       # select of names
     frame9.pack()
@@ -390,9 +571,13 @@ def makeWindow () :
     selectEmpleado = Listbox(frame9, yscrollcommand=scroll.set, height=6)
     scroll.config (command=selectEmpleado.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    selectEmpleado.pack(side=LEFT,  fill=BOTH, expand=1)
+    selectEmpleado.pack(side=LEFT, expand=1)
 
-    #salTotal= Entry(frame9, textvariable=estInc, state=DISABLED)
+    b12a = Button(frameEmpleado,text="Salario total",command=salTotalEmpleado)
+    b12a.pack(side=LEFT)
+    salTotalEmp = StringVar()
+    salTotal= Entry(frameEmpleado, textvariable=salTotalEmp, state=DISABLED)
+    salTotal.pack(side=LEFT)
 
 
 
@@ -449,7 +634,7 @@ def makeWindow () :
     #Incidencias
     frameIncidencia = ttk.Labelframe(n, text="Lista de Incidencias")
     frameIncidencia.pack(side = LEFT)
-    n.add(frameIncidencia, text="Incidencia")
+    n.add(frameIncidencia, text="Incidencias")
     frame13 = Frame(frameIncidencia)
     frame13.pack()
     Label(frame13, text="ID").grid(row=6, column=4, sticky=W)
@@ -494,6 +679,12 @@ def makeWindow () :
     return win
 
 def setSelectSucursal () :
+    """Lista seleccion sucursales
+
+    Metodo que actualiza la lista de sucursales en el cuadro de seleccion.
+
+    :return:
+    """
 
     listaSucursales.sort()
     selectSucursal.delete(0,END)
@@ -501,6 +692,12 @@ def setSelectSucursal () :
         selectSucursal.insert(END, sucursal.get_ID())
 
 def setSelectProducto () :
+    """Lista seleccion productos
+
+    Metodo que actualiza la lista de productos en el cuadro de seleccion.
+
+    :return:
+    """
 
     sucursal = sucursalSeleccionada
     selectProducto.delete(0,END)
@@ -509,6 +706,12 @@ def setSelectProducto () :
         selectProducto.insert (END, producto.get_ID())
 
 def setSelectEmpleado() :
+    """Lista seleccion empleados
+
+    Metodo que actualiza la lista de empleados en el cuadro de seleccion.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     selectEmpleado.delete(0,END)
     lista = sucursal.get_listaEmpleados()
@@ -516,6 +719,12 @@ def setSelectEmpleado() :
         selectEmpleado.insert(END, empleado.get_ID())
 
 def setSelectProveedor() :
+    """Lista seleccion proveedores
+
+    Metodo que actualiza la lista de proveedores en el cuadro de seleccion.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     selectProveedor.delete(0,END)
     lista = sucursal.get_listaProveedores()
@@ -523,6 +732,12 @@ def setSelectProveedor() :
         selectProveedor.insert(END, proveedor.get_ID())
 
 def setSelectIncidencia() :
+    """Lista seleccion incidencias
+
+    Metodo que actualiza la lista de incidencias en el cuadro de seleccion.
+
+    :return:
+    """
     sucursal = sucursalSeleccionada
     selectIncidencia.delete(0,END)
     lista = sucursal.get_listaIncidencias()

@@ -3,7 +3,6 @@ from Persona import *
 
 class Empleado(Persona):
     def __init__(self, ID, DNI, nombre, telefono, direccion, salario, horario):
-        #super.__init__()
         Persona.__init__(self,ID, DNI, nombre, telefono, direccion)
         self.salario=salario
         self.horario=horario

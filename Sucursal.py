@@ -9,7 +9,7 @@ class Sucursal():
         self.direccion = direccion
         self.id = id
         self.lista_emp = []
-        self.lista_productos = [] # tiene que trabajar con la lista de los productos de la sucursal que estamos tratando
+        self.lista_productos = []
         self.lista_proveedores = []
         self.lista_incidencias = []
 
@@ -74,13 +74,7 @@ class Sucursal():
 
     def get_salario_total(self):
         num=0
-        for i in self.lista:
+        for i in self.lista_emp:
              num += i.get_salario()
-        return num
-
-    def salario_total_mensual(self):
-        num = 0
-        for i in self.lista:
-            num += i.get_salario_mensual()
         return num
 
