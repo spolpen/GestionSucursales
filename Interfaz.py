@@ -38,6 +38,7 @@ def limpiar_variables():
     des_inc.set("")
     est_inc.set("")
 
+
     #PRODUCTOS
 
 def which_producto_selected():
@@ -88,7 +89,7 @@ def delete_producto():
     :return:
     """
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_listaProductos()
+    lista = sucursal.get_listaproductos()
     producto = lista[which_producto_selected()]
     sucursal.eliminarProducto(producto)
 
@@ -104,12 +105,13 @@ def load_producto():
     """
     global producto_seleccionado
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_listaProductos()
+    lista = sucursal.get_listaproductos()
     producto = lista[which_producto_selected()]
     producto_seleccionado = producto
     id_prod.set(producto.get_id())
     name_prod.set(producto.get_nombre())
     price_prod.set(producto.get_precio())
+
 
     #SUCURSALES
 
@@ -235,7 +237,7 @@ def delete_empleado():
     :return:
     """
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_lista_empleados()
+    lista = sucursal.get_listaempleados()
     empleado = lista[which_empleado_selected()]
     sucursal.eliminar_empleado(empleado)
     set_select_empleado()
@@ -250,7 +252,7 @@ def load_empleado():
     """
     global empleado_seleccionado
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_listaEmpleados()
+    lista = sucursal.get_listaempleados()
     empleado = lista[which_empleado_selected()]
     empleado_seleccionado = empleado
     id_emp.set(empleado.get_id())
@@ -323,7 +325,7 @@ def delete_proveedor():
     :return:
     """
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_lista_proveedores()
+    lista = sucursal.get_listaproveedores()
     proveedor = lista[which_proveedor_selected()]
     sucursal.eliminar_proveedor(proveedor)
     set_select_proveedor()
@@ -338,7 +340,7 @@ def load_proveedor():
     """
     global proveedor_seleccionado
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_listaProveedores()
+    lista = sucursal.get_listaproveedores()
     proveedor = lista[which_proveedor_selected()]
     proveedor_seleccionado = proveedor
     id_pro.set(proveedor.get_id())
@@ -396,7 +398,7 @@ def delete_incidencia():
     :return:
     """
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_lista_incidencias()
+    lista = sucursal.get_listaincidencias()
     incidencia = lista[which_incidencia_selected()]
     sucursal.eliminar_incidencia(incidencia)
     set_select_incidencia()
@@ -411,7 +413,7 @@ def load_incidencia():
     """
     global incidencia_seleccionada
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_lista_incidencias()
+    lista = sucursal.get_listaincidencias()
     incidencia = lista[which_incidencia_selected()]
     incidencia_seleccionada = incidencia
     id_inc.set(incidencia.get_id())
@@ -428,7 +430,7 @@ def resolver_incidencia():
     :return:
     """
     sucursal = sucursal_seleccionada
-    lista = sucursal.get_lista_incidencias()
+    lista = sucursal.get_listaincidencias()
     incidencia = lista[which_incidencia_selected()]
     incidencia.resolver()
     est_inc.set(incidencia.get_estado())
@@ -730,7 +732,7 @@ def set_select_producto():
 
     sucursal = sucursal_seleccionada
     select_producto.delete(0, END)
-    lista = sucursal.get_listaProductos()
+    lista = sucursal.get_listaproductos()
     for producto in lista:
         select_producto.insert(END, producto.get_id())
 
@@ -744,7 +746,7 @@ def set_select_empleado():
     """
     sucursal = sucursal_seleccionada
     select_empleado.delete(0, END)
-    lista = sucursal.get_listaEmpleados()
+    lista = sucursal.get_listaempleados()
     for empleado in lista:
         select_empleado.insert(END, empleado.get_id())
 
@@ -758,7 +760,7 @@ def set_select_proveedor():
     """
     sucursal = sucursal_seleccionada
     select_proveedor.delete(0, END)
-    lista = sucursal.get_listaProveedores()
+    lista = sucursal.get_listaproveedores()
     for proveedor in lista:
         select_proveedor.insert(END, proveedor.get_id())
 
@@ -772,6 +774,6 @@ def set_select_incidencia():
     """
     sucursal = sucursal_seleccionada
     select_incidencia.delete(0, END)
-    lista = sucursal.get_lista_incidencias()
+    lista = sucursal.get_listaincidencias()
     for incidencia in lista:
         select_incidencia.insert(END, incidencia.get_id())

@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="GestionSucursales 0.1 documentation" href="index.html" />
-    <link rel="next" title="Clase Test Incidencia" href="test_incidencia.html" />
+    <link rel="next" title="Test Incidencia" href="test_incidencia.html" />
     <link rel="prev" title="Clase Persona" href="persona.html" /> 
   </head>
   <body>
@@ -35,7 +35,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="test_incidencia.html" title="Clase Test Incidencia"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="test_incidencia.html" title="Test Incidencia"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="persona.html" title="Clase Persona"
@@ -50,7 +53,7 @@
                         title="previous chapter">Clase Persona</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="test_incidencia.html"
-                        title="next chapter">Clase Test Incidencia</a></p>
+                        title="next chapter">Test Incidencia</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/incidencia.txt"
@@ -81,17 +84,10 @@
 <h1>Clase Incidencia<a class="headerlink" href="#clase-incidencia" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="Incidencia.Incidencia">
-<em class="property">class </em><tt class="descclassname">Incidencia.</tt><tt class="descname">Incidencia</tt><big>(</big><em>ID</em>, <em>asunto</em>, <em>descripcion</em><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">Incidencia.</tt><tt class="descname">Incidencia</tt><big>(</big><em>id_inc</em>, <em>asunto</em>, <em>descripcion</em><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clase incidencia</p>
-<p>Esta clase representa una incidencia de la sucursal y automaticamente se inicializa como &#8220;Abierta&#8221; pudiendo resolverse mediante la interfaz de usuario.</p>
-<dl class="method">
-<dt id="Incidencia.Incidencia.get_ID">
-<tt class="descname">get_ID</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia.get_ID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia.get_ID" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get ID incidencia</p>
-<p>Metodo que devuelve la ID de la incidencia.</p>
-<p>:return:ID incidencia</p>
-</dd></dl>
-
+<p>Esta clase representa una incidencia de la sucursal y automaticamente se inicializa
+como &#8220;Abierta&#8221; pudiendo resolverse mediante la interfaz de usuario.</p>
 <dl class="method">
 <dt id="Incidencia.Incidencia.get_asunto">
 <tt class="descname">get_asunto</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia.get_asunto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia.get_asunto" title="Permalink to this definition">¶</a></dt>
@@ -117,6 +113,14 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="Incidencia.Incidencia.get_id">
+<tt class="descname">get_id</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia.get_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia.get_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ID incidencia</p>
+<p>Metodo que devuelve la ID de la incidencia.</p>
+<p>:return:ID incidencia</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="Incidencia.Incidencia.resolver">
 <tt class="descname">resolver</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia.resolver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia.resolver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resolver incidencia</p>
@@ -126,23 +130,6 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Incidencia.Incidencia.set_ID">
-<tt class="descname">set_ID</tt><big>(</big><em>ID</em><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia.set_ID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia.set_ID" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set ID incidencia</p>
-<p>Metodo que cambia la ID de la incidencia al parametro introducido.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ID</strong> &#8211; </td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -182,6 +169,23 @@
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="Incidencia.Incidencia.set_id">
+<tt class="descname">set_id</tt><big>(</big><em>id_inc</em><big>)</big><a class="reference internal" href="_modules/Incidencia.html#Incidencia.set_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Incidencia.Incidencia.set_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set ID incidencia</p>
+<p>Metodo que cambia la ID de la incidencia al parametro introducido.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id_inc</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -199,7 +203,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="test_incidencia.html" title="Clase Test Incidencia"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="test_incidencia.html" title="Test Incidencia"
              >next</a> |</li>
         <li class="right" >
           <a href="persona.html" title="Clase Persona"

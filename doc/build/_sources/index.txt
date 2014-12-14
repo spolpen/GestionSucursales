@@ -37,6 +37,7 @@ PRUEBAS UNITARIAS
 		
 		test_incidencia
 		test_sucursal
+		test_make_window
 	
 	
 MANUAL DE USUARIO

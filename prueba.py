@@ -11,15 +11,15 @@ proveedor1 = Proveedor("Proveedor1", "48102981A", "Manuel Garcia", 912018391, "M
 
 #SUCURSALES
 sucursal1 = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
-sucursal1.aniadirProducto(producto1)
-sucursal1.aniadirEmpleado(empleado1)
-sucursal1.aniadirProveedor(proveedor1)
+sucursal1.aniadir_producto(producto1)
+sucursal1.aniadir_empleado(empleado1)
+sucursal1.aniadir_proveedor(proveedor1)
 sucursal2 = Sucursal("Malaga", "Malaga", "Sucursal2")
 
 lista_sucursales.append(sucursal1)
 lista_sucursales.append(sucursal2)
 
-win = makeWindow()
+win = make_window()
 set_select_sucursal()
 win.mainloop()
 

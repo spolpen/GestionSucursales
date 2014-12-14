@@ -64,6 +64,7 @@
           <div class="body">
             
   <h1>Source code for test_sucursal</h1><div class="highlight"><pre>
+<span class="c"># coding=utf-8</span>
 <span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
 <span class="kn">from</span> <span class="nn">Sucursal</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">Empleado</span> <span class="kn">import</span> <span class="o">*</span>
@@ -89,24 +90,23 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Empleado</span>
-        <span class="n">Emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
-        <span class="n">Emp2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">emp2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Simulamos comportamiento</span>
-        <span class="n">when</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
-        <span class="n">when</span><span class="p">(</span><span class="n">Emp2</span><span class="p">)</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">emp1</span><span class="p">)</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">emp2</span><span class="p">)</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
 
         <span class="c"># Incluimos empleados</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp2</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">emp1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">emp2</span><span class="p">)</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">suc</span><span class="o">.</span><span class="n">get_salario_total</span><span class="p">(),</span> <span class="mi">3000</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_aniadirEmpleado"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirEmpleado">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirEmpleado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_aniadir_empleado"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadir_empleado">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadir_empleado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test aniadir empleado</span>
 
 <span class="sd">        Este test comprueba que los empleados se agregan correctamente a la lista de empleados de la sucursal.</span>
@@ -114,22 +114,21 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Empleado</span>
-        <span class="n">Emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Simulamos comportamiento</span>
-        <span class="n">when</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">emp1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="c"># Incluimos empleados</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">emp1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaempleados</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_aniadirProducto"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirProducto">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirProducto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_aniadir_producto"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadir_producto">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadir_producto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test aniadir producto</span>
 
 <span class="sd">        Este test comprueba que los productos se agregan correctamente a la lista de productos de la sucursal.</span>
@@ -137,22 +136,21 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Producto</span>
-        <span class="n">Prod1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
+        <span class="n">prod1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Simulamos comportamiento</span>
-        <span class="n">when</span><span class="p">(</span><span class="n">Prod1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">prod1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="c"># Incluimos producto</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">Prod1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_producto</span><span class="p">(</span><span class="n">prod1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaproductos</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_aniadirIncidencia"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirIncidencia">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirIncidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_aniadir_incidencia"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadir_incidencia">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadir_incidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test aniadir incidencia</span>
 
 <span class="sd">        Este test comprueba que las incidencias se agregan correctamente a la lista de incidencias de la sucursal.</span>
@@ -160,22 +158,21 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Incidencia</span>
-        <span class="n">Inc1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
+        <span class="n">inc1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Simulamos comportamiento</span>
-        <span class="n">when</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">inc1</span><span class="p">)</span><span class="o">.</span><span class="n">get_id</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="c"># Incluimos incidencia</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_incidencia</span><span class="p">(</span><span class="n">inc1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaincidencias</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_id</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
 </div>
-<div class="viewcode-block" id="TestSucursal.test_aniadirProveedor"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirProveedor">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirProveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_aniadir_proveedor"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadir_proveedor">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadir_proveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test aniadir proveedor</span>
 
 <span class="sd">        Este test comprueba que los proveedores se agregan correctamente a la lista de proveedores de la sucursal.</span>
@@ -183,22 +180,21 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Proveedor</span>
-        <span class="n">Pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
+        <span class="n">pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
 
         <span class="c"># Creamos proveedor</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Simulamos comportamiento</span>
-        <span class="n">when</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">pro1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="c"># Incluimos proveedor</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_proveedor</span><span class="p">(</span><span class="n">pro1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaproveedores</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_eliminarEmpleado"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarEmpleado">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarEmpleado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_eliminar_empleado"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminar_empleado">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminar_empleado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test eliminar empleado</span>
 
 <span class="sd">        Este test comprueba que los empleados se eliminan correctamente de la lista de empleados de la sucursal.</span>
@@ -206,23 +202,22 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Empleado</span>
-        <span class="n">Emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
-        <span class="n">Emp2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">emp2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Incluimos empleados</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp2</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">emp1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">emp2</span><span class="p">)</span>
         <span class="c"># Eliminamos un empleado</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminar_empleado</span><span class="p">(</span><span class="n">emp1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaempleados</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_eliminarProducto"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarProducto">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarProducto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_eliminar_producto"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminar_producto">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminar_producto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test eliminar producto</span>
 
 <span class="sd">        Este test comprueba que los productos se eliminan correctamente de la lista de productos de la sucursal.</span>
@@ -230,23 +225,22 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Producto</span>
-        <span class="n">Pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
-        <span class="n">Pro2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
+        <span class="n">pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
+        <span class="n">pro2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Incluimos productos</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">Pro2</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_producto</span><span class="p">(</span><span class="n">pro1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_producto</span><span class="p">(</span><span class="n">pro2</span><span class="p">)</span>
         <span class="c"># Eliminamos un producto</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarProducto</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminar_producto</span><span class="p">(</span><span class="n">pro1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaproductos</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_eliminarIncidencia"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarIncidencia">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarIncidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_eliminar_incidencia"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminar_incidencia">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminar_incidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test eliminar incidencia</span>
 
 <span class="sd">        Este test comprueba que las incidencias se eliminan correctamente de la lista de incidencias de la sucursal.</span>
@@ -254,23 +248,22 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># Creamos mocks de Incidencia</span>
-        <span class="n">Inc1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
-        <span class="n">Inc2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
+        <span class="n">inc1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
+        <span class="n">inc2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Incluimos incidencias</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">Inc2</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_incidencia</span><span class="p">(</span><span class="n">inc1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_incidencia</span><span class="p">(</span><span class="n">inc2</span><span class="p">)</span>
         <span class="c"># Eliminamos una incidencia</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarIncidencia</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminar_incidencia</span><span class="p">(</span><span class="n">inc1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaincidencias</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-
 </div>
-<div class="viewcode-block" id="TestSucursal.test_eliminarProveedor"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarProveedor">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarProveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSucursal.test_eliminar_proveedor"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminar_proveedor">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminar_proveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test eliminar proveedor</span>
 
 <span class="sd">        Este test comprueba que los proveedores se eliminan correctamente de la lista de proveedores de la sucursal.</span>
@@ -278,18 +271,18 @@
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
          <span class="c"># Creamos mocks de Proveedor</span>
-        <span class="n">Pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
-        <span class="n">Pro2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
+        <span class="n">pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
+        <span class="n">pro2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
 
         <span class="c"># Creamos sucursal</span>
         <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
 
         <span class="c"># Incluimos proveedores</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">Pro2</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_proveedor</span><span class="p">(</span><span class="n">pro1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadir_proveedor</span><span class="p">(</span><span class="n">pro2</span><span class="p">)</span>
         <span class="c"># Eliminamos un proveedor</span>
-        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarProveedor</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
-        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminar_proveedor</span><span class="p">(</span><span class="n">pro1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaproveedores</span><span class="p">()</span>
         <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span></div></div>
 </pre></div>

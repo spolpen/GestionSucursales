@@ -64,29 +64,32 @@
           <div class="body">
             
   <h1>Source code for Producto</h1><div class="highlight"><pre>
+<span class="c"># coding=utf-8</span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Polo&#39;</span>
 
-<div class="viewcode-block" id="Producto"><a class="viewcode-back" href="../producto.html#Producto.Producto">[docs]</a><span class="k">class</span> <span class="nc">Producto</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Producto"><a class="viewcode-back" href="../producto.html#Producto.Producto">[docs]</a><span class="k">class</span> <span class="nc">Producto</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Clase producto</span>
 
 <span class="sd">    Define un producto con sus atributos de ID, nombre y precio.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ide</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor producto</span>
 
 <span class="sd">        Metodo constructor de la clase producto, que inicializa sus atributos con los valores introducidos.</span>
 
-<span class="sd">        :param ID:</span>
+<span class="sd">        :param ide:</span>
 <span class="sd">        :param nombre:</span>
 <span class="sd">        :param precio:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">precio</span><span class="o">=</span><span class="n">precio</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="o">=</span> <span class="n">ide</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">precio</span> <span class="o">=</span> <span class="n">precio</span>
 
-<div class="viewcode-block" id="Producto.get_ID"><a class="viewcode-back" href="../producto.html#Producto.Producto.get_ID">[docs]</a>    <span class="k">def</span> <span class="nf">get_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Producto.get_id"><a class="viewcode-back" href="../producto.html#Producto.Producto.get_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get ID</span>
 
 <span class="sd">        Metodo que devuelve la ID del producto.</span>
@@ -113,17 +116,17 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">precio</span>
 </div>
-<div class="viewcode-block" id="Producto.set_ID"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_ID">[docs]</a>    <span class="k">def</span> <span class="nf">set_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">):</span>
+<div class="viewcode-block" id="Producto.set_id"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_id">[docs]</a>    <span class="k">def</span> <span class="nf">set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ide</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set ID producto</span>
 
 <span class="sd">        Cambia la ID del producto al parametro introducido.</span>
 
-<span class="sd">        :param ID:</span>
+<span class="sd">        :param ide:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="o">=</span> <span class="n">ide</span>
 </div>
-<div class="viewcode-block" id="Producto.set_nombre"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_nombre">[docs]</a>    <span class="k">def</span> <span class="nf">set_nombre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nombre</span><span class="p">):</span>
+<div class="viewcode-block" id="Producto.set_nombre"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_nombre">[docs]</a>    <span class="k">def</span> <span class="nf">set_nombre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set nombre producto</span>
 
 <span class="sd">        Cambia el nombre del producto al parametro introducido.</span>
@@ -131,9 +134,9 @@
 <span class="sd">        :param nombre:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
 </div>
-<div class="viewcode-block" id="Producto.set_precio"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_precio">[docs]</a>    <span class="k">def</span> <span class="nf">set_precio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">precio</span><span class="p">):</span>
+<div class="viewcode-block" id="Producto.set_precio"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_precio">[docs]</a>    <span class="k">def</span> <span class="nf">set_precio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">precio</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set precio producto</span>
 
 <span class="sd">        Cambia el precio del producto al parametro introducido.</span>
@@ -141,7 +144,7 @@
 <span class="sd">        :param precio:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">precio</span><span class="o">=</span><span class="n">precio</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">precio</span> <span class="o">=</span> <span class="n">precio</span></div></div>
 </pre></div>
 
           </div>

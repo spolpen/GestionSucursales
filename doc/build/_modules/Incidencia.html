@@ -64,37 +64,42 @@
           <div class="body">
             
   <h1>Source code for Incidencia</h1><div class="highlight"><pre>
+<span class="c"># coding=utf-8</span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Luzu&#39;</span>
+
 
 <div class="viewcode-block" id="Incidencia"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia">[docs]</a><span class="k">class</span> <span class="nc">Incidencia</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Clase incidencia</span>
 
-<span class="sd">    Esta clase representa una incidencia de la sucursal y automaticamente se inicializa como &quot;Abierta&quot; pudiendo resolverse mediante la interfaz de usuario.</span>
+<span class="sd">    Esta clase representa una incidencia de la sucursal y automaticamente se inicializa</span>
+<span class="sd">    como &quot;Abierta&quot; pudiendo resolverse mediante la interfaz de usuario.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">,</span><span class="n">asunto</span><span class="p">,</span><span class="n">descripcion</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_inc</span><span class="p">,</span> <span class="n">asunto</span><span class="p">,</span> <span class="n">descripcion</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor incidencia</span>
 
-<span class="sd">        Metodo constructor de la clase incidencia, que inicializa sus atributos con los parametros introducidos y su estado en &quot;Abierta&quot;.</span>
+<span class="sd">        Metodo constructor de la clase incidencia, que inicializa sus atributos con los parametros introducidos y</span>
+<span class="sd">        estado en &quot;Abierta&quot;.</span>
 
-<span class="sd">        :param ID:</span>
+<span class="sd">        :param id_inc:</span>
 <span class="sd">        :param asunto:</span>
 <span class="sd">        :param descripcion:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_inc</span> <span class="o">=</span> <span class="n">id_inc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">asunto</span> <span class="o">=</span> <span class="n">asunto</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">descripcion</span> <span class="o">=</span> <span class="n">descripcion</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">estado</span><span class="o">=</span><span class="s">&#39;Abierta&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estado</span> <span class="o">=</span> <span class="s">&#39;Abierta&#39;</span>
 
-<div class="viewcode-block" id="Incidencia.get_ID"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_ID">[docs]</a>    <span class="k">def</span> <span class="nf">get_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Incidencia.get_id"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get ID incidencia</span>
 
 <span class="sd">        Metodo que devuelve la ID de la incidencia.</span>
 
 <span class="sd">        :return:ID incidencia</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_inc</span>
 </div>
 <div class="viewcode-block" id="Incidencia.get_asunto"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_asunto">[docs]</a>    <span class="k">def</span> <span class="nf">get_asunto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get asunto incidencia</span>
@@ -123,17 +128,17 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">estado</span>
 </div>
-<div class="viewcode-block" id="Incidencia.set_ID"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_ID">[docs]</a>    <span class="k">def</span> <span class="nf">set_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">):</span>
+<div class="viewcode-block" id="Incidencia.set_id"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_id">[docs]</a>    <span class="k">def</span> <span class="nf">set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_inc</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set ID incidencia</span>
 
 <span class="sd">        Metodo que cambia la ID de la incidencia al parametro introducido.</span>
 
-<span class="sd">        :param ID:</span>
+<span class="sd">        :param id_inc:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_inc</span> <span class="o">=</span> <span class="n">id_inc</span>
 </div>
-<div class="viewcode-block" id="Incidencia.set_asunto"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_asunto">[docs]</a>    <span class="k">def</span> <span class="nf">set_asunto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">asunto</span><span class="p">):</span>
+<div class="viewcode-block" id="Incidencia.set_asunto"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_asunto">[docs]</a>    <span class="k">def</span> <span class="nf">set_asunto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">asunto</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set asunto incidencia</span>
 
 <span class="sd">        Metodo que cambia el asunto de la incidencia al parametro introducido.</span>
@@ -141,9 +146,9 @@
 <span class="sd">        :param asunto:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">asunto</span><span class="o">=</span><span class="n">asunto</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asunto</span> <span class="o">=</span> <span class="n">asunto</span>
 </div>
-<div class="viewcode-block" id="Incidencia.set_descripcion"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_descripcion">[docs]</a>    <span class="k">def</span> <span class="nf">set_descripcion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">descripcion</span><span class="p">):</span>
+<div class="viewcode-block" id="Incidencia.set_descripcion"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_descripcion">[docs]</a>    <span class="k">def</span> <span class="nf">set_descripcion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descripcion</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set descripcion incidencia</span>
 
 <span class="sd">        Metodo que cambia la descripcion de la incidencia al parametro introducido.</span>
@@ -151,7 +156,7 @@
 <span class="sd">        :param descripcion:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">descripcion</span><span class="o">=</span><span class="n">descripcion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">descripcion</span> <span class="o">=</span> <span class="n">descripcion</span>
 </div>
 <div class="viewcode-block" id="Incidencia.resolver"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.resolver">[docs]</a>    <span class="k">def</span> <span class="nf">resolver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Resolver incidencia</span>
@@ -160,7 +165,7 @@
 
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">estado</span><span class="o">=</span><span class="s">&#39;Resuelta&#39;</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estado</span> <span class="o">=</span> <span class="s">&#39;Resuelta&#39;</span></div></div>
 </pre></div>
 
           </div>

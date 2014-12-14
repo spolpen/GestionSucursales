@@ -74,171 +74,162 @@
 <span class="kn">from</span> <span class="nn">Incidencia</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">ttk</span>
 
-<span class="c">#PRODUCTOS</span>
-<span class="n">producto1</span> <span class="o">=</span> <span class="n">Producto</span><span class="p">(</span><span class="s">&quot;Producto1&quot;</span><span class="p">,</span><span class="s">&quot;Televisor&quot;</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-<span class="c">#EMPLEADO</span>
-<span class="n">empleado1</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="s">&quot;Empleado1&quot;</span><span class="p">,</span><span class="s">&quot;29808123F&quot;</span><span class="p">,</span><span class="s">&quot;Juan Perez&quot;</span><span class="p">,</span><span class="mi">954951289</span><span class="p">,</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span><span class="s">&quot;8:00-15:00&quot;</span><span class="p">)</span>
-<span class="c">#PROVEEDOR</span>
-<span class="n">proveedor1</span> <span class="o">=</span> <span class="n">Proveedor</span><span class="p">(</span><span class="s">&quot;Proveedor1&quot;</span><span class="p">,</span><span class="s">&quot;48102981A&quot;</span><span class="p">,</span><span class="s">&quot;Manuel Garcia&quot;</span><span class="p">,</span><span class="mi">912018391</span><span class="p">,</span><span class="s">&quot;Madrid&quot;</span><span class="p">)</span>
+<span class="n">lista_sucursales</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="c">#SUCURSALES</span>
-<span class="n">sucursal1</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span><span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span><span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
-<span class="n">sucursal1</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">producto1</span><span class="p">)</span>
-<span class="n">sucursal1</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">empleado1</span><span class="p">)</span>
-<span class="n">sucursal1</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">proveedor1</span><span class="p">)</span>
-<span class="n">sucursal2</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Malaga&quot;</span><span class="p">,</span><span class="s">&quot;Malaga&quot;</span><span class="p">,</span><span class="s">&quot;Sucursal2&quot;</span><span class="p">)</span>
-<span class="n">listaSucursales</span> <span class="o">=</span><span class="p">[]</span>
-<span class="n">listaSucursales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sucursal1</span><span class="p">)</span>
-<span class="n">listaSucursales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sucursal2</span><span class="p">)</span>
 
-<div class="viewcode-block" id="limpiarVariables"><a class="viewcode-back" href="../interfaz.html#Interfaz.limpiarVariables">[docs]</a><span class="k">def</span> <span class="nf">limpiarVariables</span> <span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="limpiar_variables"><a class="viewcode-back" href="../interfaz.html#Interfaz.limpiar_variables">[docs]</a><span class="k">def</span> <span class="nf">limpiar_variables</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Limpieza de variables</span>
 
 <span class="sd">    Metodo que elimina los datos de los campos de producto, empleado, proveedor e incidencia.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">nameProd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">priceProd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">idProd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">idEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">dniEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">nameEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">telEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">dirEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">salEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">horEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">idPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">dniPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">namePro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">telPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">dirPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">telEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">dirEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">idInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">asuInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">desInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">estInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">name_prod</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">price_prod</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">id_prod</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">id_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">dni_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">name_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">tel_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">dir_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">sal_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">hor_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">id_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">dni_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">name_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">tel_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">dir_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">id_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">asu_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">des_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">est_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
 
 
-<span class="c">#Metodos productos</span></div>
-<div class="viewcode-block" id="whichProductoSelected"><a class="viewcode-back" href="../interfaz.html#Interfaz.whichProductoSelected">[docs]</a><span class="k">def</span> <span class="nf">whichProductoSelected</span> <span class="p">()</span> <span class="p">:</span>
+    <span class="c">#PRODUCTOS</span>
+</div>
+<div class="viewcode-block" id="which_producto_selected"><a class="viewcode-back" href="../interfaz.html#Interfaz.which_producto_selected">[docs]</a><span class="k">def</span> <span class="nf">which_producto_selected</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Producto seleccionado</span>
 
 <span class="sd">    Metodo que nos devuelve el producto que tenemos seleccionado en la lista de productos.</span>
 
 <span class="sd">    :return: producto seleccionado</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectProducto</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">select_producto</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
 </div>
-<div class="viewcode-block" id="addProducto"><a class="viewcode-back" href="../interfaz.html#Interfaz.addProducto">[docs]</a><span class="k">def</span> <span class="nf">addProducto</span> <span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="add_producto"><a class="viewcode-back" href="../interfaz.html#Interfaz.add_producto">[docs]</a><span class="k">def</span> <span class="nf">add_producto</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Agregar producto</span>
 
-<span class="sd">    Metodo que crea un nuevo producto con los datos que hay en los campos y lo agrega a la lista de productos de la sucursal</span>
+<span class="sd">    Metodo que crea un nuevo producto con los datos que hay en los campos y</span>
+<span class="sd">    lo agrega a la lista de productos de la sucursal</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">producto</span> <span class="o">=</span> <span class="n">Producto</span><span class="p">(</span><span class="n">idProd</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">nameProd</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">priceProd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">producto</span> <span class="o">=</span> <span class="n">Producto</span><span class="p">(</span><span class="n">id_prod</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">name_prod</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">price_prod</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadir_producto</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
 
-    <span class="n">setSelectProducto</span> <span class="p">()</span>
+    <span class="n">set_select_producto</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="updateProducto"><a class="viewcode-back" href="../interfaz.html#Interfaz.updateProducto">[docs]</a><span class="k">def</span> <span class="nf">updateProducto</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="update_producto"><a class="viewcode-back" href="../interfaz.html#Interfaz.update_producto">[docs]</a><span class="k">def</span> <span class="nf">update_producto</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Modificar producto</span>
 
 <span class="sd">    Metodo que actualiza el producto con los datos que hay en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">producto</span> <span class="o">=</span> <span class="n">productoSeleccionado</span>
-    <span class="n">producto</span><span class="o">.</span><span class="n">set_ID</span><span class="p">(</span><span class="n">idProd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">producto</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">nameProd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">producto</span><span class="o">.</span><span class="n">set_precio</span><span class="p">(</span><span class="n">priceProd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">producto</span> <span class="o">=</span> <span class="n">producto_seleccionado</span>
+    <span class="n">producto</span><span class="o">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">id_prod</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">producto</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">name_prod</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">producto</span><span class="o">.</span><span class="n">set_precio</span><span class="p">(</span><span class="n">price_prod</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 
-    <span class="n">setSelectProducto</span> <span class="p">()</span>
+    <span class="n">set_select_producto</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="deleteProducto"><a class="viewcode-back" href="../interfaz.html#Interfaz.deleteProducto">[docs]</a><span class="k">def</span> <span class="nf">deleteProducto</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="delete_producto"><a class="viewcode-back" href="../interfaz.html#Interfaz.delete_producto">[docs]</a><span class="k">def</span> <span class="nf">delete_producto</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Eliminar producto</span>
 
 <span class="sd">    Metodo que elimina el producto seleccionado en la lista de productos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
-    <span class="n">producto</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichProductoSelected</span><span class="p">()]</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproductos</span><span class="p">()</span>
+    <span class="n">producto</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_producto_selected</span><span class="p">()]</span>
     <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminarProducto</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
 
-    <span class="n">setSelectProducto</span> <span class="p">()</span>
+    <span class="n">set_select_producto</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="loadProducto"><a class="viewcode-back" href="../interfaz.html#Interfaz.loadProducto">[docs]</a><span class="k">def</span> <span class="nf">loadProducto</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="load_producto"><a class="viewcode-back" href="../interfaz.html#Interfaz.load_producto">[docs]</a><span class="k">def</span> <span class="nf">load_producto</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Consultar producto</span>
 
 <span class="sd">    Metodo que lee el producto seleccionado y coloca sus datos en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">productoSeleccionado</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
-    <span class="n">producto</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichProductoSelected</span><span class="p">()]</span>
-    <span class="n">productoSeleccionado</span> <span class="o">=</span> <span class="n">producto</span>
-    <span class="n">idProd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">producto</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
-    <span class="n">nameProd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">producto</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
-    <span class="n">priceProd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">producto</span><span class="o">.</span><span class="n">get_precio</span><span class="p">())</span>
+    <span class="k">global</span> <span class="n">producto_seleccionado</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproductos</span><span class="p">()</span>
+    <span class="n">producto</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_producto_selected</span><span class="p">()]</span>
+    <span class="n">producto_seleccionado</span> <span class="o">=</span> <span class="n">producto</span>
+    <span class="n">id_prod</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">producto</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+    <span class="n">name_prod</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">producto</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
+    <span class="n">price_prod</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">producto</span><span class="o">.</span><span class="n">get_precio</span><span class="p">())</span>
 
 
-<span class="c">#Metodos sucursales</span></div>
-<div class="viewcode-block" id="whichSucursalSelected"><a class="viewcode-back" href="../interfaz.html#Interfaz.whichSucursalSelected">[docs]</a><span class="k">def</span> <span class="nf">whichSucursalSelected</span> <span class="p">()</span> <span class="p">:</span>
+    <span class="c">#SUCURSALES</span>
+</div>
+<div class="viewcode-block" id="which_sucursal_selected"><a class="viewcode-back" href="../interfaz.html#Interfaz.which_sucursal_selected">[docs]</a><span class="k">def</span> <span class="nf">which_sucursal_selected</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Sucursal seleccionada</span>
 
 <span class="sd">    Metodo que nos devuelve la sucursal que tenemos seleccionada en la lista de sucursales.</span>
 
 <span class="sd">    :return: sucursal seleccionada</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectSucursal</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">select_sucursal</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
 </div>
-<div class="viewcode-block" id="addSucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.addSucursal">[docs]</a><span class="k">def</span> <span class="nf">addSucursal</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="add_sucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.add_sucursal">[docs]</a><span class="k">def</span> <span class="nf">add_sucursal</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Agregar sucursal</span>
 
 <span class="sd">    Metodo que crea una sucursal con los datos que hay en los campos y la agrega a la lista de sucursales.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="n">nameSuc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">dirSuc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">idSuc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">listaSucursales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sucursal</span><span class="p">)</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="n">name_suc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dir_suc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id_suc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">lista_sucursales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sucursal</span><span class="p">)</span>
 
-    <span class="n">setSelectSucursal</span> <span class="p">()</span>
+    <span class="n">set_select_sucursal</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="updateSucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.updateSucursal">[docs]</a><span class="k">def</span> <span class="nf">updateSucursal</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="update_sucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.update_sucursal">[docs]</a><span class="k">def</span> <span class="nf">update_sucursal</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Modificar sucursal</span>
 
 <span class="sd">    Metodo que actualiza la sucursal con los datos que hay en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">nameSuc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">set_direccion</span><span class="p">(</span><span class="n">dirSuc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">set_ID</span><span class="p">(</span><span class="n">idSuc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">setSelectSucursal</span> <span class="p">()</span>
-
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">name_suc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">set_direccion</span><span class="p">(</span><span class="n">dir_suc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">id_suc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">set_select_sucursal</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="deleteSucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.deleteSucursal">[docs]</a><span class="k">def</span> <span class="nf">deleteSucursal</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="delete_sucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.delete_sucursal">[docs]</a><span class="k">def</span> <span class="nf">delete_sucursal</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Eliminar sucursal</span>
 
 <span class="sd">    Metodo que elimina la sucursal seleccionada en la lista de sucursales.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">del</span> <span class="n">listaSucursales</span><span class="p">[</span><span class="n">whichSucursalSelected</span><span class="p">()]</span>
-    <span class="n">setSelectSucursal</span> <span class="p">()</span>
+    <span class="k">del</span> <span class="n">lista_sucursales</span><span class="p">[</span><span class="n">which_sucursal_selected</span><span class="p">()]</span>
+    <span class="n">set_select_sucursal</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="loadSucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.loadSucursal">[docs]</a><span class="k">def</span> <span class="nf">loadSucursal</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="load_sucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.load_sucursal">[docs]</a><span class="k">def</span> <span class="nf">load_sucursal</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Consultar sucursal</span>
 
 <span class="sd">    Metodo que lee la sucursal seleccionada y coloca sus datos en los campos.</span>
@@ -246,505 +237,544 @@
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">listaSucursales</span><span class="p">[</span><span class="n">whichSucursalSelected</span><span class="p">()]</span>
-    <span class="n">sucursalSeleccionada</span> <span class="o">=</span> <span class="n">sucursal</span>
-    <span class="n">nameSuc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
-    <span class="n">dirSuc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_direccion</span><span class="p">())</span>
-    <span class="n">idSuc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
-    <span class="n">limpiarVariables</span><span class="p">()</span>
-    <span class="n">setSelectProducto</span> <span class="p">()</span>
-    <span class="n">setSelectEmpleado</span><span class="p">()</span>
-    <span class="n">setSelectProveedor</span><span class="p">()</span>
-    <span class="n">setSelectIncidencia</span><span class="p">()</span>
+    <span class="k">global</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">lista_sucursales</span><span class="p">[</span><span class="n">which_sucursal_selected</span><span class="p">()]</span>
+    <span class="n">sucursal_seleccionada</span> <span class="o">=</span> <span class="n">sucursal</span>
+    <span class="n">name_suc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
+    <span class="n">dir_suc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_direccion</span><span class="p">())</span>
+    <span class="n">id_suc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+    <span class="n">limpiar_variables</span><span class="p">()</span>
+    <span class="n">set_select_producto</span><span class="p">()</span>
+    <span class="n">set_select_empleado</span><span class="p">()</span>
+    <span class="n">set_select_proveedor</span><span class="p">()</span>
+    <span class="n">set_select_incidencia</span><span class="p">()</span>
 
-<span class="c">#Metodos empleados</span></div>
-<div class="viewcode-block" id="whichEmpleadoSelected"><a class="viewcode-back" href="../interfaz.html#Interfaz.whichEmpleadoSelected">[docs]</a><span class="k">def</span> <span class="nf">whichEmpleadoSelected</span><span class="p">()</span> <span class="p">:</span>
+
+    <span class="c">#EMPLEADOS</span>
+</div>
+<div class="viewcode-block" id="which_empleado_selected"><a class="viewcode-back" href="../interfaz.html#Interfaz.which_empleado_selected">[docs]</a><span class="k">def</span> <span class="nf">which_empleado_selected</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Empleado seleccionado</span>
 
 <span class="sd">    Metodo que nos devuelve el empleado que tenemos seleccionado en la lista de empleados.</span>
 
 <span class="sd">    :return: empleado seleccionado</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectEmpleado</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">select_empleado</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
 </div>
-<div class="viewcode-block" id="addEmpleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.addEmpleado">[docs]</a><span class="k">def</span> <span class="nf">addEmpleado</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="add_empleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.add_empleado">[docs]</a><span class="k">def</span> <span class="nf">add_empleado</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Agregar empleado</span>
 
-<span class="sd">    Metodo que crea un nuevo empleado con los datos que hay en los campos y lo agrega a la lista de empleados de la sucursal</span>
+<span class="sd">    Metodo que crea un nuevo empleado con los datos que hay en los campos</span>
+<span class="sd">    y lo agrega a la lista de empleados de la sucursal</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">empleado</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="n">idEmp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">dniEmp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">nameEmp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">telEmp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">dirEmp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">salEmp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">horEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
-    <span class="n">setSelectEmpleado</span> <span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">empleado</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="n">id_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dni_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">name_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">tel_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dir_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">sal_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>
+                        <span class="n">hor_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
+    <span class="n">set_select_empleado</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="updateEmpleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.updateEmpleado">[docs]</a><span class="k">def</span> <span class="nf">updateEmpleado</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="update_empleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.update_empleado">[docs]</a><span class="k">def</span> <span class="nf">update_empleado</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Modificar empleado</span>
 
 <span class="sd">    Metodo que actualiza el empleado con los datos que hay en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">empleado</span> <span class="o">=</span> <span class="n">empleadoSeleccionado</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">nameEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_ID</span><span class="p">(</span><span class="n">idEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_direccion</span><span class="p">(</span><span class="n">dirEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_DNI</span><span class="p">(</span><span class="n">dniEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_telefono</span><span class="p">(</span><span class="n">telEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_salario</span><span class="p">(</span><span class="n">salEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">empleado</span><span class="o">.</span><span class="n">set_horario</span><span class="p">(</span><span class="n">horEmp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">setSelectEmpleado</span> <span class="p">()</span>
+    <span class="n">empleado</span> <span class="o">=</span> <span class="n">empleado_seleccionado</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">name_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">id_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_direccion</span><span class="p">(</span><span class="n">dir_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_dni</span><span class="p">(</span><span class="n">dni_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_telefono</span><span class="p">(</span><span class="n">tel_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_salario</span><span class="p">(</span><span class="n">sal_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span><span class="o">.</span><span class="n">set_horario</span><span class="p">(</span><span class="n">hor_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">set_select_empleado</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="deleteEmpleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.deleteEmpleado">[docs]</a><span class="k">def</span> <span class="nf">deleteEmpleado</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="delete_empleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.delete_empleado">[docs]</a><span class="k">def</span> <span class="nf">delete_empleado</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Eliminar empleado</span>
 
 <span class="sd">    Metodo que elimina el empleado seleccionado en la lista de empleados.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
-    <span class="n">empleado</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichEmpleadoSelected</span><span class="p">()]</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminarEmpleado</span><span class="p">((</span><span class="n">empleado</span><span class="p">))</span>
-    <span class="n">setSelectEmpleado</span> <span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaempleados</span><span class="p">()</span>
+    <span class="n">empleado</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_empleado_selected</span><span class="p">()]</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminar_empleado</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
+    <span class="n">set_select_empleado</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="loadEmpleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.loadEmpleado">[docs]</a><span class="k">def</span> <span class="nf">loadEmpleado</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="load_empleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.load_empleado">[docs]</a><span class="k">def</span> <span class="nf">load_empleado</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Consultar empleado</span>
 
 <span class="sd">    Metodo que lee el empleado seleccionado y coloca sus datos en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">empleadoSeleccionado</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
-    <span class="n">empleado</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichEmpleadoSelected</span><span class="p">()]</span>
-    <span class="n">empleadoSeleccionado</span> <span class="o">=</span> <span class="n">empleado</span>
-    <span class="n">idEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
-    <span class="n">dniEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_DNI</span><span class="p">())</span>
-    <span class="n">nameEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
-    <span class="n">telEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_telefono</span><span class="p">())</span>
-    <span class="n">dirEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_direccion</span><span class="p">())</span>
-    <span class="n">salEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_salario</span><span class="p">())</span>
-    <span class="n">horEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_horario</span><span class="p">())</span>
+    <span class="k">global</span> <span class="n">empleado_seleccionado</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaempleados</span><span class="p">()</span>
+    <span class="n">empleado</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_empleado_selected</span><span class="p">()]</span>
+    <span class="n">empleado_seleccionado</span> <span class="o">=</span> <span class="n">empleado</span>
+    <span class="n">id_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+    <span class="n">dni_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_dni</span><span class="p">())</span>
+    <span class="n">name_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
+    <span class="n">tel_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_telefono</span><span class="p">())</span>
+    <span class="n">dir_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_direccion</span><span class="p">())</span>
+    <span class="n">sal_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_salario</span><span class="p">())</span>
+    <span class="n">hor_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">empleado</span><span class="o">.</span><span class="n">get_horario</span><span class="p">())</span>
+
 </div>
-<div class="viewcode-block" id="salTotalEmpleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.salTotalEmpleado">[docs]</a><span class="k">def</span> <span class="nf">salTotalEmpleado</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="sal_total_empleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.sal_total_empleado">[docs]</a><span class="k">def</span> <span class="nf">sal_total_empleado</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Salario total</span>
 
 <span class="sd">    Metodo que obtiene el salario total de los empleados de la sucursal seleccionada</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">salTotalEmp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_salario_total</span><span class="p">())</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">sal_total_emp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sucursal</span><span class="o">.</span><span class="n">get_salario_total</span><span class="p">())</span>
 
-<span class="c">#Metodos proveedores</span></div>
-<div class="viewcode-block" id="whichProveedorSelected"><a class="viewcode-back" href="../interfaz.html#Interfaz.whichProveedorSelected">[docs]</a><span class="k">def</span> <span class="nf">whichProveedorSelected</span><span class="p">()</span> <span class="p">:</span>
+
+    <span class="c">#PROVEEDORES</span>
+</div>
+<div class="viewcode-block" id="which_proveedor_selected"><a class="viewcode-back" href="../interfaz.html#Interfaz.which_proveedor_selected">[docs]</a><span class="k">def</span> <span class="nf">which_proveedor_selected</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Proveedor seleccionado</span>
 
 <span class="sd">    Metodo que nos devuelve el proveedor que tenemos seleccionado en la lista de proveedores.</span>
 
 <span class="sd">    :return: proveedor seleccionado</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectProveedor</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">select_proveedor</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
 </div>
-<div class="viewcode-block" id="addProveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.addProveedor">[docs]</a><span class="k">def</span> <span class="nf">addProveedor</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="add_proveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.add_proveedor">[docs]</a><span class="k">def</span> <span class="nf">add_proveedor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Agregar proveedor</span>
 
-<span class="sd">    Metodo que crea un nuevo proveedor con los datos que hay en los campos y lo agrega a la lista de proveedores de la sucursal</span>
+<span class="sd">    Metodo que crea un nuevo proveedor con los datos que hay en los campos</span>
+<span class="sd">    y lo agrega a la lista de proveedores de la sucursal</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">Proveedor</span><span class="p">(</span><span class="n">idPro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">dniPro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">namePro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">telPro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">dirPro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">proveedor</span><span class="p">)</span>
-    <span class="n">setSelectProveedor</span> <span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">Proveedor</span><span class="p">(</span><span class="n">id_pro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dni_pro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">name_pro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">tel_pro</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dir_pro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadir_proveedor</span><span class="p">(</span><span class="n">proveedor</span><span class="p">)</span>
+    <span class="n">set_select_proveedor</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="updateProveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.updateProveedor">[docs]</a><span class="k">def</span> <span class="nf">updateProveedor</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="update_proveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.update_proveedor">[docs]</a><span class="k">def</span> <span class="nf">update_proveedor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Modificar proveedor</span>
 
 <span class="sd">    Metodo que actualiza el proveedor con los datos que hay en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">proveedorSeleccionado</span>
-    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">namePro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_ID</span><span class="p">(</span><span class="n">idPro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_direccion</span><span class="p">(</span><span class="n">dirPro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_DNI</span><span class="p">(</span><span class="n">dniPro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_telefono</span><span class="p">(</span><span class="n">telPro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">setSelectProveedor</span><span class="p">()</span>
+    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">proveedor_seleccionado</span>
+    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_nombre</span><span class="p">(</span><span class="n">name_pro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">id_pro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_direccion</span><span class="p">(</span><span class="n">dir_pro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_dni</span><span class="p">(</span><span class="n">dni_pro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">proveedor</span><span class="o">.</span><span class="n">set_telefono</span><span class="p">(</span><span class="n">tel_pro</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">set_select_proveedor</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="deleteProveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.deleteProveedor">[docs]</a><span class="k">def</span> <span class="nf">deleteProveedor</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="delete_proveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.delete_proveedor">[docs]</a><span class="k">def</span> <span class="nf">delete_proveedor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Eliminar proveedor</span>
 
 <span class="sd">    Metodo que elimina el proveedor seleccionado en la lista de proveedores.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
-    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichProveedorSelected</span><span class="p">()]</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminarProveedor</span><span class="p">(</span><span class="n">proveedor</span><span class="p">)</span>
-    <span class="n">setSelectProveedor</span> <span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproveedores</span><span class="p">()</span>
+    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_proveedor_selected</span><span class="p">()]</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminar_proveedor</span><span class="p">(</span><span class="n">proveedor</span><span class="p">)</span>
+    <span class="n">set_select_proveedor</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="loadProveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.loadProveedor">[docs]</a><span class="k">def</span> <span class="nf">loadProveedor</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="load_proveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.load_proveedor">[docs]</a><span class="k">def</span> <span class="nf">load_proveedor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Consultar proveedor</span>
 
 <span class="sd">    Metodo que lee el proveedor seleccionado y coloca sus datos en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">proveedorSeleccionado</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
-    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichProveedorSelected</span><span class="p">()]</span>
-    <span class="n">proveedorSeleccionado</span> <span class="o">=</span> <span class="n">proveedor</span>
-    <span class="n">idPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
-    <span class="n">dniPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_DNI</span><span class="p">())</span>
-    <span class="n">namePro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
-    <span class="n">telPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_telefono</span><span class="p">())</span>
-    <span class="n">dirPro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_direccion</span><span class="p">())</span>
+    <span class="k">global</span> <span class="n">proveedor_seleccionado</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproveedores</span><span class="p">()</span>
+    <span class="n">proveedor</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_proveedor_selected</span><span class="p">()]</span>
+    <span class="n">proveedor_seleccionado</span> <span class="o">=</span> <span class="n">proveedor</span>
+    <span class="n">id_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+    <span class="n">dni_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_dni</span><span class="p">())</span>
+    <span class="n">name_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_nombre</span><span class="p">())</span>
+    <span class="n">tel_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_telefono</span><span class="p">())</span>
+    <span class="n">dir_pro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">proveedor</span><span class="o">.</span><span class="n">get_direccion</span><span class="p">())</span>
 
-<span class="c">#INCIDENCIA</span></div>
-<div class="viewcode-block" id="whichIncidenciaSelected"><a class="viewcode-back" href="../interfaz.html#Interfaz.whichIncidenciaSelected">[docs]</a><span class="k">def</span> <span class="nf">whichIncidenciaSelected</span><span class="p">()</span> <span class="p">:</span>
+
+    <span class="c">#INCIDENCIAS</span>
+</div>
+<div class="viewcode-block" id="which_incidencia_selected"><a class="viewcode-back" href="../interfaz.html#Interfaz.which_incidencia_selected">[docs]</a><span class="k">def</span> <span class="nf">which_incidencia_selected</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Incidencia seleccionada</span>
 
 <span class="sd">    Metodo que nos devuelve la incidencia que tenemos seleccionad en la lista de incidencias.</span>
 
 <span class="sd">    :return: incidencia seleccionada</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectIncidencia</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">select_incidencia</span><span class="o">.</span><span class="n">curselection</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
 </div>
-<div class="viewcode-block" id="addIncidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.addIncidencia">[docs]</a><span class="k">def</span> <span class="nf">addIncidencia</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="add_incidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.add_incidencia">[docs]</a><span class="k">def</span> <span class="nf">add_incidencia</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Agregar incidencia</span>
 
-<span class="sd">    Metodo que crea una nueva incidencia con los datos que hay en los campos y la agrega a la lista de incidencias de la sucursal</span>
+<span class="sd">    Metodo que crea una nueva incidencia con los datos que hay en los campos y</span>
+<span class="sd">    la agrega a la lista de incidencias de la sucursal</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">Incidencia</span><span class="p">(</span><span class="n">idInc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">asuInc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span><span class="n">desInc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">incidencia</span><span class="p">)</span>
-    <span class="n">setSelectIncidencia</span> <span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">Incidencia</span><span class="p">(</span><span class="n">id_inc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">asu_inc</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">des_inc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadir_incidencia</span><span class="p">(</span><span class="n">incidencia</span><span class="p">)</span>
+    <span class="n">set_select_incidencia</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="updateIncidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.updateIncidencia">[docs]</a><span class="k">def</span> <span class="nf">updateIncidencia</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="update_incidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.update_incidencia">[docs]</a><span class="k">def</span> <span class="nf">update_incidencia</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Modificar incidencia</span>
 
 <span class="sd">    Metodo que actualiza la incidencia con los datos que hay en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">incidenciaSeleccionada</span>
-    <span class="n">incidencia</span><span class="o">.</span><span class="n">set_ID</span><span class="p">(</span><span class="n">idInc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">incidencia</span><span class="o">.</span><span class="n">set_asunto</span><span class="p">(</span><span class="n">asuInc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">incidencia</span><span class="o">.</span><span class="n">set_descripcion</span><span class="p">(</span><span class="n">desInc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">setSelectIncidencia</span><span class="p">()</span>
+    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">incidencia_seleccionada</span>
+    <span class="n">incidencia</span><span class="o">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">id_inc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">incidencia</span><span class="o">.</span><span class="n">set_asunto</span><span class="p">(</span><span class="n">asu_inc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">incidencia</span><span class="o">.</span><span class="n">set_descripcion</span><span class="p">(</span><span class="n">des_inc</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">set_select_incidencia</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="deleteIncidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.deleteIncidencia">[docs]</a><span class="k">def</span> <span class="nf">deleteIncidencia</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="delete_incidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.delete_incidencia">[docs]</a><span class="k">def</span> <span class="nf">delete_incidencia</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Eliminar incidencia</span>
 
 <span class="sd">    Metodo que elimina la incidencia seleccionada en la lista de incidencias.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
-    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichIncidenciaSelected</span><span class="p">()]</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminarIncidencia</span><span class="p">(</span><span class="n">incidencia</span><span class="p">)</span>
-    <span class="n">setSelectIncidencia</span> <span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaincidencias</span><span class="p">()</span>
+    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_incidencia_selected</span><span class="p">()]</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminar_incidencia</span><span class="p">(</span><span class="n">incidencia</span><span class="p">)</span>
+    <span class="n">set_select_incidencia</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="loadIncidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.loadIncidencia">[docs]</a><span class="k">def</span> <span class="nf">loadIncidencia</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="load_incidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.load_incidencia">[docs]</a><span class="k">def</span> <span class="nf">load_incidencia</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Consultar incidencia</span>
 
 <span class="sd">    Metodo que lee la incidencia seleccionada y coloca sus datos en los campos.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">incidenciaSeleccionada</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
-    <span class="n">incidencia</span>  <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichIncidenciaSelected</span><span class="p">()]</span>
-    <span class="n">incidenciaSeleccionada</span> <span class="o">=</span> <span class="n">incidencia</span>
-    <span class="n">idInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
-    <span class="n">asuInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_asunto</span><span class="p">())</span>
-    <span class="n">desInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_descripcion</span><span class="p">())</span>
-    <span class="n">estInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_estado</span><span class="p">())</span>
+    <span class="k">global</span> <span class="n">incidencia_seleccionada</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaincidencias</span><span class="p">()</span>
+    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_incidencia_selected</span><span class="p">()]</span>
+    <span class="n">incidencia_seleccionada</span> <span class="o">=</span> <span class="n">incidencia</span>
+    <span class="n">id_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+    <span class="n">asu_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_asunto</span><span class="p">())</span>
+    <span class="n">des_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_descripcion</span><span class="p">())</span>
+    <span class="n">est_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_estado</span><span class="p">())</span>
+
 </div>
-<div class="viewcode-block" id="resolverIncidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.resolverIncidencia">[docs]</a><span class="k">def</span> <span class="nf">resolverIncidencia</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="resolver_incidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.resolver_incidencia">[docs]</a><span class="k">def</span> <span class="nf">resolver_incidencia</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Resolver incidencia</span>
 
 <span class="sd">    Metodo que cambia el estado de la incidencia de &quot;Abierta&quot; a &quot;Resuelta&quot;.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
-    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">whichIncidenciaSelected</span><span class="p">()]</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaincidencias</span><span class="p">()</span>
+    <span class="n">incidencia</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_incidencia_selected</span><span class="p">()]</span>
     <span class="n">incidencia</span><span class="o">.</span><span class="n">resolver</span><span class="p">()</span>
-    <span class="n">estInc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_estado</span><span class="p">())</span>
-    <span class="n">setSelectIncidencia</span> <span class="p">()</span>
+    <span class="n">est_inc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">incidencia</span><span class="o">.</span><span class="n">get_estado</span><span class="p">())</span>
+    <span class="n">set_select_incidencia</span><span class="p">()</span>
+
 </div>
-<div class="viewcode-block" id="makeWindow"><a class="viewcode-back" href="../interfaz.html#Interfaz.makeWindow">[docs]</a><span class="k">def</span> <span class="nf">makeWindow</span> <span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="make_window"><a class="viewcode-back" href="../interfaz.html#Interfaz.make_window">[docs]</a><span class="k">def</span> <span class="nf">make_window</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Crear ventana</span>
 
-<span class="sd">    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones, campos, etc de la ventana de la aplicacion.</span>
+<span class="sd">    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones,</span>
+<span class="sd">    campos, etc de la ventana de la aplicacion.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">nameProd</span><span class="p">,</span> <span class="n">priceProd</span><span class="p">,</span> <span class="n">idProd</span><span class="p">,</span> <span class="n">nameSuc</span><span class="p">,</span> <span class="n">dirSuc</span><span class="p">,</span> <span class="n">idSuc</span><span class="p">,</span> <span class="n">idEmp</span><span class="p">,</span> <span class="n">dniEmp</span><span class="p">,</span> <span class="n">nameEmp</span><span class="p">,</span> <span class="n">telEmp</span><span class="p">,</span> <span class="n">dirEmp</span><span class="p">,</span> <span class="n">salEmp</span><span class="p">,</span> <span class="n">horEmp</span><span class="p">,</span> <span class="n">idPro</span><span class="p">,</span> <span class="n">dniPro</span><span class="p">,</span> <span class="n">namePro</span><span class="p">,</span><span class="n">telPro</span><span class="p">,</span><span class="n">dirPro</span><span class="p">,</span> <span class="n">telEmp</span><span class="p">,</span> <span class="n">dirEmp</span><span class="p">,</span> <span class="n">salTotalEmp</span><span class="p">,</span> <span class="n">idInc</span><span class="p">,</span> <span class="n">asuInc</span><span class="p">,</span> <span class="n">desInc</span><span class="p">,</span> <span class="n">estInc</span><span class="p">,</span> <span class="n">selectIncidencia</span><span class="p">,</span> <span class="n">selectProducto</span><span class="p">,</span> <span class="n">selectSucursal</span><span class="p">,</span> <span class="n">selectEmpleado</span><span class="p">,</span> <span class="n">selectProveedor</span>
+    <span class="k">global</span> <span class="n">name_prod</span><span class="p">,</span> <span class="n">price_prod</span><span class="p">,</span> <span class="n">id_prod</span><span class="p">,</span> \
+        <span class="n">name_suc</span><span class="p">,</span> <span class="n">dir_suc</span><span class="p">,</span> <span class="n">id_suc</span><span class="p">,</span> \
+        <span class="n">id_emp</span><span class="p">,</span> <span class="n">dni_emp</span><span class="p">,</span> <span class="n">name_emp</span><span class="p">,</span> <span class="n">tel_emp</span><span class="p">,</span> <span class="n">dir_emp</span><span class="p">,</span>  <span class="n">sal_emp</span><span class="p">,</span> <span class="n">sal_total_emp</span><span class="p">,</span> <span class="n">hor_emp</span><span class="p">,</span> \
+        <span class="n">id_pro</span><span class="p">,</span> <span class="n">dni_pro</span><span class="p">,</span> <span class="n">name_pro</span><span class="p">,</span> <span class="n">tel_pro</span><span class="p">,</span> <span class="n">dir_pro</span><span class="p">,</span> \
+        <span class="n">id_inc</span><span class="p">,</span> <span class="n">asu_inc</span><span class="p">,</span> <span class="n">des_inc</span><span class="p">,</span> <span class="n">est_inc</span><span class="p">,</span> \
+        <span class="n">select_incidencia</span><span class="p">,</span> <span class="n">select_producto</span><span class="p">,</span> <span class="n">select_sucursal</span><span class="p">,</span> <span class="n">select_empleado</span><span class="p">,</span> <span class="n">select_proveedor</span>
     <span class="n">win</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
     <span class="n">win</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Gestion de Sucursales&quot;</span><span class="p">)</span>
-    <span class="n">frameSucursal</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Sucursales&quot;</span><span class="p">)</span>
+    <span class="n">frame_sucursal</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Sucursales&quot;</span><span class="p">)</span>
 
-    <span class="n">frame1</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameSucursal</span><span class="p">)</span>
-    <span class="n">frameSucursal</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+    <span class="n">frame1</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_sucursal</span><span class="p">)</span>
+    <span class="n">frame_sucursal</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">frame1</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">Label</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Nombre&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">nameSuc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">name2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">nameSuc</span><span class="p">)</span>
+    <span class="n">name_suc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">name2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">name_suc</span><span class="p">)</span>
     <span class="n">name2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Direccion&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">dirSuc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">dir2</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dirSuc</span><span class="p">)</span>
+    <span class="n">dir_suc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">dir2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dir_suc</span><span class="p">)</span>
     <span class="n">dir2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;ID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">idSuc</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">id2</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">idSuc</span><span class="p">)</span>
+    <span class="n">id_suc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">id2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">id_suc</span><span class="p">)</span>
     <span class="n">id2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
-    <span class="n">frame2</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameSucursal</span><span class="p">)</span>       <span class="c"># Row of buttons</span>
+    <span class="n">frame2</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_sucursal</span><span class="p">)</span>  <span class="c"># Row of buttons</span>
     <span class="n">frame2</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="n">b5</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">addSucursal</span><span class="p">)</span>
-    <span class="n">b6</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">updateSucursal</span><span class="p">)</span>
-    <span class="n">b7</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">deleteSucursal</span><span class="p">)</span>
-    <span class="n">b8</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar &quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">loadSucursal</span><span class="p">)</span>
-    <span class="n">b5</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b6</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">b7</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b8</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b5</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">add_sucursal</span><span class="p">)</span>
+    <span class="n">b6</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_sucursal</span><span class="p">)</span>
+    <span class="n">b7</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">delete_sucursal</span><span class="p">)</span>
+    <span class="n">b8</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar &quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">load_sucursal</span><span class="p">)</span>
+    <span class="n">b5</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b6</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b7</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b8</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
 
-    <span class="n">frame3</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameSucursal</span><span class="p">)</span>       <span class="c"># select of names</span>
+    <span class="n">frame3</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_sucursal</span><span class="p">)</span>  <span class="c"># select of names</span>
     <span class="n">frame3</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">frame3</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-    <span class="n">selectSucursal</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame3</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span> <span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">selectSucursal</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+    <span class="n">select_sucursal</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame3</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">select_sucursal</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
     <span class="n">scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-    <span class="n">selectSucursal</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span>  <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">select_sucursal</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="n">n</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
     <span class="n">n</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="c">#PRODUCTOS</span>
+    <span class="c">#Productos</span>
 
-    <span class="n">frameProducto</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Productos&quot;</span><span class="p">)</span>
-    <span class="n">frameProducto</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frameProducto</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Productos&quot;</span><span class="p">)</span>
+    <span class="n">frame_producto</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Productos&quot;</span><span class="p">)</span>
+    <span class="n">frame_producto</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frame_producto</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Productos&quot;</span><span class="p">)</span>
 
-    <span class="n">frame4</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameProducto</span><span class="p">)</span>
+    <span class="n">frame4</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_producto</span><span class="p">)</span>
     <span class="n">frame4</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">Label</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Nombre&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">nameProd</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">nameProd</span><span class="p">)</span>
+    <span class="n">name_prod</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">name_prod</span><span class="p">)</span>
     <span class="n">name</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Precio&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">priceProd</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">price</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">priceProd</span><span class="p">)</span>
+    <span class="n">price_prod</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">price_prod</span><span class="p">)</span>
     <span class="n">price</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;ID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">idProd</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="nb">id</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">idProd</span><span class="p">)</span>
-    <span class="nb">id</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
+    <span class="n">id_prod</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">id1</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame4</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">id_prod</span><span class="p">)</span>
+    <span class="n">id1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
-
-    <span class="n">frame5</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameProducto</span><span class="p">)</span>       <span class="c"># Row of buttons</span>
+    <span class="n">frame5</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_producto</span><span class="p">)</span>  <span class="c"># Row of buttons</span>
     <span class="n">frame5</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="n">b1</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">addProducto</span><span class="p">)</span>
-    <span class="n">b2</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">updateProducto</span><span class="p">)</span>
-    <span class="n">b3</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">deleteProducto</span><span class="p">)</span>
-    <span class="n">b4</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar &quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">loadProducto</span><span class="p">)</span>
-    <span class="n">b1</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b2</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">b3</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b4</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">add_producto</span><span class="p">)</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_producto</span><span class="p">)</span>
+    <span class="n">b3</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">delete_producto</span><span class="p">)</span>
+    <span class="n">b4</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame5</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar &quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">load_producto</span><span class="p">)</span>
+    <span class="n">b1</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b2</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b3</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b4</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
 
-    <span class="n">frame6</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameProducto</span><span class="p">)</span>       <span class="c"># select of names</span>
+    <span class="n">frame6</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_producto</span><span class="p">)</span>  <span class="c"># select of names</span>
     <span class="n">frame6</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">frame6</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-    <span class="n">selectProducto</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame6</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span> <span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">selectProducto</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+    <span class="n">select_producto</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame6</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">select_producto</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
     <span class="n">scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-    <span class="n">selectProducto</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span>  <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">select_producto</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c">#Empleados</span>
 
-    <span class="n">frameEmpleado</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Empleados&quot;</span><span class="p">)</span>
-    <span class="n">frameEmpleado</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="n">BOTH</span><span class="p">)</span>
-    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frameEmpleado</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Empleados&quot;</span><span class="p">)</span>
-    <span class="n">frame7</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameEmpleado</span><span class="p">)</span>
+    <span class="n">frame_empleado</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Empleados&quot;</span><span class="p">)</span>
+    <span class="n">frame_empleado</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">)</span>
+    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frame_empleado</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Empleados&quot;</span><span class="p">)</span>
+    <span class="n">frame7</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_empleado</span><span class="p">)</span>
     <span class="n">frame7</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Nombre empleado&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">nameEmp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">name3</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">nameEmp</span><span class="p">)</span>
+    <span class="n">name_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">name3</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">name_emp</span><span class="p">)</span>
     <span class="n">name3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Direccion&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">dirEmp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">dir3</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dirEmp</span><span class="p">)</span>
+    <span class="n">dir_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">dir3</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dir_emp</span><span class="p">)</span>
     <span class="n">dir3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;ID empleado&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">idEmp</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">id3</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">idEmp</span><span class="p">)</span>
+    <span class="n">id_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">id3</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">id_emp</span><span class="p">)</span>
     <span class="n">id3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;DNI&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">dniEmp</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">dni</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dniEmp</span><span class="p">)</span>
+    <span class="n">dni_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">dni</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dni_emp</span><span class="p">)</span>
     <span class="n">dni</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Telefono&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">telEmp</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">tel</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">telEmp</span><span class="p">)</span>
+    <span class="n">tel_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">tel</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">tel_emp</span><span class="p">)</span>
     <span class="n">tel</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Salario&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">salEmp</span><span class="o">=</span> <span class="n">IntVar</span><span class="p">()</span>
-    <span class="n">sal</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">salEmp</span><span class="p">)</span>
+    <span class="n">sal_emp</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">()</span>
+    <span class="n">sal</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">sal_emp</span><span class="p">)</span>
     <span class="n">sal</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Horario&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">horEmp</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">hor</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">horEmp</span><span class="p">)</span>
+    <span class="n">hor_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">hor</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame7</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">hor_emp</span><span class="p">)</span>
     <span class="n">hor</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
-    <span class="n">frame8</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameEmpleado</span><span class="p">)</span>       <span class="c"># Row of buttons</span>
+    <span class="n">frame8</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_empleado</span><span class="p">)</span>  <span class="c"># Row of buttons</span>
     <span class="n">frame8</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="n">b9</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">addEmpleado</span><span class="p">)</span>
-    <span class="n">b10</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">updateEmpleado</span><span class="p">)</span>
-    <span class="n">b11</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">deleteEmpleado</span><span class="p">)</span>
-    <span class="n">b12</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">loadEmpleado</span><span class="p">)</span>
+    <span class="n">b9</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">add_empleado</span><span class="p">)</span>
+    <span class="n">b10</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_empleado</span><span class="p">)</span>
+    <span class="n">b11</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">delete_empleado</span><span class="p">)</span>
+    <span class="n">b12</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame8</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">load_empleado</span><span class="p">)</span>
 
-    <span class="n">b9</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b10</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">b11</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b12</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b9</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b10</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b11</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b12</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
 
-
-    <span class="n">frame9</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameEmpleado</span><span class="p">)</span>       <span class="c"># select of names</span>
+    <span class="n">frame9</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_empleado</span><span class="p">)</span>  <span class="c"># select of names</span>
     <span class="n">frame9</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">frame9</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-    <span class="n">selectEmpleado</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame9</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span> <span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">selectEmpleado</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+    <span class="n">select_empleado</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame9</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">select_empleado</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
     <span class="n">scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-    <span class="n">selectEmpleado</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">select_empleado</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">b12a</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frameEmpleado</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Salario total&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">salTotalEmpleado</span><span class="p">)</span>
+    <span class="n">b12a</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame_empleado</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Salario total&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">sal_total_empleado</span><span class="p">)</span>
     <span class="n">b12a</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">salTotalEmp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">salTotal</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frameEmpleado</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">salTotalEmp</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
-    <span class="n">salTotal</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
-
-
-
+    <span class="n">sal_total_emp</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">sal_total</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame_empleado</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">sal_total_emp</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
+    <span class="n">sal_total</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
 
     <span class="c">#Proveedores</span>
 
-    <span class="n">frameProveedor</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Proveedores&quot;</span><span class="p">)</span>
-    <span class="n">frameProveedor</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span> <span class="o">=</span> <span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frameProveedor</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Proveedores&quot;</span><span class="p">)</span>
-    <span class="n">frame10</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameProveedor</span><span class="p">)</span>
+    <span class="n">frame_proveedor</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Proveedores&quot;</span><span class="p">)</span>
+    <span class="n">frame_proveedor</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frame_proveedor</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Proveedores&quot;</span><span class="p">)</span>
+    <span class="n">frame10</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_proveedor</span><span class="p">)</span>
     <span class="n">frame10</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">Label</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Nombre proveedores&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">namePro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">name4</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">namePro</span><span class="p">)</span>
+    <span class="n">name_pro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">name4</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">name_pro</span><span class="p">)</span>
     <span class="n">name4</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Direccion&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">dirPro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">dir4</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dirPro</span><span class="p">)</span>
+    <span class="n">dir_pro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">dir4</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dir_pro</span><span class="p">)</span>
     <span class="n">dir4</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;ID proveedor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">idPro</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">id4</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">idPro</span><span class="p">)</span>
+    <span class="n">id_pro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">id4</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">id_pro</span><span class="p">)</span>
     <span class="n">id4</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;DNI&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">dniPro</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">dni2</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dniPro</span><span class="p">)</span>
+    <span class="n">dni_pro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">dni2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">dni_pro</span><span class="p">)</span>
     <span class="n">dni2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Telefono&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">telPro</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">tel2</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">telPro</span><span class="p">)</span>
+    <span class="n">tel_pro</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">tel2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame10</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">tel_pro</span><span class="p">)</span>
     <span class="n">tel2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
-    <span class="n">frame11</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameProveedor</span><span class="p">)</span>       <span class="c"># Row of buttons</span>
+    <span class="n">frame11</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_proveedor</span><span class="p">)</span>  <span class="c"># Row of buttons</span>
     <span class="n">frame11</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="n">b13</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">addProveedor</span><span class="p">)</span>
-    <span class="n">b14</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">updateProveedor</span><span class="p">)</span>
-    <span class="n">b15</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">deleteProveedor</span><span class="p">)</span>
-    <span class="n">b16</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">loadProveedor</span><span class="p">)</span>
-    <span class="n">b13</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b14</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">b15</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b16</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b13</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">add_proveedor</span><span class="p">)</span>
+    <span class="n">b14</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_proveedor</span><span class="p">)</span>
+    <span class="n">b15</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">delete_proveedor</span><span class="p">)</span>
+    <span class="n">b16</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame11</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">load_proveedor</span><span class="p">)</span>
+    <span class="n">b13</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b14</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b15</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b16</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
 
-    <span class="n">frame12</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameProveedor</span><span class="p">)</span>       <span class="c"># select of names</span>
+    <span class="n">frame12</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_proveedor</span><span class="p">)</span>  <span class="c"># select of names</span>
     <span class="n">frame12</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">frame12</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-    <span class="n">selectProveedor</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame12</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span> <span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">selectProveedor</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+    <span class="n">select_proveedor</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame12</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">select_proveedor</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
     <span class="n">scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-    <span class="n">selectProveedor</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span>  <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">select_proveedor</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c">#Incidencias</span>
-    <span class="n">frameIncidencia</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Incidencias&quot;</span><span class="p">)</span>
-    <span class="n">frameIncidencia</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span> <span class="o">=</span> <span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frameIncidencia</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Incidencias&quot;</span><span class="p">)</span>
-    <span class="n">frame13</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameIncidencia</span><span class="p">)</span>
+
+    <span class="n">frame_incidencia</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Labelframe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Lista de Incidencias&quot;</span><span class="p">)</span>
+    <span class="n">frame_incidencia</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frame_incidencia</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Incidencias&quot;</span><span class="p">)</span>
+    <span class="n">frame13</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_incidencia</span><span class="p">)</span>
     <span class="n">frame13</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">Label</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;ID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">idInc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">id5</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">idInc</span><span class="p">)</span>
+    <span class="n">id_inc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">id5</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">id_inc</span><span class="p">)</span>
     <span class="n">id5</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Asunto&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">asuInc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">asu</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">asuInc</span><span class="p">)</span>
+    <span class="n">asu_inc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">asu</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">asu_inc</span><span class="p">)</span>
     <span class="n">asu</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Descripcion&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">desInc</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">des</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">desInc</span><span class="p">)</span>
+    <span class="n">des_inc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">des</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">des_inc</span><span class="p">)</span>
     <span class="n">des</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
     <span class="n">Label</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Estado&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
-    <span class="n">estInc</span><span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-    <span class="n">est</span><span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">estInc</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
+    <span class="n">est_inc</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+    <span class="n">est</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame13</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">est_inc</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
     <span class="n">est</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
 
-    <span class="n">frame14</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameIncidencia</span><span class="p">)</span>       <span class="c"># Row of buttons</span>
+    <span class="n">frame14</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_incidencia</span><span class="p">)</span>  <span class="c"># Row of buttons</span>
     <span class="n">frame14</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    <span class="n">b17</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">addIncidencia</span><span class="p">)</span>
-    <span class="n">b18</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">updateIncidencia</span><span class="p">)</span>
-    <span class="n">b19</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">deleteIncidencia</span><span class="p">)</span>
-    <span class="n">b20</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">loadIncidencia</span><span class="p">)</span>
-    <span class="n">b21</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Resolver&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">resolverIncidencia</span><span class="p">)</span>
+    <span class="n">b17</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Agregar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">add_incidencia</span><span class="p">)</span>
+    <span class="n">b18</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Modificar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_incidencia</span><span class="p">)</span>
+    <span class="n">b19</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Eliminar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">delete_incidencia</span><span class="p">)</span>
+    <span class="n">b20</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Consultar&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">load_incidencia</span><span class="p">)</span>
+    <span class="n">b21</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">frame14</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Resolver&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">resolver_incidencia</span><span class="p">)</span>
 
-    <span class="n">b17</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b18</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span>
-    <span class="n">b19</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span> <span class="n">b20</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">);</span><span class="n">b21</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b17</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b18</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b19</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b20</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">b21</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
 
-    <span class="n">frame15</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frameIncidencia</span><span class="p">)</span>       <span class="c"># select of names</span>
+    <span class="n">frame15</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">frame_incidencia</span><span class="p">)</span>  <span class="c"># select of names</span>
     <span class="n">frame15</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     <span class="n">scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">frame15</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-    <span class="n">selectIncidencia</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame15</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span> <span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">selectIncidencia</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+    <span class="n">select_incidencia</span> <span class="o">=</span> <span class="n">Listbox</span><span class="p">(</span><span class="n">frame15</span><span class="p">,</span> <span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">select_incidencia</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
     <span class="n">scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-    <span class="n">selectIncidencia</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span>  <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">select_incidencia</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">win</span>
+
 </div>
-<div class="viewcode-block" id="setSelectSucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.setSelectSucursal">[docs]</a><span class="k">def</span> <span class="nf">setSelectSucursal</span> <span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="set_select_sucursal"><a class="viewcode-back" href="../interfaz.html#Interfaz.set_select_sucursal">[docs]</a><span class="k">def</span> <span class="nf">set_select_sucursal</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Lista seleccion sucursales</span>
 
 <span class="sd">    Metodo que actualiza la lista de sucursales en el cuadro de seleccion.</span>
@@ -752,12 +782,13 @@
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">listaSucursales</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="n">selectSucursal</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">sucursal</span> <span class="ow">in</span> <span class="n">listaSucursales</span> <span class="p">:</span>
-        <span class="n">selectSucursal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
+    <span class="n">lista_sucursales</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">select_sucursal</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">sucursal</span> <span class="ow">in</span> <span class="n">lista_sucursales</span><span class="p">:</span>
+        <span class="n">select_sucursal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+
 </div>
-<div class="viewcode-block" id="setSelectProducto"><a class="viewcode-back" href="../interfaz.html#Interfaz.setSelectProducto">[docs]</a><span class="k">def</span> <span class="nf">setSelectProducto</span> <span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="set_select_producto"><a class="viewcode-back" href="../interfaz.html#Interfaz.set_select_producto">[docs]</a><span class="k">def</span> <span class="nf">set_select_producto</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Lista seleccion productos</span>
 
 <span class="sd">    Metodo que actualiza la lista de productos en el cuadro de seleccion.</span>
@@ -765,54 +796,53 @@
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">selectProducto</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">lista</span> <span class="p">:</span>
-        <span class="n">selectProducto</span><span class="o">.</span><span class="n">insert</span> <span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">producto</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">select_producto</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproductos</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+        <span class="n">select_producto</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">producto</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+
 </div>
-<div class="viewcode-block" id="setSelectEmpleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.setSelectEmpleado">[docs]</a><span class="k">def</span> <span class="nf">setSelectEmpleado</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="set_select_empleado"><a class="viewcode-back" href="../interfaz.html#Interfaz.set_select_empleado">[docs]</a><span class="k">def</span> <span class="nf">set_select_empleado</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Lista seleccion empleados</span>
 
 <span class="sd">    Metodo que actualiza la lista de empleados en el cuadro de seleccion.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">selectEmpleado</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">empleado</span> <span class="ow">in</span> <span class="n">lista</span> <span class="p">:</span>
-        <span class="n">selectEmpleado</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">empleado</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">select_empleado</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaempleados</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">empleado</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+        <span class="n">select_empleado</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">empleado</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+
 </div>
-<div class="viewcode-block" id="setSelectProveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.setSelectProveedor">[docs]</a><span class="k">def</span> <span class="nf">setSelectProveedor</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="set_select_proveedor"><a class="viewcode-back" href="../interfaz.html#Interfaz.set_select_proveedor">[docs]</a><span class="k">def</span> <span class="nf">set_select_proveedor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Lista seleccion proveedores</span>
 
 <span class="sd">    Metodo que actualiza la lista de proveedores en el cuadro de seleccion.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">selectProveedor</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">proveedor</span> <span class="ow">in</span> <span class="n">lista</span> <span class="p">:</span>
-        <span class="n">selectProveedor</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">proveedor</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">select_proveedor</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproveedores</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">proveedor</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+        <span class="n">select_proveedor</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">proveedor</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span>
+
 </div>
-<div class="viewcode-block" id="setSelectIncidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.setSelectIncidencia">[docs]</a><span class="k">def</span> <span class="nf">setSelectIncidencia</span><span class="p">()</span> <span class="p">:</span>
+<div class="viewcode-block" id="set_select_incidencia"><a class="viewcode-back" href="../interfaz.html#Interfaz.set_select_incidencia">[docs]</a><span class="k">def</span> <span class="nf">set_select_incidencia</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Lista seleccion incidencias</span>
 
 <span class="sd">    Metodo que actualiza la lista de incidencias en el cuadro de seleccion.</span>
 
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursalSeleccionada</span>
-    <span class="n">selectIncidencia</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
-    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">incidencia</span> <span class="ow">in</span> <span class="n">lista</span> <span class="p">:</span>
-        <span class="n">selectIncidencia</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">incidencia</span><span class="o">.</span><span class="n">get_ID</span><span class="p">())</span>
-</div>
-<span class="n">win</span> <span class="o">=</span> <span class="n">makeWindow</span><span class="p">()</span>
-<span class="n">setSelectSucursal</span> <span class="p">()</span>
-<span class="n">win</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+    <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
+    <span class="n">select_incidencia</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaincidencias</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">incidencia</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+        <span class="n">select_incidencia</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="n">incidencia</span><span class="o">.</span><span class="n">get_id</span><span class="p">())</span></div>
 </pre></div>
 
           </div>

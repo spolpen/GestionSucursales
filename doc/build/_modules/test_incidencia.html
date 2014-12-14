@@ -64,8 +64,10 @@
           <div class="body">
             
   <h1>Source code for test_incidencia</h1><div class="highlight"><pre>
+<span class="c"># coding=utf-8</span>
 <span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
 <span class="kn">from</span> <span class="nn">Incidencia</span> <span class="kn">import</span> <span class="o">*</span>
+
 <span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Polo&#39;</span>
 
 
@@ -75,6 +77,7 @@
 <span class="sd">    Esta clase contiene los tests unitarios de la clase incidencia..</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="TestIncidencia.test_resolver"><a class="viewcode-back" href="../test_incidencia.html#test_incidencia.TestIncidencia.test_resolver">[docs]</a>    <span class="k">def</span> <span class="nf">test_resolver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test resolver</span>
 
@@ -82,9 +85,9 @@
 
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">inc</span> <span class="o">=</span> <span class="n">Incidencia</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;Asunto&quot;</span><span class="p">,</span><span class="s">&quot;Descripcion&quot;</span><span class="p">)</span>
+        <span class="n">inc</span> <span class="o">=</span> <span class="n">Incidencia</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Asunto&quot;</span><span class="p">,</span> <span class="s">&quot;Descripcion&quot;</span><span class="p">)</span>
         <span class="n">inc</span><span class="o">.</span><span class="n">resolver</span><span class="p">()</span>
-        <span class="c">#Hacemos el test</span>
+        <span class="c"># Hacemos el test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inc</span><span class="o">.</span><span class="n">get_estado</span><span class="p">(),</span> <span class="s">&quot;Resuelta&quot;</span><span class="p">)</span></div></div>
 </pre></div>
 

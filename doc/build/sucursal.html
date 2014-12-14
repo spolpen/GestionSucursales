@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="GestionSucursales 0.1 documentation" href="index.html" />
-    <link rel="next" title="Clase Empleado" href="empleado.html" />
+    <link rel="next" title="Clase Producto" href="producto.html" />
     <link rel="prev" title="Clase Interfaz" href="interfaz.html" /> 
   </head>
   <body>
@@ -35,7 +35,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="empleado.html" title="Clase Empleado"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="producto.html" title="Clase Producto"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="interfaz.html" title="Clase Interfaz"
@@ -49,8 +52,8 @@
   <p class="topless"><a href="interfaz.html"
                         title="previous chapter">Clase Interfaz</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="empleado.html"
-                        title="next chapter">Clase Empleado</a></p>
+  <p class="topless"><a href="producto.html"
+                        title="next chapter">Clase Producto</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/sucursal.txt"
@@ -81,12 +84,13 @@
 <h1>Clase Sucursal<a class="headerlink" href="#clase-sucursal" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="Sucursal.Sucursal">
-<em class="property">class </em><tt class="descclassname">Sucursal.</tt><tt class="descname">Sucursal</tt><big>(</big><em>nombre_sucursal</em>, <em>direccion</em>, <em>id</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">Sucursal.</tt><tt class="descname">Sucursal</tt><big>(</big><em>nombre_sucursal</em>, <em>direccion</em>, <em>id_suc</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clase sucursal</p>
-<p>Esta clase define una sucursal, con listas de empleados, productos, proveedores e incidencias, y metodos para agregar y eliminar de dichas listas.</p>
+<p>Esta clase define una sucursal, con listas de empleados, productos, proveedores e incidencias, y metodos para
+agregar y eliminar de dichas listas.</p>
 <dl class="method">
-<dt id="Sucursal.Sucursal.aniadirEmpleado">
-<tt class="descname">aniadirEmpleado</tt><big>(</big><em>empleado</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadirEmpleado"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadirEmpleado" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.aniadir_empleado">
+<tt class="descname">aniadir_empleado</tt><big>(</big><em>empleado</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadir_empleado"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadir_empleado" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agregar empleado</p>
 <p>Agrega un empleado a la lista de empleados.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -102,8 +106,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.aniadirIncidencia">
-<tt class="descname">aniadirIncidencia</tt><big>(</big><em>incidencia</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadirIncidencia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadirIncidencia" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.aniadir_incidencia">
+<tt class="descname">aniadir_incidencia</tt><big>(</big><em>incidencia</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadir_incidencia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadir_incidencia" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agregar incidencia</p>
 <p>Agrega una incidencia a la lista de incidencias.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -119,8 +123,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.aniadirProducto">
-<tt class="descname">aniadirProducto</tt><big>(</big><em>producto</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadirProducto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadirProducto" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.aniadir_producto">
+<tt class="descname">aniadir_producto</tt><big>(</big><em>producto</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadir_producto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadir_producto" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agregar producto</p>
 <p>Agrega un producto a la lista de productos.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -136,8 +140,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.aniadirProveedor">
-<tt class="descname">aniadirProveedor</tt><big>(</big><em>proveedor</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadirProveedor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadirProveedor" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.aniadir_proveedor">
+<tt class="descname">aniadir_proveedor</tt><big>(</big><em>proveedor</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.aniadir_proveedor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.aniadir_proveedor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agregar proveedor</p>
 <p>Agrega un proveedor a la lista de proveedores.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -153,8 +157,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.eliminarEmpleado">
-<tt class="descname">eliminarEmpleado</tt><big>(</big><em>empleado</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminarEmpleado"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminarEmpleado" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.eliminar_empleado">
+<tt class="descname">eliminar_empleado</tt><big>(</big><em>empleado</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminar_empleado"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminar_empleado" title="Permalink to this definition">¶</a></dt>
 <dd><p>Eliminar empleado</p>
 <p>Elimina un empleado de la lista de empleados.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -170,8 +174,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.eliminarIncidencia">
-<tt class="descname">eliminarIncidencia</tt><big>(</big><em>incidencia</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminarIncidencia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminarIncidencia" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.eliminar_incidencia">
+<tt class="descname">eliminar_incidencia</tt><big>(</big><em>incidencia</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminar_incidencia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminar_incidencia" title="Permalink to this definition">¶</a></dt>
 <dd><p>Eliminar incidencia</p>
 <p>Elimina una incidencia de la lista de incidencias.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -187,8 +191,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.eliminarProducto">
-<tt class="descname">eliminarProducto</tt><big>(</big><em>producto</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminarProducto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminarProducto" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.eliminar_producto">
+<tt class="descname">eliminar_producto</tt><big>(</big><em>producto</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminar_producto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminar_producto" title="Permalink to this definition">¶</a></dt>
 <dd><p>Eliminar producto</p>
 <p>Elimina un producto de la lista de productos.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -204,8 +208,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.eliminarProveedor">
-<tt class="descname">eliminarProveedor</tt><big>(</big><em>proveedor</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminarProveedor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminarProveedor" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.eliminar_proveedor">
+<tt class="descname">eliminar_proveedor</tt><big>(</big><em>proveedor</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.eliminar_proveedor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.eliminar_proveedor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Eliminar proveedor</p>
 <p>Elimina un proveedor de la lista de proveedores.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -221,14 +225,6 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.get_ID">
-<tt class="descname">get_ID</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_ID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_ID" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get ID</p>
-<p>Metodo que devuelve la ID de la sucursal</p>
-<p>:return:ID sucursal</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="Sucursal.Sucursal.get_direccion">
 <tt class="descname">get_direccion</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_direccion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_direccion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get direccion</p>
@@ -237,32 +233,40 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.get_listaEmpleados">
-<tt class="descname">get_listaEmpleados</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaEmpleados"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaEmpleados" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.get_id">
+<tt class="descname">get_id</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ID</p>
+<p>Metodo que devuelve la ID de la sucursal</p>
+<p>:return:ID sucursal</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Sucursal.Sucursal.get_listaempleados">
+<tt class="descname">get_listaempleados</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaempleados"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaempleados" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get lista empleados</p>
 <p>Metodo que devuelve la lista de empleados de la sucursal</p>
 <p>:return:lista empleados</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.get_listaIncidencias">
-<tt class="descname">get_listaIncidencias</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaIncidencias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaIncidencias" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.get_listaincidencias">
+<tt class="descname">get_listaincidencias</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaincidencias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaincidencias" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get lista incidencias</p>
 <p>Metodo que devuelve la lista de incidencias de la sucursal</p>
 <p>:return:lista incidencias</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.get_listaProductos">
-<tt class="descname">get_listaProductos</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaProductos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaProductos" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.get_listaproductos">
+<tt class="descname">get_listaproductos</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaproductos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaproductos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get lista productos</p>
 <p>Metodo que devuelve la lista de productos de la sucursal</p>
 <p>:return:lista productos</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.get_listaProveedores">
-<tt class="descname">get_listaProveedores</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaProveedores"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaProveedores" title="Permalink to this definition">¶</a></dt>
+<dt id="Sucursal.Sucursal.get_listaproveedores">
+<tt class="descname">get_listaproveedores</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.get_listaproveedores"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.get_listaproveedores" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get lista proveedores</p>
 <p>Metodo que devuelve la lista de proveedores de la sucursal</p>
 <p>:return:lista proveedores</p>
@@ -286,15 +290,15 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.set_ID">
-<tt class="descname">set_ID</tt><big>(</big><em>id</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.set_ID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.set_ID" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set ID sucursal</p>
-<p>Cambia la ID de la sucursal al parametro introducido.</p>
+<dt id="Sucursal.Sucursal.set_direccion">
+<tt class="descname">set_direccion</tt><big>(</big><em>direccion</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.set_direccion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.set_direccion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set direccion sucursal</p>
+<p>Cambia la direccion de la sucursal al parametro introducido.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ID</strong> &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direccion</strong> &#8211; </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
 </tr>
@@ -303,12 +307,20 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Sucursal.Sucursal.set_direccion">
-<tt class="descname">set_direccion</tt><big>(</big><em>direccion</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.set_direccion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.set_direccion" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set direccion sucursal</p>
-<p>Cambia la direccion de la sucursal al parametro introducido.</p>
-<p>:
-:return:</p>
+<dt id="Sucursal.Sucursal.set_id">
+<tt class="descname">set_id</tt><big>(</big><em>id_suc</em><big>)</big><a class="reference internal" href="_modules/Sucursal.html#Sucursal.set_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Sucursal.Sucursal.set_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set ID sucursal</p>
+<p>Cambia la ID de la sucursal al parametro introducido.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id_suc</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -345,7 +357,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="empleado.html" title="Clase Empleado"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="producto.html" title="Clase Producto"
              >next</a> |</li>
         <li class="right" >
           <a href="interfaz.html" title="Clase Interfaz"
