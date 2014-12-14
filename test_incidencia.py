@@ -1,5 +1,7 @@
+# coding=utf-8
 from unittest import TestCase
 from Incidencia import *
+
 __author__ = 'Polo'
 
 
@@ -9,6 +11,7 @@ class TestIncidencia(TestCase):
     Esta clase contiene los tests unitarios de la clase incidencia..
 
     """
+
     def test_resolver(self):
         """Test resolver
 
@@ -16,7 +19,7 @@ class TestIncidencia(TestCase):
 
         :return:
         """
-        inc = Incidencia(1,"Asunto","Descripcion")
+        inc = Incidencia(1, "Asunto", "Descripcion")
         inc.resolver()
-        #Hacemos el test
+        # Hacemos el test
         self.assertEqual(inc.get_estado(), "Resuelta")
