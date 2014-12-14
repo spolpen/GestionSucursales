@@ -1,5 +1,7 @@
+# coding=utf-8
 __author__ = 'Polo'
 from Persona import *
+
 
 class Empleado(Persona):
     """Clase empleado
@@ -7,13 +9,15 @@ class Empleado(Persona):
     Esta clase hereda de persona y ademas tiene varios atributos propios como el salario y el horario.
 
     """
-    def __init__(self, ID, DNI, nombre, telefono, direccion, salario, horario):
+
+    def __init__(self, ide, dni, nombre, telefono, direccion, salario, horario):
         """Constructor empleado
 
-        Metodo constructor de la clase empleado, que inicializa sus atributos que hereda de persona mediante el constructor de persona, ademas de los suyos propios.
+        Metodo constructor de la clase empleado, que inicializa sus atributos que hereda de persona
+         mediante el constructor de persona, ademas de los suyos propios.
 
-        :param ID:
-        :param DNI:
+        :param ide:
+        :param dni:
         :param nombre:
         :param telefono:
         :param direccion:
@@ -21,9 +25,9 @@ class Empleado(Persona):
         :param horario:
         :return:
         """
-        Persona.__init__(self,ID, DNI, nombre, telefono, direccion)
-        self.salario=salario
-        self.horario=horario
+        Persona.__init__(self, ide, dni, nombre, telefono, direccion)
+        self.salario = salario
+        self.horario = horario
 
     def get_salario(self):
         """Get salario empleado
@@ -43,7 +47,7 @@ class Empleado(Persona):
         """
         return self.horario
 
-    def set_salario(self,salario):
+    def set_salario(self, salario):
         """Set salario empleado
 
         Metodo que cambia el salario del empleado al parametro introducido.
@@ -51,9 +55,9 @@ class Empleado(Persona):
         :param salario:
         :return:
         """
-        self.salario=salario
+        self.salario = salario
 
-    def set_horario(self,horario):
+    def set_horario(self, horario):
         """Set horario empleado
 
         Metodo que cambia el horario de un empleado al parametro introducido.
@@ -61,4 +65,4 @@ class Empleado(Persona):
         :param horario:
         :return:
         """
-        self.horario=horario
+        self.horario = horario
