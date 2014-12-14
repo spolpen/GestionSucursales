@@ -21,8 +21,8 @@ class Persona(object):
         :param direccion:
         :return:
         """
-        self.ID = ide
-        self.DNI = dni
+        self.ide = ide
+        self.dni = dni
         self.nombre = nombre
         self.telefono = telefono
         self.direccion = direccion
@@ -34,7 +34,7 @@ class Persona(object):
 
         :return:ID persona
         """
-        return self.ID
+        return self.ide
 
     def get_dni(self):
         """Get ID persona
@@ -43,7 +43,7 @@ class Persona(object):
 
         :return:ID persona
         """
-        return self.DNI
+        return self.dni
 
     def get_nombre(self):
         """Get nombre persona
@@ -80,7 +80,7 @@ class Persona(object):
         :param ide:
         :return:
         """
-        self.ID = ide
+        self.ide = ide
 
     def set_dni(self, dni):
         """Set DNI persona
@@ -90,7 +90,7 @@ class Persona(object):
         :param dni:
         :return:
         """
-        self.DNI = dni
+        self.dni = dni
 
     def set_nombre(self, nombre):
         """Set nombre persona

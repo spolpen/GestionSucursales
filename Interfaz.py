@@ -91,7 +91,7 @@ def delete_producto():
     sucursal = sucursal_seleccionada
     lista = sucursal.get_listaproductos()
     producto = lista[which_producto_selected()]
-    sucursal.eliminarProducto(producto)
+    sucursal.eliminar_producto(producto)
 
     set_select_producto()
 
@@ -205,8 +205,8 @@ def add_empleado():
     :return:
     """
     sucursal = sucursal_seleccionada
-    empleado = Empleado(id_emp.get(), dni_emp.get(), name_emp.get(), tel_emp.get(), dir_emp.get(), sal_emp.get(),
-                        hor_emp.get())
+    empleado = Empleado\
+        (id_emp.get(), dni_emp.get(), name_emp.get(), tel_emp.get(), dir_emp.get(), sal_emp.get(), hor_emp.get())
     sucursal.aniadir_empleado(empleado)
     set_select_empleado()
 
