@@ -1,5 +1,4 @@
 from unittest import TestCase
-from Tkinter import *
 from Interfaz import *
 __author__ = 'Polo'
 
