@@ -38,8 +38,8 @@ def limpiar_variables():
     des_inc.set("")
     est_inc.set("")
 
+    #PRODUCTOS
 
-# Metodos productos
 def which_producto_selected():
     """Producto seleccionado
 
@@ -111,8 +111,8 @@ def load_producto():
     name_prod.set(producto.get_nombre())
     price_prod.set(producto.get_precio())
 
+    #SUCURSALES
 
-#Metodos sucursales
 def which_sucursal_selected():
     """Sucursal seleccionada
 
@@ -182,7 +182,8 @@ def load_sucursal():
     set_select_incidencia()
 
 
-#Metodos empleados
+    #EMPLEADOS
+
 def which_empleado_selected():
     """Empleado seleccionado
 
@@ -272,7 +273,8 @@ def sal_total_empleado():
     sal_total_emp.set(sucursal.get_salario_total())
 
 
-#Metodos proveedores
+    #PROVEEDORES
+
 def which_proveedor_selected():
     """Proveedor seleccionado
 
@@ -346,7 +348,8 @@ def load_proveedor():
     dir_pro.set(proveedor.get_direccion())
 
 
-#INCIDENCIA
+    #INCIDENCIAS
+
 def which_incidencia_selected():
     """Incidencia seleccionada
 
@@ -490,7 +493,7 @@ def make_window():
     n = ttk.Notebook(win)
     n.pack()
 
-    #PRODUCTOS
+    #Productos
 
     frame_producto = ttk.Labelframe(n, text="Lista de Productos")
     frame_producto.pack()
@@ -652,6 +655,7 @@ def make_window():
     select_proveedor.pack(side=LEFT, fill=BOTH, expand=1)
 
     #Incidencias
+
     frame_incidencia = ttk.Labelframe(n, text="Lista de Incidencias")
     frame_incidencia.pack(side=LEFT)
     n.add(frame_incidencia, text="Incidencias")
