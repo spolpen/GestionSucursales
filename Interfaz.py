@@ -7,156 +7,161 @@ from Empleado import *
 from Proveedor import *
 from Incidencia import *
 import ttk
-listaSucursales =[]
 
-def limpiarVariables () :
+lista_sucursales = []
+
+
+def limpiar_variables():
     """Limpieza de variables
 
     Metodo que elimina los datos de los campos de producto, empleado, proveedor e incidencia.
 
     :return:
     """
-    nameProd.set("")
-    priceProd.set("")
-    idProd.set("")
-    idEmp.set("")
-    dniEmp.set("")
-    nameEmp.set("")
-    telEmp.set("")
-    dirEmp.set("")
-    salEmp.set("")
-    horEmp.set("")
-    idPro.set("")
-    dniPro.set("")
-    namePro.set("")
-    telPro.set("")
-    dirPro.set("")
-    telEmp.set("")
-    dirEmp.set("")
-    idInc.set("")
-    asuInc.set("")
-    desInc.set("")
-    estInc.set("")
+    name_prod.set("")
+    price_prod.set("")
+    id_prod.set("")
+    id_emp.set("")
+    dni_emp.set("")
+    name_emp.set("")
+    tel_emp.set("")
+    dir_emp.set("")
+    sal_emp.set("")
+    hor_emp.set("")
+    id_pro.set("")
+    dni_pro.set("")
+    name_pro.set("")
+    tel_pro.set("")
+    dir_pro.set("")
+    id_inc.set("")
+    asu_inc.set("")
+    des_inc.set("")
+    est_inc.set("")
 
 
-#Metodos productos
-def whichProductoSelected () :
+# Metodos productos
+def which_producto_selected():
     """Producto seleccionado
 
     Metodo que nos devuelve el producto que tenemos seleccionado en la lista de productos.
 
     :return: producto seleccionado
     """
-    return int(selectProducto.curselection()[0])
+    return int(select_producto.curselection()[0])
 
-def addProducto () :
+
+def add_producto():
     """Agregar producto
 
-    Metodo que crea un nuevo producto con los datos que hay en los campos y lo agrega a la lista de productos de la sucursal
+    Metodo que crea un nuevo producto con los datos que hay en los campos y
+    lo agrega a la lista de productos de la sucursal
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    producto = Producto(idProd.get(),nameProd.get(),priceProd.get())
-    sucursal.aniadirProducto(producto)
+    sucursal = sucursal_seleccionada
+    producto = Producto(id_prod.get(), name_prod.get(), price_prod.get())
+    sucursal.aniadir_producto(producto)
 
-    setSelectProducto ()
+    set_select_producto()
 
-def updateProducto() :
+
+def update_producto():
     """Modificar producto
 
     Metodo que actualiza el producto con los datos que hay en los campos.
 
     :return:
     """
-    producto = productoSeleccionado
-    producto.set_ID(idProd.get())
-    producto.set_nombre(nameProd.get())
-    producto.set_precio(priceProd.get())
+    producto = producto_seleccionado
+    producto.set_id(id_prod.get())
+    producto.set_nombre(name_prod.get())
+    producto.set_precio(price_prod.get())
 
-    setSelectProducto ()
+    set_select_producto()
 
-def deleteProducto() :
+
+def delete_producto():
     """Eliminar producto
 
     Metodo que elimina el producto seleccionado en la lista de productos.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
+    sucursal = sucursal_seleccionada
     lista = sucursal.get_listaProductos()
-    producto = lista[whichProductoSelected()]
+    producto = lista[which_producto_selected()]
     sucursal.eliminarProducto(producto)
 
-    setSelectProducto ()
+    set_select_producto()
 
-def loadProducto() :
+
+def load_producto():
     """Consultar producto
 
     Metodo que lee el producto seleccionado y coloca sus datos en los campos.
 
     :return:
     """
-    global productoSeleccionado
-    sucursal = sucursalSeleccionada
+    global producto_seleccionado
+    sucursal = sucursal_seleccionada
     lista = sucursal.get_listaProductos()
-    producto = lista[whichProductoSelected()]
-    productoSeleccionado = producto
-    idProd.set(producto.get_ID())
-    nameProd.set(producto.get_nombre())
-    priceProd.set(producto.get_precio())
+    producto = lista[which_producto_selected()]
+    producto_seleccionado = producto
+    id_prod.set(producto.get_id())
+    name_prod.set(producto.get_nombre())
+    price_prod.set(producto.get_precio())
 
 
 #Metodos sucursales
-def whichSucursalSelected () :
+def which_sucursal_selected():
     """Sucursal seleccionada
 
     Metodo que nos devuelve la sucursal que tenemos seleccionada en la lista de sucursales.
 
     :return: sucursal seleccionada
     """
-    return int(selectSucursal.curselection()[0])
+    return int(select_sucursal.curselection()[0])
 
-def addSucursal() :
+
+def add_sucursal():
     """Agregar sucursal
 
     Metodo que crea una sucursal con los datos que hay en los campos y la agrega a la lista de sucursales.
 
     :return:
     """
-    sucursal = Sucursal(nameSuc.get(),dirSuc.get(),idSuc.get())
-    listaSucursales.append(sucursal)
+    sucursal = Sucursal(name_suc.get(), dir_suc.get(), id_suc.get())
+    lista_sucursales.append(sucursal)
 
-    setSelectSucursal ()
+    set_select_sucursal()
 
 
-def updateSucursal() :
+def update_sucursal():
     """Modificar sucursal
 
     Metodo que actualiza la sucursal con los datos que hay en los campos.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    sucursal.set_nombre(nameSuc.get())
-    sucursal.set_direccion(dirSuc.get())
-    sucursal.set_ID(idSuc.get())
-    setSelectSucursal ()
+    sucursal = sucursal_seleccionada
+    sucursal.set_nombre(name_suc.get())
+    sucursal.set_direccion(dir_suc.get())
+    sucursal.set_id(id_suc.get())
+    set_select_sucursal()
 
 
-
-def deleteSucursal() :
+def delete_sucursal():
     """Eliminar sucursal
 
     Metodo que elimina la sucursal seleccionada en la lista de sucursales.
 
     :return:
     """
-    del listaSucursales[whichSucursalSelected()]
-    setSelectSucursal ()
+    del lista_sucursales[which_sucursal_selected()]
+    set_select_sucursal()
 
 
-def loadSucursal() :
+def load_sucursal():
     """Consultar sucursal
 
     Metodo que lee la sucursal seleccionada y coloca sus datos en los campos.
@@ -164,505 +169,540 @@ def loadSucursal() :
 
     :return:
     """
-    global sucursalSeleccionada
-    sucursal = listaSucursales[whichSucursalSelected()]
-    sucursalSeleccionada = sucursal
-    nameSuc.set(sucursal.get_nombre())
-    dirSuc.set(sucursal.get_direccion())
-    idSuc.set(sucursal.get_ID())
-    limpiarVariables()
-    setSelectProducto ()
-    setSelectEmpleado()
-    setSelectProveedor()
-    setSelectIncidencia()
+    global sucursal_seleccionada
+    sucursal = lista_sucursales[which_sucursal_selected()]
+    sucursal_seleccionada = sucursal
+    name_suc.set(sucursal.get_nombre())
+    dir_suc.set(sucursal.get_direccion())
+    id_suc.set(sucursal.get_id())
+    limpiar_variables()
+    set_select_producto()
+    set_select_empleado()
+    set_select_proveedor()
+    set_select_incidencia()
+
 
 #Metodos empleados
-def whichEmpleadoSelected() :
+def which_empleado_selected():
     """Empleado seleccionado
 
     Metodo que nos devuelve el empleado que tenemos seleccionado en la lista de empleados.
 
     :return: empleado seleccionado
     """
-    return int(selectEmpleado.curselection()[0])
+    return int(select_empleado.curselection()[0])
 
-def addEmpleado() :
+
+def add_empleado():
     """Agregar empleado
 
-    Metodo que crea un nuevo empleado con los datos que hay en los campos y lo agrega a la lista de empleados de la sucursal
+    Metodo que crea un nuevo empleado con los datos que hay en los campos
+    y lo agrega a la lista de empleados de la sucursal
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    empleado = Empleado(idEmp.get(),dniEmp.get(),nameEmp.get(),telEmp.get(),dirEmp.get(),salEmp.get(),horEmp.get())
-    sucursal.aniadirEmpleado(empleado)
-    setSelectEmpleado ()
+    sucursal = sucursal_seleccionada
+    empleado = Empleado(id_emp.get(), dni_emp.get(), name_emp.get(), tel_emp.get(), dir_emp.get(), sal_emp.get(),
+                        hor_emp.get())
+    sucursal.aniadir_empleado(empleado)
+    set_select_empleado()
 
-def updateEmpleado() :
+
+def update_empleado():
     """Modificar empleado
 
     Metodo que actualiza el empleado con los datos que hay en los campos.
 
     :return:
     """
-    empleado = empleadoSeleccionado
-    empleado.set_nombre(nameEmp.get())
-    empleado.set_ID(idEmp.get())
-    empleado.set_direccion(dirEmp.get())
-    empleado.set_DNI(dniEmp.get())
-    empleado.set_telefono(telEmp.get())
-    empleado.set_salario(salEmp.get())
-    empleado.set_horario(horEmp.get())
-    setSelectEmpleado ()
+    empleado = empleado_seleccionado
+    empleado.set_nombre(name_emp.get())
+    empleado.set_id(id_emp.get())
+    empleado.set_direccion(dir_emp.get())
+    empleado.set_dni(dni_emp.get())
+    empleado.set_telefono(tel_emp.get())
+    empleado.set_salario(sal_emp.get())
+    empleado.set_horario(hor_emp.get())
+    set_select_empleado()
 
-def deleteEmpleado() :
+
+def delete_empleado():
     """Eliminar empleado
 
     Metodo que elimina el empleado seleccionado en la lista de empleados.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    lista = sucursal.get_listaEmpleados()
-    empleado = lista[whichEmpleadoSelected()]
-    sucursal.eliminarEmpleado((empleado))
-    setSelectEmpleado ()
+    sucursal = sucursal_seleccionada
+    lista = sucursal.get_lista_empleados()
+    empleado = lista[which_empleado_selected()]
+    sucursal.eliminar_empleado(empleado)
+    set_select_empleado()
 
-def loadEmpleado() :
+
+def load_empleado():
     """Consultar empleado
 
     Metodo que lee el empleado seleccionado y coloca sus datos en los campos.
 
     :return:
     """
-    global empleadoSeleccionado
-    sucursal = sucursalSeleccionada
+    global empleado_seleccionado
+    sucursal = sucursal_seleccionada
     lista = sucursal.get_listaEmpleados()
-    empleado = lista[whichEmpleadoSelected()]
-    empleadoSeleccionado = empleado
-    idEmp.set(empleado.get_ID())
-    dniEmp.set(empleado.get_DNI())
-    nameEmp.set(empleado.get_nombre())
-    telEmp.set(empleado.get_telefono())
-    dirEmp.set(empleado.get_direccion())
-    salEmp.set(empleado.get_salario())
-    horEmp.set(empleado.get_horario())
+    empleado = lista[which_empleado_selected()]
+    empleado_seleccionado = empleado
+    id_emp.set(empleado.get_id())
+    dni_emp.set(empleado.get_dni())
+    name_emp.set(empleado.get_nombre())
+    tel_emp.set(empleado.get_telefono())
+    dir_emp.set(empleado.get_direccion())
+    sal_emp.set(empleado.get_salario())
+    hor_emp.set(empleado.get_horario())
 
-def salTotalEmpleado() :
+
+def sal_total_empleado():
     """Salario total
 
     Metodo que obtiene el salario total de los empleados de la sucursal seleccionada
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    salTotalEmp.set(sucursal.get_salario_total())
+    sucursal = sucursal_seleccionada
+    sal_total_emp.set(sucursal.get_salario_total())
+
 
 #Metodos proveedores
-def whichProveedorSelected() :
+def which_proveedor_selected():
     """Proveedor seleccionado
 
     Metodo que nos devuelve el proveedor que tenemos seleccionado en la lista de proveedores.
 
     :return: proveedor seleccionado
     """
-    return int(selectProveedor.curselection()[0])
+    return int(select_proveedor.curselection()[0])
 
-def addProveedor() :
+
+def add_proveedor():
     """Agregar proveedor
 
-    Metodo que crea un nuevo proveedor con los datos que hay en los campos y lo agrega a la lista de proveedores de la sucursal
+    Metodo que crea un nuevo proveedor con los datos que hay en los campos
+    y lo agrega a la lista de proveedores de la sucursal
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    proveedor = Proveedor(idPro.get(),dniPro.get(),namePro.get(),telPro.get(),dirPro.get())
-    sucursal.aniadirProveedor(proveedor)
-    setSelectProveedor ()
+    sucursal = sucursal_seleccionada
+    proveedor = Proveedor(id_pro.get(), dni_pro.get(), name_pro.get(), tel_pro.get(), dir_pro.get())
+    sucursal.aniadir_proveedor(proveedor)
+    set_select_proveedor()
 
-def updateProveedor() :
+
+def update_proveedor():
     """Modificar proveedor
 
     Metodo que actualiza el proveedor con los datos que hay en los campos.
 
     :return:
     """
-    proveedor = proveedorSeleccionado
-    proveedor.set_nombre(namePro.get())
-    proveedor.set_ID(idPro.get())
-    proveedor.set_direccion(dirPro.get())
-    proveedor.set_DNI(dniPro.get())
-    proveedor.set_telefono(telPro.get())
-    setSelectProveedor()
+    proveedor = proveedor_seleccionado
+    proveedor.set_nombre(name_pro.get())
+    proveedor.set_id(id_pro.get())
+    proveedor.set_direccion(dir_pro.get())
+    proveedor.set_dni(dni_pro.get())
+    proveedor.set_telefono(tel_pro.get())
+    set_select_proveedor()
 
-def deleteProveedor() :
+
+def delete_proveedor():
     """Eliminar proveedor
 
     Metodo que elimina el proveedor seleccionado en la lista de proveedores.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    lista = sucursal.get_listaProveedores()
-    proveedor = lista[whichProveedorSelected()]
-    sucursal.eliminarProveedor(proveedor)
-    setSelectProveedor ()
+    sucursal = sucursal_seleccionada
+    lista = sucursal.get_lista_proveedores()
+    proveedor = lista[which_proveedor_selected()]
+    sucursal.eliminar_proveedor(proveedor)
+    set_select_proveedor()
 
-def loadProveedor() :
+
+def load_proveedor():
     """Consultar proveedor
 
     Metodo que lee el proveedor seleccionado y coloca sus datos en los campos.
 
     :return:
     """
-    global proveedorSeleccionado
-    sucursal = sucursalSeleccionada
+    global proveedor_seleccionado
+    sucursal = sucursal_seleccionada
     lista = sucursal.get_listaProveedores()
-    proveedor = lista[whichProveedorSelected()]
-    proveedorSeleccionado = proveedor
-    idPro.set(proveedor.get_ID())
-    dniPro.set(proveedor.get_DNI())
-    namePro.set(proveedor.get_nombre())
-    telPro.set(proveedor.get_telefono())
-    dirPro.set(proveedor.get_direccion())
+    proveedor = lista[which_proveedor_selected()]
+    proveedor_seleccionado = proveedor
+    id_pro.set(proveedor.get_id())
+    dni_pro.set(proveedor.get_dni())
+    name_pro.set(proveedor.get_nombre())
+    tel_pro.set(proveedor.get_telefono())
+    dir_pro.set(proveedor.get_direccion())
+
 
 #INCIDENCIA
-def whichIncidenciaSelected() :
+def which_incidencia_selected():
     """Incidencia seleccionada
 
     Metodo que nos devuelve la incidencia que tenemos seleccionad en la lista de incidencias.
 
     :return: incidencia seleccionada
     """
-    return int(selectIncidencia.curselection()[0])
+    return int(select_incidencia.curselection()[0])
 
-def addIncidencia() :
+
+def add_incidencia():
     """Agregar incidencia
 
-    Metodo que crea una nueva incidencia con los datos que hay en los campos y la agrega a la lista de incidencias de la sucursal
+    Metodo que crea una nueva incidencia con los datos que hay en los campos y
+    la agrega a la lista de incidencias de la sucursal
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    incidencia = Incidencia(idInc.get(),asuInc.get(),desInc.get())
-    sucursal.aniadirIncidencia(incidencia)
-    setSelectIncidencia ()
+    sucursal = sucursal_seleccionada
+    incidencia = Incidencia(id_inc.get(), asu_inc.get(), des_inc.get())
+    sucursal.aniadir_incidencia(incidencia)
+    set_select_incidencia()
 
-def updateIncidencia() :
+
+def update_incidencia():
     """Modificar incidencia
 
     Metodo que actualiza la incidencia con los datos que hay en los campos.
 
     :return:
     """
-    incidencia = incidenciaSeleccionada
-    incidencia.set_ID(idInc.get())
-    incidencia.set_asunto(asuInc.get())
-    incidencia.set_descripcion(desInc.get())
-    setSelectIncidencia()
+    incidencia = incidencia_seleccionada
+    incidencia.set_id(id_inc.get())
+    incidencia.set_asunto(asu_inc.get())
+    incidencia.set_descripcion(des_inc.get())
+    set_select_incidencia()
 
-def deleteIncidencia() :
+
+def delete_incidencia():
     """Eliminar incidencia
 
     Metodo que elimina la incidencia seleccionada en la lista de incidencias.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    lista = sucursal.get_listaIncidencias()
-    incidencia = lista[whichIncidenciaSelected()]
-    sucursal.eliminarIncidencia(incidencia)
-    setSelectIncidencia ()
+    sucursal = sucursal_seleccionada
+    lista = sucursal.get_lista_incidencias()
+    incidencia = lista[which_incidencia_selected()]
+    sucursal.eliminar_incidencia(incidencia)
+    set_select_incidencia()
 
-def loadIncidencia() :
+
+def load_incidencia():
     """Consultar incidencia
 
     Metodo que lee la incidencia seleccionada y coloca sus datos en los campos.
 
     :return:
     """
-    global incidenciaSeleccionada
-    sucursal = sucursalSeleccionada
-    lista = sucursal.get_listaIncidencias()
-    incidencia  = lista[whichIncidenciaSelected()]
-    incidenciaSeleccionada = incidencia
-    idInc.set(incidencia.get_ID())
-    asuInc.set(incidencia.get_asunto())
-    desInc.set(incidencia.get_descripcion())
-    estInc.set(incidencia.get_estado())
+    global incidencia_seleccionada
+    sucursal = sucursal_seleccionada
+    lista = sucursal.get_lista_incidencias()
+    incidencia = lista[which_incidencia_selected()]
+    incidencia_seleccionada = incidencia
+    id_inc.set(incidencia.get_id())
+    asu_inc.set(incidencia.get_asunto())
+    des_inc.set(incidencia.get_descripcion())
+    est_inc.set(incidencia.get_estado())
 
-def resolverIncidencia() :
+
+def resolver_incidencia():
     """Resolver incidencia
 
     Metodo que cambia el estado de la incidencia de "Abierta" a "Resuelta".
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    lista = sucursal.get_listaIncidencias()
-    incidencia = lista[whichIncidenciaSelected()]
+    sucursal = sucursal_seleccionada
+    lista = sucursal.get_lista_incidencias()
+    incidencia = lista[which_incidencia_selected()]
     incidencia.resolver()
-    estInc.set(incidencia.get_estado())
-    setSelectIncidencia ()
+    est_inc.set(incidencia.get_estado())
+    set_select_incidencia()
 
-def makeWindow () :
+
+def make_window():
     """Crear ventana
 
-    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones, campos, etc de la ventana de la aplicacion.
+    Metodo que crea la interfaz grafica para el usuario. En este metodo se reune la creacion de todos los botones,
+    campos, etc de la ventana de la aplicacion.
 
     :return:
     """
-    global nameProd, priceProd, idProd, nameSuc, dirSuc, idSuc, idEmp, dniEmp, nameEmp, telEmp, dirEmp, salEmp, horEmp, idPro, dniPro, namePro,telPro,dirPro, telEmp, dirEmp, salTotalEmp, idInc, asuInc, desInc, estInc, selectIncidencia, selectProducto, selectSucursal, selectEmpleado, selectProveedor
+    global name_prod, price_prod, id_prod, \
+        name_suc, dir_suc, id_suc, \
+        id_emp, dni_emp, name_emp, tel_emp, dir_emp,  sal_emp, sal_total_emp, hor_emp, \
+        id_pro, dni_pro, name_pro, tel_pro, dir_pro, \
+        id_inc, asu_inc, des_inc, est_inc, \
+        select_incidencia, select_producto, select_sucursal, select_empleado, select_proveedor
     win = Tk()
     win.title("Gestion de Sucursales")
-    frameSucursal = ttk.Labelframe(win, text="Lista de Sucursales")
+    frame_sucursal = ttk.Labelframe(win, text="Lista de Sucursales")
 
-    frame1 = Frame(frameSucursal)
-    frameSucursal.pack()
+    frame1 = Frame(frame_sucursal)
+    frame_sucursal.pack()
     frame1.pack()
     Label(frame1, text="Nombre").grid(row=1, column=0, sticky=W)
-    nameSuc = StringVar()
-    name2 = Entry(frame1, textvariable=nameSuc)
+    name_suc = StringVar()
+    name2 = Entry(frame1, textvariable=name_suc)
     name2.grid(row=1, column=1, sticky=W)
 
     Label(frame1, text="Direccion").grid(row=2, column=0, sticky=W)
-    dirSuc = StringVar()
-    dir2= Entry(frame1, textvariable=dirSuc)
+    dir_suc = StringVar()
+    dir2 = Entry(frame1, textvariable=dir_suc)
     dir2.grid(row=2, column=1, sticky=W)
 
     Label(frame1, text="ID").grid(row=3, column=0, sticky=W)
-    idSuc= StringVar()
-    id2= Entry(frame1, textvariable=idSuc)
+    id_suc = StringVar()
+    id2 = Entry(frame1, textvariable=id_suc)
     id2.grid(row=3, column=1, sticky=W)
 
-    frame2 = Frame(frameSucursal)       # Row of buttons
+    frame2 = Frame(frame_sucursal)  # Row of buttons
     frame2.pack()
-    b5 = Button(frame2,text="Agregar",command=addSucursal)
-    b6 = Button(frame2,text="Modificar",command=updateSucursal)
-    b7 = Button(frame2,text="Eliminar",command=deleteSucursal)
-    b8 = Button(frame2,text="Consultar ",command=loadSucursal)
-    b5.pack(side=LEFT); b6.pack(side=LEFT)
-    b7.pack(side=LEFT); b8.pack(side=LEFT)
+    b5 = Button(frame2, text="Agregar", command=add_sucursal)
+    b6 = Button(frame2, text="Modificar", command=update_sucursal)
+    b7 = Button(frame2, text="Eliminar", command=delete_sucursal)
+    b8 = Button(frame2, text="Consultar ", command=load_sucursal)
+    b5.pack(side=LEFT)
+    b6.pack(side=LEFT)
+    b7.pack(side=LEFT)
+    b8.pack(side=LEFT)
 
-    frame3 = Frame(frameSucursal)       # select of names
+    frame3 = Frame(frame_sucursal)  # select of names
     frame3.pack()
     scroll = Scrollbar(frame3, orient=VERTICAL)
-    selectSucursal = Listbox(frame3, yscrollcommand=scroll.set, height=6)
-    scroll.config (command=selectSucursal.yview)
+    select_sucursal = Listbox(frame3, yscrollcommand=scroll.set, height=6)
+    scroll.config(command=select_sucursal.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    selectSucursal.pack(side=LEFT,  fill=BOTH, expand=1)
+    select_sucursal.pack(side=LEFT, fill=BOTH, expand=1)
 
     n = ttk.Notebook(win)
     n.pack()
 
     #PRODUCTOS
 
-    frameProducto = ttk.Labelframe(n, text="Lista de Productos")
-    frameProducto.pack()
-    n.add(frameProducto, text="Productos")
+    frame_producto = ttk.Labelframe(n, text="Lista de Productos")
+    frame_producto.pack()
+    n.add(frame_producto, text="Productos")
 
-    frame4 = Frame(frameProducto)
+    frame4 = Frame(frame_producto)
     frame4.pack()
     Label(frame4, text="Nombre").grid(row=5, column=0, sticky=W)
-    nameProd = StringVar()
-    name = Entry(frame4, textvariable=nameProd)
+    name_prod = StringVar()
+    name = Entry(frame4, textvariable=name_prod)
     name.grid(row=5, column=1, sticky=W)
 
     Label(frame4, text="Precio").grid(row=6, column=0, sticky=W)
-    priceProd= StringVar()
-    price= Entry(frame4, textvariable=priceProd)
+    price_prod = StringVar()
+    price = Entry(frame4, textvariable=price_prod)
     price.grid(row=6, column=1, sticky=W)
 
     Label(frame4, text="ID").grid(row=7, column=0, sticky=W)
-    idProd= StringVar()
-    id= Entry(frame4, textvariable=idProd)
-    id.grid(row=7, column=1, sticky=W)
+    id_prod = StringVar()
+    id1 = Entry(frame4, textvariable=id_prod)
+    id1.grid(row=7, column=1, sticky=W)
 
-
-    frame5 = Frame(frameProducto)       # Row of buttons
+    frame5 = Frame(frame_producto)  # Row of buttons
     frame5.pack()
-    b1 = Button(frame5,text="Agregar",command=addProducto)
-    b2 = Button(frame5,text="Modificar",command=updateProducto)
-    b3 = Button(frame5,text="Eliminar",command=deleteProducto)
-    b4 = Button(frame5,text="Consultar ",command=loadProducto)
-    b1.pack(side=LEFT); b2.pack(side=LEFT)
-    b3.pack(side=LEFT); b4.pack(side=LEFT)
+    b1 = Button(frame5, text="Agregar", command=add_producto)
+    b2 = Button(frame5, text="Modificar", command=update_producto)
+    b3 = Button(frame5, text="Eliminar", command=delete_producto)
+    b4 = Button(frame5, text="Consultar ", command=load_producto)
+    b1.pack(side=LEFT)
+    b2.pack(side=LEFT)
+    b3.pack(side=LEFT)
+    b4.pack(side=LEFT)
 
-    frame6 = Frame(frameProducto)       # select of names
+    frame6 = Frame(frame_producto)  # select of names
     frame6.pack()
     scroll = Scrollbar(frame6, orient=VERTICAL)
-    selectProducto = Listbox(frame6, yscrollcommand=scroll.set, height=6)
-    scroll.config (command=selectProducto.yview)
+    select_producto = Listbox(frame6, yscrollcommand=scroll.set, height=6)
+    scroll.config(command=select_producto.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    selectProducto.pack(side=LEFT,  fill=BOTH, expand=1)
+    select_producto.pack(side=LEFT, fill=BOTH, expand=1)
 
     #Empleados
 
-    frameEmpleado = ttk.Labelframe(n, text="Lista de Empleados")
-    frameEmpleado.pack(fill = BOTH)
-    n.add(frameEmpleado, text="Empleados")
-    frame7 = Frame(frameEmpleado)
+    frame_empleado = ttk.Labelframe(n, text="Lista de Empleados")
+    frame_empleado.pack(fill=BOTH)
+    n.add(frame_empleado, text="Empleados")
+    frame7 = Frame(frame_empleado)
     frame7.pack()
     Label(frame7, text="Nombre empleado").grid(row=1, column=4, sticky=W)
-    nameEmp = StringVar()
-    name3 = Entry(frame7, textvariable=nameEmp)
+    name_emp = StringVar()
+    name3 = Entry(frame7, textvariable=name_emp)
     name3.grid(row=1, column=5, sticky=W)
 
     Label(frame7, text="Direccion").grid(row=2, column=4, sticky=W)
-    dirEmp = StringVar()
-    dir3= Entry(frame7, textvariable=dirEmp)
+    dir_emp = StringVar()
+    dir3 = Entry(frame7, textvariable=dir_emp)
     dir3.grid(row=2, column=5, sticky=W)
 
     Label(frame7, text="ID empleado").grid(row=3, column=4, sticky=W)
-    idEmp= StringVar()
-    id3= Entry(frame7, textvariable=idEmp)
+    id_emp = StringVar()
+    id3 = Entry(frame7, textvariable=id_emp)
     id3.grid(row=3, column=5, sticky=W)
 
     Label(frame7, text="DNI").grid(row=4, column=4, sticky=W)
-    dniEmp= StringVar()
-    dni= Entry(frame7, textvariable=dniEmp)
+    dni_emp = StringVar()
+    dni = Entry(frame7, textvariable=dni_emp)
     dni.grid(row=4, column=5, sticky=W)
 
     Label(frame7, text="Telefono").grid(row=5, column=4, sticky=W)
-    telEmp= StringVar()
-    tel= Entry(frame7, textvariable=telEmp)
+    tel_emp = StringVar()
+    tel = Entry(frame7, textvariable=tel_emp)
     tel.grid(row=5, column=5, sticky=W)
 
     Label(frame7, text="Salario").grid(row=6, column=4, sticky=W)
-    salEmp= IntVar()
-    sal= Entry(frame7, textvariable=salEmp)
+    sal_emp = IntVar()
+    sal = Entry(frame7, textvariable=sal_emp)
     sal.grid(row=6, column=5, sticky=W)
 
     Label(frame7, text="Horario").grid(row=7, column=4, sticky=W)
-    horEmp= StringVar()
-    hor= Entry(frame7, textvariable=horEmp)
+    hor_emp = StringVar()
+    hor = Entry(frame7, textvariable=hor_emp)
     hor.grid(row=7, column=5, sticky=W)
 
-    frame8 = Frame(frameEmpleado)       # Row of buttons
+    frame8 = Frame(frame_empleado)  # Row of buttons
     frame8.pack()
-    b9 = Button(frame8,text="Agregar",command=addEmpleado)
-    b10 = Button(frame8,text="Modificar",command=updateEmpleado)
-    b11 = Button(frame8,text="Eliminar",command=deleteEmpleado)
-    b12 = Button(frame8,text="Consultar",command=loadEmpleado)
+    b9 = Button(frame8, text="Agregar", command=add_empleado)
+    b10 = Button(frame8, text="Modificar", command=update_empleado)
+    b11 = Button(frame8, text="Eliminar", command=delete_empleado)
+    b12 = Button(frame8, text="Consultar", command=load_empleado)
 
-    b9.pack(side=LEFT); b10.pack(side=LEFT)
-    b11.pack(side=LEFT); b12.pack(side=LEFT)
+    b9.pack(side=LEFT)
+    b10.pack(side=LEFT)
+    b11.pack(side=LEFT)
+    b12.pack(side=LEFT)
 
-
-    frame9 = Frame(frameEmpleado)       # select of names
+    frame9 = Frame(frame_empleado)  # select of names
     frame9.pack()
     scroll = Scrollbar(frame9, orient=VERTICAL)
-    selectEmpleado = Listbox(frame9, yscrollcommand=scroll.set, height=6)
-    scroll.config (command=selectEmpleado.yview)
+    select_empleado = Listbox(frame9, yscrollcommand=scroll.set, height=6)
+    scroll.config(command=select_empleado.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    selectEmpleado.pack(side=LEFT, expand=1)
+    select_empleado.pack(side=LEFT, expand=1)
 
-    b12a = Button(frameEmpleado,text="Salario total",command=salTotalEmpleado)
+    b12a = Button(frame_empleado, text="Salario total", command=sal_total_empleado)
     b12a.pack(side=LEFT)
-    salTotalEmp = StringVar()
-    salTotal= Entry(frameEmpleado, textvariable=salTotalEmp, state=DISABLED)
-    salTotal.pack(side=LEFT)
-
-
-
+    sal_total_emp = StringVar()
+    sal_total = Entry(frame_empleado, textvariable=sal_total_emp, state=DISABLED)
+    sal_total.pack(side=LEFT)
 
     #Proveedores
 
-    frameProveedor = ttk.Labelframe(n, text="Lista de Proveedores")
-    frameProveedor.pack(side = LEFT)
-    n.add(frameProveedor, text="Proveedores")
-    frame10 = Frame(frameProveedor)
+    frame_proveedor = ttk.Labelframe(n, text="Lista de Proveedores")
+    frame_proveedor.pack(side=LEFT)
+    n.add(frame_proveedor, text="Proveedores")
+    frame10 = Frame(frame_proveedor)
     frame10.pack()
     Label(frame10, text="Nombre proveedores").grid(row=6, column=4, sticky=W)
-    namePro = StringVar()
-    name4 = Entry(frame10, textvariable=namePro)
+    name_pro = StringVar()
+    name4 = Entry(frame10, textvariable=name_pro)
     name4.grid(row=6, column=5, sticky=W)
 
     Label(frame10, text="Direccion").grid(row=7, column=4, sticky=W)
-    dirPro = StringVar()
-    dir4= Entry(frame10, textvariable=dirPro)
+    dir_pro = StringVar()
+    dir4 = Entry(frame10, textvariable=dir_pro)
     dir4.grid(row=7, column=5, sticky=W)
 
     Label(frame10, text="ID proveedor").grid(row=8, column=4, sticky=W)
-    idPro= StringVar()
-    id4= Entry(frame10, textvariable=idPro)
+    id_pro = StringVar()
+    id4 = Entry(frame10, textvariable=id_pro)
     id4.grid(row=8, column=5, sticky=W)
 
     Label(frame10, text="DNI").grid(row=9, column=4, sticky=W)
-    dniPro= StringVar()
-    dni2= Entry(frame10, textvariable=dniPro)
+    dni_pro = StringVar()
+    dni2 = Entry(frame10, textvariable=dni_pro)
     dni2.grid(row=9, column=5, sticky=W)
 
     Label(frame10, text="Telefono").grid(row=10, column=4, sticky=W)
-    telPro= StringVar()
-    tel2= Entry(frame10, textvariable=telPro)
+    tel_pro = StringVar()
+    tel2 = Entry(frame10, textvariable=tel_pro)
     tel2.grid(row=10, column=5, sticky=W)
 
-    frame11 = Frame(frameProveedor)       # Row of buttons
+    frame11 = Frame(frame_proveedor)  # Row of buttons
     frame11.pack()
-    b13 = Button(frame11,text="Agregar",command=addProveedor)
-    b14 = Button(frame11,text="Modificar",command=updateProveedor)
-    b15 = Button(frame11,text="Eliminar",command=deleteProveedor)
-    b16 = Button(frame11,text="Consultar",command=loadProveedor)
-    b13.pack(side=LEFT); b14.pack(side=LEFT)
-    b15.pack(side=LEFT); b16.pack(side=LEFT)
+    b13 = Button(frame11, text="Agregar", command=add_proveedor)
+    b14 = Button(frame11, text="Modificar", command=update_proveedor)
+    b15 = Button(frame11, text="Eliminar", command=delete_proveedor)
+    b16 = Button(frame11, text="Consultar", command=load_proveedor)
+    b13.pack(side=LEFT)
+    b14.pack(side=LEFT)
+    b15.pack(side=LEFT)
+    b16.pack(side=LEFT)
 
-    frame12 = Frame(frameProveedor)       # select of names
+    frame12 = Frame(frame_proveedor)  # select of names
     frame12.pack()
     scroll = Scrollbar(frame12, orient=VERTICAL)
-    selectProveedor = Listbox(frame12, yscrollcommand=scroll.set, height=6)
-    scroll.config (command=selectProveedor.yview)
+    select_proveedor = Listbox(frame12, yscrollcommand=scroll.set, height=6)
+    scroll.config(command=select_proveedor.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    selectProveedor.pack(side=LEFT,  fill=BOTH, expand=1)
+    select_proveedor.pack(side=LEFT, fill=BOTH, expand=1)
 
     #Incidencias
-    frameIncidencia = ttk.Labelframe(n, text="Lista de Incidencias")
-    frameIncidencia.pack(side = LEFT)
-    n.add(frameIncidencia, text="Incidencias")
-    frame13 = Frame(frameIncidencia)
+    frame_incidencia = ttk.Labelframe(n, text="Lista de Incidencias")
+    frame_incidencia.pack(side=LEFT)
+    n.add(frame_incidencia, text="Incidencias")
+    frame13 = Frame(frame_incidencia)
     frame13.pack()
     Label(frame13, text="ID").grid(row=6, column=4, sticky=W)
-    idInc = StringVar()
-    id5 = Entry(frame13, textvariable=idInc)
+    id_inc = StringVar()
+    id5 = Entry(frame13, textvariable=id_inc)
     id5.grid(row=6, column=5, sticky=W)
 
     Label(frame13, text="Asunto").grid(row=7, column=4, sticky=W)
-    asuInc = StringVar()
-    asu= Entry(frame13, textvariable=asuInc)
+    asu_inc = StringVar()
+    asu = Entry(frame13, textvariable=asu_inc)
     asu.grid(row=7, column=5, sticky=W)
 
     Label(frame13, text="Descripcion").grid(row=8, column=4, sticky=W)
-    desInc= StringVar()
-    des= Entry(frame13, textvariable=desInc)
+    des_inc = StringVar()
+    des = Entry(frame13, textvariable=des_inc)
     des.grid(row=8, column=5, sticky=W)
 
     Label(frame13, text="Estado").grid(row=9, column=4, sticky=W)
-    estInc= StringVar()
-    est= Entry(frame13, textvariable=estInc, state=DISABLED)
+    est_inc = StringVar()
+    est = Entry(frame13, textvariable=est_inc, state=DISABLED)
     est.grid(row=9, column=5, sticky=W)
 
-    frame14 = Frame(frameIncidencia)       # Row of buttons
+    frame14 = Frame(frame_incidencia)  # Row of buttons
     frame14.pack()
-    b17 = Button(frame14,text="Agregar",command=addIncidencia)
-    b18 = Button(frame14,text="Modificar",command=updateIncidencia)
-    b19 = Button(frame14,text="Eliminar",command=deleteIncidencia)
-    b20 = Button(frame14,text="Consultar",command=loadIncidencia)
-    b21 = Button(frame14,text="Resolver",command=resolverIncidencia)
+    b17 = Button(frame14, text="Agregar", command=add_incidencia)
+    b18 = Button(frame14, text="Modificar", command=update_incidencia)
+    b19 = Button(frame14, text="Eliminar", command=delete_incidencia)
+    b20 = Button(frame14, text="Consultar", command=load_incidencia)
+    b21 = Button(frame14, text="Resolver", command=resolver_incidencia)
 
-    b17.pack(side=LEFT); b18.pack(side=LEFT);
-    b19.pack(side=LEFT); b20.pack(side=LEFT);b21.pack(side=LEFT)
+    b17.pack(side=LEFT)
+    b18.pack(side=LEFT)
+    b19.pack(side=LEFT)
+    b20.pack(side=LEFT)
+    b21.pack(side=LEFT)
 
-    frame15 = Frame(frameIncidencia)       # select of names
+    frame15 = Frame(frame_incidencia)  # select of names
     frame15.pack()
     scroll = Scrollbar(frame15, orient=VERTICAL)
-    selectIncidencia = Listbox(frame15, yscrollcommand=scroll.set, height=6)
-    scroll.config (command=selectIncidencia.yview)
+    select_incidencia = Listbox(frame15, yscrollcommand=scroll.set, height=6)
+    scroll.config(command=select_incidencia.yview)
     scroll.pack(side=RIGHT, fill=Y)
-    selectIncidencia.pack(side=LEFT,  fill=BOTH, expand=1)
+    select_incidencia.pack(side=LEFT, fill=BOTH, expand=1)
 
     return win
 
-def setSelectSucursal () :
+
+def set_select_sucursal():
     """Lista seleccion sucursales
 
     Metodo que actualiza la lista de sucursales en el cuadro de seleccion.
@@ -670,12 +710,13 @@ def setSelectSucursal () :
     :return:
     """
 
-    listaSucursales.sort()
-    selectSucursal.delete(0,END)
-    for sucursal in listaSucursales :
-        selectSucursal.insert(END, sucursal.get_ID())
+    lista_sucursales.sort()
+    select_sucursal.delete(0, END)
+    for sucursal in lista_sucursales:
+        select_sucursal.insert(END, sucursal.get_id())
 
-def setSelectProducto () :
+
+def set_select_producto():
     """Lista seleccion productos
 
     Metodo que actualiza la lista de productos en el cuadro de seleccion.
@@ -683,48 +724,50 @@ def setSelectProducto () :
     :return:
     """
 
-    sucursal = sucursalSeleccionada
-    selectProducto.delete(0,END)
+    sucursal = sucursal_seleccionada
+    select_producto.delete(0, END)
     lista = sucursal.get_listaProductos()
-    for producto in lista :
-        selectProducto.insert (END, producto.get_ID())
+    for producto in lista:
+        select_producto.insert(END, producto.get_id())
 
-def setSelectEmpleado() :
+
+def set_select_empleado():
     """Lista seleccion empleados
 
     Metodo que actualiza la lista de empleados en el cuadro de seleccion.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    selectEmpleado.delete(0,END)
+    sucursal = sucursal_seleccionada
+    select_empleado.delete(0, END)
     lista = sucursal.get_listaEmpleados()
-    for empleado in lista :
-        selectEmpleado.insert(END, empleado.get_ID())
+    for empleado in lista:
+        select_empleado.insert(END, empleado.get_id())
 
-def setSelectProveedor() :
+
+def set_select_proveedor():
     """Lista seleccion proveedores
 
     Metodo que actualiza la lista de proveedores en el cuadro de seleccion.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    selectProveedor.delete(0,END)
+    sucursal = sucursal_seleccionada
+    select_proveedor.delete(0, END)
     lista = sucursal.get_listaProveedores()
-    for proveedor in lista :
-        selectProveedor.insert(END, proveedor.get_ID())
+    for proveedor in lista:
+        select_proveedor.insert(END, proveedor.get_id())
 
-def setSelectIncidencia() :
+
+def set_select_incidencia():
     """Lista seleccion incidencias
 
     Metodo que actualiza la lista de incidencias en el cuadro de seleccion.
 
     :return:
     """
-    sucursal = sucursalSeleccionada
-    selectIncidencia.delete(0,END)
-    lista = sucursal.get_listaIncidencias()
-    for incidencia in lista :
-        selectIncidencia.insert(END, incidencia.get_ID())
-
+    sucursal = sucursal_seleccionada
+    select_incidencia.delete(0, END)
+    lista = sucursal.get_lista_incidencias()
+    for incidencia in lista:
+        select_incidencia.insert(END, incidencia.get_id())
