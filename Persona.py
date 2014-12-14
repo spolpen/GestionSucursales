@@ -1,4 +1,6 @@
+# coding=utf-8
 __author__ = 'Polo'
+
 
 class Persona(object):
     """Clase persona
@@ -6,25 +8,26 @@ class Persona(object):
     De esta clase heredan sus atributos las clases "Empleado" y "Proveedor"
 
     """
-    def __init__(self, ID, DNI, nombre, telefono, direccion):
+
+    def __init__(self, ide, dni, nombre, telefono, direccion):
         """Constructor persona
 
         Metodo constructor de la clase persona, que inicializa sus atributos con los parametros introducidos.
 
-        :param ID:
-        :param DNI:
+        :param ide:
+        :param dni:
         :param nombre:
         :param telefono:
         :param direccion:
         :return:
         """
-        self.ID=ID
-        self.DNI=DNI
-        self.nombre=nombre
-        self.telefono=telefono
-        self.direccion=direccion
+        self.ID = ide
+        self.DNI = dni
+        self.nombre = nombre
+        self.telefono = telefono
+        self.direccion = direccion
 
-    def get_ID(self):
+    def get_id(self):
         """Get ID persona
 
         Metodo que devuelve la ID de la persona.
@@ -33,7 +36,7 @@ class Persona(object):
         """
         return self.ID
 
-    def get_DNI(self):
+    def get_dni(self):
         """Get ID persona
 
         Metodo que devuelve la ID de la persona.
@@ -69,27 +72,27 @@ class Persona(object):
         """
         return self.direccion
 
-    def set_ID(self,ID):
+    def set_id(self, ide):
         """Set ID persona
 
         Metodo que cambia la ID de la persona al parametro introducido.
 
-        :param ID:
+        :param ide:
         :return:
         """
-        self.ID=ID
+        self.ID = ide
 
-    def set_DNI(self,DNI):
+    def set_dni(self, dni):
         """Set DNI persona
 
         Metodo que cambia el DNI de la persona al parametro introducido.
 
-        :param DNI:
+        :param dni:
         :return:
         """
-        self.DNI=DNI
+        self.DNI = dni
 
-    def set_nombre(self,nombre):
+    def set_nombre(self, nombre):
         """Set nombre persona
 
         Metodo que cambia el nombre de la persona al parametro introducido.
@@ -97,9 +100,9 @@ class Persona(object):
         :param nombre:
         :return:
         """
-        self.nombre=nombre
+        self.nombre = nombre
 
-    def set_telefono(self,telefono):
+    def set_telefono(self, telefono):
         """Set telefono persona
 
         Metodo que cambia el telefono de la persona al parametro introducido.
@@ -107,9 +110,9 @@ class Persona(object):
         :param telefono:
         :return:
         """
-        self.telefono=telefono
+        self.telefono = telefono
 
-    def set_direccion(self,direccion):
+    def set_direccion(self, direccion):
         """Set direccion persona
 
         Metodo que cambia la direccion de la persona al parametro introducido.
@@ -117,4 +120,4 @@ class Persona(object):
         :param direccion:
         :return:
         """
-        self.direccion=direccion
+        self.direccion = direccion
