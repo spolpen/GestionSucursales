@@ -17,7 +17,7 @@ producto2 = Producto("Impresora", "Impresora Multifuncion Epson ", 59)
 producto3 = Producto("HDD", "Disco Duro portatil Toshiba 1 TB", 69)
 producto4 = Producto("Tablet", "Tablet Samsung Galaxy Tab 4", 239)
 producto5 = Producto("USB", "Pen Drive Toshiba 8", 4)
-producto6 = Producto("Raton", "Ratón Microsoft 1850", 15)
+producto6 = Producto("Raton", "Raton Microsoft 1850", 15)
 
 #EMPLEADOS
 
@@ -30,7 +30,7 @@ empleado4 = Empleado("Juan", "29808123F", "Juan Perez", 954955789, "Sevilla", 24
 
 
 #PROVEEDORES
-proveedor1 = Proveedor("Proveedor1", "48102981A", "Manuel Garcia", 912018391, "Madrid")
+proveedor1 = Proveedor("Manuel", "48102981A", "Manuel Garcia", 912018391, "Madrid")
 
 
 #INCIDENCIAS
