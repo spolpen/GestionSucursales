@@ -157,7 +157,7 @@
     <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
     <span class="n">lista</span> <span class="o">=</span> <span class="n">sucursal</span><span class="o">.</span><span class="n">get_listaproductos</span><span class="p">()</span>
     <span class="n">producto</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">which_producto_selected</span><span class="p">()]</span>
-    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminarProducto</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+    <span class="n">sucursal</span><span class="o">.</span><span class="n">eliminar_producto</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
 
     <span class="n">set_select_producto</span><span class="p">()</span>
 
@@ -271,8 +271,8 @@
 <span class="sd">    :return:</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sucursal</span> <span class="o">=</span> <span class="n">sucursal_seleccionada</span>
-    <span class="n">empleado</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="n">id_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dni_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">name_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">tel_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dir_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">sal_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>
-                        <span class="n">hor_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">empleado</span> <span class="o">=</span> <span class="n">Empleado</span>\
+        <span class="p">(</span><span class="n">id_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dni_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">name_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">tel_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">dir_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">sal_emp</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">hor_emp</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
     <span class="n">sucursal</span><span class="o">.</span><span class="n">aniadir_empleado</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
     <span class="n">set_select_empleado</span><span class="p">()</span>
 
