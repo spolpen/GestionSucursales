@@ -1,3 +1,4 @@
+# coding=utf-8
 from unittest import TestCase
 from Sucursal import *
 from Empleado import *
@@ -23,24 +24,23 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Empleado
-        Emp1 = mock(Empleado)
-        Emp2 = mock(Empleado)
+        emp1 = mock(Empleado)
+        emp2 = mock(Empleado)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Simulamos comportamiento
-        when(Emp1).get_salario().thenReturn(1500)
-        when(Emp2).get_salario().thenReturn(1500)
+        when(emp1).get_salario().thenReturn(1500)
+        when(emp2).get_salario().thenReturn(1500)
 
         # Incluimos empleados
-        suc.aniadirEmpleado(Emp1)
-        suc.aniadirEmpleado(Emp2)
+        suc.aniadir_empleado(emp1)
+        suc.aniadir_empleado(emp2)
         # Hacemos el test
         self.assertEqual(suc.get_salario_total(), 3000)
 
-
-    def test_aniadirEmpleado(self):
+    def test_aniadir_empleado(self):
         """Test aniadir empleado
 
         Este test comprueba que los empleados se agregan correctamente a la lista de empleados de la sucursal.
@@ -48,22 +48,21 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Empleado
-        Emp1 = mock(Empleado)
+        emp1 = mock(Empleado)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Simulamos comportamiento
-        when(Emp1).get_ID().thenReturn(1)
+        when(emp1).get_ID().thenReturn(1)
 
         # Incluimos empleados
-        suc.aniadirEmpleado(Emp1)
-        lista = suc.get_listaEmpleados()
+        suc.aniadir_empleado(emp1)
+        lista = suc.get_listaempleados()
         # Hacemos el test
         self.assertEqual(lista[0].get_ID(), 1)
 
-
-    def test_aniadirProducto(self):
+    def test_aniadir_producto(self):
         """Test aniadir producto
 
         Este test comprueba que los productos se agregan correctamente a la lista de productos de la sucursal.
@@ -71,22 +70,21 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Producto
-        Prod1 = mock(Producto)
+        prod1 = mock(Producto)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Simulamos comportamiento
-        when(Prod1).get_ID().thenReturn(1)
+        when(prod1).get_ID().thenReturn(1)
 
         # Incluimos producto
-        suc.aniadirProducto(Prod1)
-        lista = suc.get_listaProductos()
+        suc.aniadir_producto(prod1)
+        lista = suc.get_listaproductos()
         # Hacemos el test
         self.assertEqual(lista[0].get_ID(), 1)
 
-
-    def test_aniadirIncidencia(self):
+    def test_aniadir_incidencia(self):
         """Test aniadir incidencia
 
         Este test comprueba que las incidencias se agregan correctamente a la lista de incidencias de la sucursal.
@@ -94,22 +92,21 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Incidencia
-        Inc1 = mock(Incidencia)
+        inc1 = mock(Incidencia)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Simulamos comportamiento
-        when(Inc1).get_ID().thenReturn(1)
+        when(inc1).get_id().thenReturn(1)
 
         # Incluimos incidencia
-        suc.aniadirIncidencia(Inc1)
-        lista = suc.get_listaIncidencias()
+        suc.aniadir_incidencia(inc1)
+        lista = suc.get_listaincidencias()
         # Hacemos el test
-        self.assertEqual(lista[0].get_ID(), 1)
+        self.assertEqual(lista[0].get_id(), 1)
 
-
-    def test_aniadirProveedor(self):
+    def test_aniadir_proveedor(self):
         """Test aniadir proveedor
 
         Este test comprueba que los proveedores se agregan correctamente a la lista de proveedores de la sucursal.
@@ -117,22 +114,21 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Proveedor
-        Pro1 = mock(Proveedor)
+        pro1 = mock(Proveedor)
 
         # Creamos proveedor
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Simulamos comportamiento
-        when(Pro1).get_ID().thenReturn(1)
+        when(pro1).get_ID().thenReturn(1)
 
         # Incluimos proveedor
-        suc.aniadirProveedor(Pro1)
-        lista = suc.get_listaProveedores()
+        suc.aniadir_proveedor(pro1)
+        lista = suc.get_listaproveedores()
         # Hacemos el test
         self.assertEqual(lista[0].get_ID(), 1)
 
-
-    def test_eliminarEmpleado(self):
+    def test_eliminar_empleado(self):
         """Test eliminar empleado
 
         Este test comprueba que los empleados se eliminan correctamente de la lista de empleados de la sucursal.
@@ -140,23 +136,22 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Empleado
-        Emp1 = mock(Empleado)
-        Emp2 = mock(Empleado)
+        emp1 = mock(Empleado)
+        emp2 = mock(Empleado)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Incluimos empleados
-        suc.aniadirEmpleado(Emp1)
-        suc.aniadirEmpleado(Emp2)
+        suc.aniadir_empleado(emp1)
+        suc.aniadir_empleado(emp2)
         # Eliminamos un empleado
-        suc.eliminarEmpleado(Emp1)
-        lista = suc.get_listaEmpleados()
+        suc.eliminar_empleado(emp1)
+        lista = suc.get_listaempleados()
         # Hacemos el test
         self.assertEqual(len(lista), 1)
 
-
-    def test_eliminarProducto(self):
+    def test_eliminar_producto(self):
         """Test eliminar producto
 
         Este test comprueba que los productos se eliminan correctamente de la lista de productos de la sucursal.
@@ -164,23 +159,22 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Producto
-        Pro1 = mock(Producto)
-        Pro2 = mock(Producto)
+        pro1 = mock(Producto)
+        pro2 = mock(Producto)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Incluimos productos
-        suc.aniadirProducto(Pro1)
-        suc.aniadirProducto(Pro2)
+        suc.aniadir_producto(pro1)
+        suc.aniadir_producto(pro2)
         # Eliminamos un producto
-        suc.eliminarProducto(Pro1)
-        lista = suc.get_listaProductos()
+        suc.eliminar_producto(pro1)
+        lista = suc.get_listaproductos()
         # Hacemos el test
         self.assertEqual(len(lista), 1)
 
-
-    def test_eliminarIncidencia(self):
+    def test_eliminar_incidencia(self):
         """Test eliminar incidencia
 
         Este test comprueba que las incidencias se eliminan correctamente de la lista de incidencias de la sucursal.
@@ -188,23 +182,22 @@ class TestSucursal(TestCase):
         :return:
         """
         # Creamos mocks de Incidencia
-        Inc1 = mock(Incidencia)
-        Inc2 = mock(Incidencia)
+        inc1 = mock(Incidencia)
+        inc2 = mock(Incidencia)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Incluimos incidencias
-        suc.aniadirIncidencia(Inc1)
-        suc.aniadirIncidencia(Inc2)
+        suc.aniadir_incidencia(inc1)
+        suc.aniadir_incidencia(inc2)
         # Eliminamos una incidencia
-        suc.eliminarIncidencia(Inc1)
-        lista = suc.get_listaIncidencias()
+        suc.eliminar_incidencia(inc1)
+        lista = suc.get_listaincidencias()
         # Hacemos el test
         self.assertEqual(len(lista), 1)
 
-
-    def test_eliminarProveedor(self):
+    def test_eliminar_proveedor(self):
         """Test eliminar proveedor
 
         Este test comprueba que los proveedores se eliminan correctamente de la lista de proveedores de la sucursal.
@@ -212,17 +205,17 @@ class TestSucursal(TestCase):
         :return:
         """
          # Creamos mocks de Proveedor
-        Pro1 = mock(Proveedor)
-        Pro2 = mock(Proveedor)
+        pro1 = mock(Proveedor)
+        pro2 = mock(Proveedor)
 
         # Creamos sucursal
         suc = Sucursal("Sevilla", "Pino Montano", "Sucursal1")
 
         # Incluimos proveedores
-        suc.aniadirProveedor(Pro1)
-        suc.aniadirProveedor(Pro2)
+        suc.aniadir_proveedor(pro1)
+        suc.aniadir_proveedor(pro2)
         # Eliminamos un proveedor
-        suc.eliminarProveedor(Pro1)
-        lista = suc.get_listaProveedores()
+        suc.eliminar_proveedor(pro1)
+        lista = suc.get_listaproveedores()
         # Hacemos el test
         self.assertEqual(len(lista), 1)
