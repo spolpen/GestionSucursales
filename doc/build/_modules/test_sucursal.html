@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>test_sucursal &mdash; GestionSucursales 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="GestionSucursales 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for test_sucursal</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">Sucursal</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Empleado</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Incidencia</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Producto</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Proveedor</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mockito</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Polo&#39;</span>
+
+
+<div class="viewcode-block" id="TestSucursal"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal">[docs]</a><span class="k">class</span> <span class="nc">TestSucursal</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clase TestSucursal</span>
+
+<span class="sd">    Esta clase contiene los tests unitarios para algunos metodos de la clase sucursal.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="TestSucursal.test_get_salario_total"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_get_salario_total">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_salario_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test get salario total</span>
+
+<span class="sd">        Este test comprueba el correcto funcionamiento del metodo Get_salario_total de la clase sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Empleado</span>
+        <span class="n">Emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">Emp2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Simulamos comportamiento</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">Emp2</span><span class="p">)</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+
+        <span class="c"># Incluimos empleados</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp2</span><span class="p">)</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">suc</span><span class="o">.</span><span class="n">get_salario_total</span><span class="p">(),</span> <span class="mi">3000</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_aniadirEmpleado"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirEmpleado">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirEmpleado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test aniadir empleado</span>
+
+<span class="sd">        Este test comprueba que los empleados se agregan correctamente a la lista de empleados de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Empleado</span>
+        <span class="n">Emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Simulamos comportamiento</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c"># Incluimos empleados</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_aniadirProducto"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirProducto">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirProducto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test aniadir producto</span>
+
+<span class="sd">        Este test comprueba que los productos se agregan correctamente a la lista de productos de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Producto</span>
+        <span class="n">Prod1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Simulamos comportamiento</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">Prod1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c"># Incluimos producto</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">Prod1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_aniadirIncidencia"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirIncidencia">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirIncidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test aniadir incidencia</span>
+
+<span class="sd">        Este test comprueba que las incidencias se agregan correctamente a la lista de incidencias de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Incidencia</span>
+        <span class="n">Inc1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Simulamos comportamiento</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c"># Incluimos incidencia</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_aniadirProveedor"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_aniadirProveedor">[docs]</a>    <span class="k">def</span> <span class="nf">test_aniadirProveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test aniadir proveedor</span>
+
+<span class="sd">        Este test comprueba que los proveedores se agregan correctamente a la lista de proveedores de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Proveedor</span>
+        <span class="n">Pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
+
+        <span class="c"># Creamos proveedor</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Simulamos comportamiento</span>
+        <span class="n">when</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span><span class="o">.</span><span class="n">get_ID</span><span class="p">()</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c"># Incluimos proveedor</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ID</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_eliminarEmpleado"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarEmpleado">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarEmpleado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test eliminar empleado</span>
+
+<span class="sd">        Este test comprueba que los empleados se eliminan correctamente de la lista de empleados de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Empleado</span>
+        <span class="n">Emp1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+        <span class="n">Emp2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Incluimos empleados</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirEmpleado</span><span class="p">(</span><span class="n">Emp2</span><span class="p">)</span>
+        <span class="c"># Eliminamos un empleado</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarEmpleado</span><span class="p">(</span><span class="n">Emp1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaEmpleados</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_eliminarProducto"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarProducto">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarProducto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test eliminar producto</span>
+
+<span class="sd">        Este test comprueba que los productos se eliminan correctamente de la lista de productos de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Producto</span>
+        <span class="n">Pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
+        <span class="n">Pro2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Producto</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Incluimos productos</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProducto</span><span class="p">(</span><span class="n">Pro2</span><span class="p">)</span>
+        <span class="c"># Eliminamos un producto</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarProducto</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProductos</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_eliminarIncidencia"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarIncidencia">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarIncidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test eliminar incidencia</span>
+
+<span class="sd">        Este test comprueba que las incidencias se eliminan correctamente de la lista de incidencias de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Creamos mocks de Incidencia</span>
+        <span class="n">Inc1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
+        <span class="n">Inc2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Incidencia</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Incluimos incidencias</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirIncidencia</span><span class="p">(</span><span class="n">Inc2</span><span class="p">)</span>
+        <span class="c"># Eliminamos una incidencia</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarIncidencia</span><span class="p">(</span><span class="n">Inc1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaIncidencias</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="TestSucursal.test_eliminarProveedor"><a class="viewcode-back" href="../test_sucursal.html#test_sucursal.TestSucursal.test_eliminarProveedor">[docs]</a>    <span class="k">def</span> <span class="nf">test_eliminarProveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test eliminar proveedor</span>
+
+<span class="sd">        Este test comprueba que los proveedores se eliminan correctamente de la lista de proveedores de la sucursal.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+         <span class="c"># Creamos mocks de Proveedor</span>
+        <span class="n">Pro1</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
+        <span class="n">Pro2</span> <span class="o">=</span> <span class="n">mock</span><span class="p">(</span><span class="n">Proveedor</span><span class="p">)</span>
+
+        <span class="c"># Creamos sucursal</span>
+        <span class="n">suc</span> <span class="o">=</span> <span class="n">Sucursal</span><span class="p">(</span><span class="s">&quot;Sevilla&quot;</span><span class="p">,</span> <span class="s">&quot;Pino Montano&quot;</span><span class="p">,</span> <span class="s">&quot;Sucursal1&quot;</span><span class="p">)</span>
+
+        <span class="c"># Incluimos proveedores</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">aniadirProveedor</span><span class="p">(</span><span class="n">Pro2</span><span class="p">)</span>
+        <span class="c"># Eliminamos un proveedor</span>
+        <span class="n">suc</span><span class="o">.</span><span class="n">eliminarProveedor</span><span class="p">(</span><span class="n">Pro1</span><span class="p">)</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">suc</span><span class="o">.</span><span class="n">get_listaProveedores</span><span class="p">()</span>
+        <span class="c"># Hacemos el test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Grupo 6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

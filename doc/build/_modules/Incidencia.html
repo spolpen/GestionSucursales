@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Incidencia &mdash; GestionSucursales 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="GestionSucursales 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for Incidencia</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Luzu&#39;</span>
+
+<div class="viewcode-block" id="Incidencia"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia">[docs]</a><span class="k">class</span> <span class="nc">Incidencia</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Clase incidencia</span>
+
+<span class="sd">    Esta clase representa una incidencia de la sucursal y automaticamente se inicializa como &quot;Abierta&quot; pudiendo resolverse mediante la interfaz de usuario.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">,</span><span class="n">asunto</span><span class="p">,</span><span class="n">descripcion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor incidencia</span>
+
+<span class="sd">        Metodo constructor de la clase incidencia, que inicializa sus atributos con los parametros introducidos y su estado en &quot;Abierta&quot;.</span>
+
+<span class="sd">        :param ID:</span>
+<span class="sd">        :param asunto:</span>
+<span class="sd">        :param descripcion:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asunto</span> <span class="o">=</span> <span class="n">asunto</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">descripcion</span> <span class="o">=</span> <span class="n">descripcion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estado</span><span class="o">=</span><span class="s">&#39;Abierta&#39;</span>
+
+<div class="viewcode-block" id="Incidencia.get_ID"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_ID">[docs]</a>    <span class="k">def</span> <span class="nf">get_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get ID incidencia</span>
+
+<span class="sd">        Metodo que devuelve la ID de la incidencia.</span>
+
+<span class="sd">        :return:ID incidencia</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span>
+</div>
+<div class="viewcode-block" id="Incidencia.get_asunto"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_asunto">[docs]</a>    <span class="k">def</span> <span class="nf">get_asunto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get asunto incidencia</span>
+
+<span class="sd">        Metodo que devuelve el asunto de la incidencia.</span>
+
+<span class="sd">        :return:asunto incidencia</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">asunto</span>
+</div>
+<div class="viewcode-block" id="Incidencia.get_descripcion"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_descripcion">[docs]</a>    <span class="k">def</span> <span class="nf">get_descripcion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get descripcion incidencia</span>
+
+<span class="sd">        Metodo que devuelve la descripcion de la incidencia.</span>
+
+<span class="sd">        :return:descripcion incidencia</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">descripcion</span>
+</div>
+<div class="viewcode-block" id="Incidencia.get_estado"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.get_estado">[docs]</a>    <span class="k">def</span> <span class="nf">get_estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get estado incidencia</span>
+
+<span class="sd">        Metodo que devuelve el estado de la incidencia.</span>
+
+<span class="sd">        :return:estado incidencia</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">estado</span>
+</div>
+<div class="viewcode-block" id="Incidencia.set_ID"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_ID">[docs]</a>    <span class="k">def</span> <span class="nf">set_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set ID incidencia</span>
+
+<span class="sd">        Metodo que cambia la ID de la incidencia al parametro introducido.</span>
+
+<span class="sd">        :param ID:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+</div>
+<div class="viewcode-block" id="Incidencia.set_asunto"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_asunto">[docs]</a>    <span class="k">def</span> <span class="nf">set_asunto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">asunto</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set asunto incidencia</span>
+
+<span class="sd">        Metodo que cambia el asunto de la incidencia al parametro introducido.</span>
+
+<span class="sd">        :param asunto:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asunto</span><span class="o">=</span><span class="n">asunto</span>
+</div>
+<div class="viewcode-block" id="Incidencia.set_descripcion"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.set_descripcion">[docs]</a>    <span class="k">def</span> <span class="nf">set_descripcion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">descripcion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set descripcion incidencia</span>
+
+<span class="sd">        Metodo que cambia la descripcion de la incidencia al parametro introducido.</span>
+
+<span class="sd">        :param descripcion:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">descripcion</span><span class="o">=</span><span class="n">descripcion</span>
+</div>
+<div class="viewcode-block" id="Incidencia.resolver"><a class="viewcode-back" href="../incidencia.html#Incidencia.Incidencia.resolver">[docs]</a>    <span class="k">def</span> <span class="nf">resolver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Resolver incidencia</span>
+
+<span class="sd">        Metodo que cambia el estado de una incidencia a &quot;Resuelta&quot;.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estado</span><span class="o">=</span><span class="s">&#39;Resuelta&#39;</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Grupo 6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

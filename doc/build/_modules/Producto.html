@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Producto &mdash; GestionSucursales 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="GestionSucursales 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for Producto</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Polo&#39;</span>
+
+<div class="viewcode-block" id="Producto"><a class="viewcode-back" href="../producto.html#Producto.Producto">[docs]</a><span class="k">class</span> <span class="nc">Producto</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Clase producto</span>
+
+<span class="sd">    Define un producto con sus atributos de ID, nombre y precio.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor producto</span>
+
+<span class="sd">        Metodo constructor de la clase producto, que inicializa sus atributos con los valores introducidos.</span>
+
+<span class="sd">        :param ID:</span>
+<span class="sd">        :param nombre:</span>
+<span class="sd">        :param precio:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">precio</span><span class="o">=</span><span class="n">precio</span>
+
+<div class="viewcode-block" id="Producto.get_ID"><a class="viewcode-back" href="../producto.html#Producto.Producto.get_ID">[docs]</a>    <span class="k">def</span> <span class="nf">get_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get ID</span>
+
+<span class="sd">        Metodo que devuelve la ID del producto.</span>
+
+<span class="sd">        :return:ID producto</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span>
+</div>
+<div class="viewcode-block" id="Producto.get_nombre"><a class="viewcode-back" href="../producto.html#Producto.Producto.get_nombre">[docs]</a>    <span class="k">def</span> <span class="nf">get_nombre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get nombre</span>
+
+<span class="sd">        Metodo que devuelve el nombre del producto</span>
+
+<span class="sd">        :return:nombre producto</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+</div>
+<div class="viewcode-block" id="Producto.get_precio"><a class="viewcode-back" href="../producto.html#Producto.Producto.get_precio">[docs]</a>    <span class="k">def</span> <span class="nf">get_precio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get precio</span>
+
+<span class="sd">        Metodo que devuelve el precio del producto</span>
+
+<span class="sd">        :return:precio producto</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">precio</span>
+</div>
+<div class="viewcode-block" id="Producto.set_ID"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_ID">[docs]</a>    <span class="k">def</span> <span class="nf">set_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ID</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set ID producto</span>
+
+<span class="sd">        Cambia la ID del producto al parametro introducido.</span>
+
+<span class="sd">        :param ID:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="o">=</span><span class="n">ID</span>
+</div>
+<div class="viewcode-block" id="Producto.set_nombre"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_nombre">[docs]</a>    <span class="k">def</span> <span class="nf">set_nombre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nombre</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set nombre producto</span>
+
+<span class="sd">        Cambia el nombre del producto al parametro introducido.</span>
+
+<span class="sd">        :param nombre:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span>
+</div>
+<div class="viewcode-block" id="Producto.set_precio"><a class="viewcode-back" href="../producto.html#Producto.Producto.set_precio">[docs]</a>    <span class="k">def</span> <span class="nf">set_precio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">precio</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set precio producto</span>
+
+<span class="sd">        Cambia el precio del producto al parametro introducido.</span>
+
+<span class="sd">        :param precio:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">precio</span><span class="o">=</span><span class="n">precio</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Grupo 6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

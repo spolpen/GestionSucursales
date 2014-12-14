@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sucursal &mdash; GestionSucursales 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="GestionSucursales 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for Sucursal</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Polo&#39;</span>
+
+
+<div class="viewcode-block" id="Sucursal"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal">[docs]</a><span class="k">class</span> <span class="nc">Sucursal</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Clase sucursal</span>
+
+<span class="sd">    Esta clase define una sucursal, con listas de empleados, productos, proveedores e incidencias, y metodos para agregar y eliminar de dichas listas.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre_sucursal</span><span class="p">,</span> <span class="n">direccion</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor sucursal</span>
+
+<span class="sd">        Metodo constructor de la clase sucursal, que inicializa sus atributos y ademas crea listas vacias para empleados, productos, proveedores e incidencias.</span>
+
+
+<span class="sd">        :param nombre_sucursal:</span>
+<span class="sd">        :param direccion:</span>
+<span class="sd">        :param id:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre_sucursal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direccion</span> <span class="o">=</span> <span class="n">direccion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_emp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_productos</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_proveedores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_incidencias</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<div class="viewcode-block" id="Sucursal.aniadirEmpleado"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.aniadirEmpleado">[docs]</a>    <span class="k">def</span> <span class="nf">aniadirEmpleado</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">empleado</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Agregar empleado</span>
+
+<span class="sd">        Agrega un empleado a la lista de empleados.</span>
+
+<span class="sd">        :param empleado:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_emp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Sucursal.aniadirProducto"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.aniadirProducto">[docs]</a>    <span class="k">def</span> <span class="nf">aniadirProducto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">producto</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Agregar producto</span>
+
+<span class="sd">        Agrega un producto a la lista de productos.</span>
+
+<span class="sd">        :param producto:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_productos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Sucursal.aniadirIncidencia"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.aniadirIncidencia">[docs]</a>    <span class="k">def</span> <span class="nf">aniadirIncidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">incidencia</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Agregar incidencia</span>
+
+<span class="sd">        Agrega una incidencia a la lista de incidencias.</span>
+
+<span class="sd">        :param incidencia:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_incidencias</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">incidencia</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Sucursal.aniadirProveedor"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.aniadirProveedor">[docs]</a>    <span class="k">def</span> <span class="nf">aniadirProveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">proveedor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Agregar proveedor</span>
+
+<span class="sd">        Agrega un proveedor a la lista de proveedores.</span>
+
+<span class="sd">        :param proveedor:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lista_proveedores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proveedor</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Sucursal.eliminarEmpleado"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.eliminarEmpleado">[docs]</a>    <span class="k">def</span> <span class="nf">eliminarEmpleado</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">empleado</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Eliminar empleado</span>
+
+<span class="sd">        Elimina un empleado de la lista de empleados.</span>
+
+<span class="sd">        :param empleado:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ubicacion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_emp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_emp</span><span class="p">[</span><span class="n">ubicacion</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Sucursal.eliminarProducto"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.eliminarProducto">[docs]</a>    <span class="k">def</span> <span class="nf">eliminarProducto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">producto</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Eliminar producto</span>
+
+<span class="sd">        Elimina un producto de la lista de productos.</span>
+
+<span class="sd">        :param producto:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ubicacion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_productos</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_productos</span><span class="p">[</span><span class="n">ubicacion</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Sucursal.eliminarIncidencia"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.eliminarIncidencia">[docs]</a>    <span class="k">def</span> <span class="nf">eliminarIncidencia</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">incidencia</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Eliminar incidencia</span>
+
+<span class="sd">        Elimina una incidencia de la lista de incidencias.</span>
+
+<span class="sd">        :param incidencia:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ubicacion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_incidencias</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">incidencia</span><span class="p">)</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_incidencias</span><span class="p">[</span><span class="n">ubicacion</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Sucursal.eliminarProveedor"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.eliminarProveedor">[docs]</a>    <span class="k">def</span> <span class="nf">eliminarProveedor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">proveedor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Eliminar proveedor</span>
+
+<span class="sd">        Elimina un proveedor de la lista de proveedores.</span>
+
+<span class="sd">        :param proveedor:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ubicacion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_proveedores</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">proveedor</span><span class="p">)</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_proveedores</span><span class="p">[</span><span class="n">ubicacion</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_nombre"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_nombre">[docs]</a>    <span class="k">def</span> <span class="nf">get_nombre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get nombre</span>
+
+<span class="sd">        Metodo que devuelve el nombre de la sucursal</span>
+
+<span class="sd">        :return:nombre sucursal</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_direccion"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_direccion">[docs]</a>    <span class="k">def</span> <span class="nf">get_direccion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get direccion</span>
+
+<span class="sd">        Metodo que devuelve la direccion de la sucursal</span>
+
+<span class="sd">        :return:direccion sucursal</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">direccion</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_ID"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_ID">[docs]</a>    <span class="k">def</span> <span class="nf">get_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get ID</span>
+
+<span class="sd">        Metodo que devuelve la ID de la sucursal</span>
+
+<span class="sd">        :return:ID sucursal</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_listaProductos"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_listaProductos">[docs]</a>    <span class="k">def</span> <span class="nf">get_listaProductos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get lista productos</span>
+
+<span class="sd">        Metodo que devuelve la lista de productos de la sucursal</span>
+
+<span class="sd">        :return:lista productos</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_productos</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_listaEmpleados"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_listaEmpleados">[docs]</a>    <span class="k">def</span> <span class="nf">get_listaEmpleados</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get lista empleados</span>
+
+<span class="sd">        Metodo que devuelve la lista de empleados de la sucursal</span>
+
+<span class="sd">        :return:lista empleados</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_emp</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_listaProveedores"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_listaProveedores">[docs]</a>    <span class="k">def</span> <span class="nf">get_listaProveedores</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get lista proveedores</span>
+
+<span class="sd">        Metodo que devuelve la lista de proveedores de la sucursal</span>
+
+<span class="sd">        :return:lista proveedores</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_proveedores</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_listaIncidencias"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_listaIncidencias">[docs]</a>    <span class="k">def</span> <span class="nf">get_listaIncidencias</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get lista incidencias</span>
+
+<span class="sd">        Metodo que devuelve la lista de incidencias de la sucursal</span>
+
+<span class="sd">        :return:lista incidencias</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_incidencias</span>
+</div>
+<div class="viewcode-block" id="Sucursal.set_nombre"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.set_nombre">[docs]</a>    <span class="k">def</span> <span class="nf">set_nombre</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nombre</span><span class="p">)</span> <span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Set nombre sucursal</span>
+
+<span class="sd">        Cambia el nombre de la sucursal al parametro introducido.</span>
+
+<span class="sd">        :param nombre:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span>
+</div>
+<div class="viewcode-block" id="Sucursal.set_direccion"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.set_direccion">[docs]</a>    <span class="k">def</span> <span class="nf">set_direccion</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">direccion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set direccion sucursal</span>
+
+<span class="sd">        Cambia la direccion de la sucursal al parametro introducido.</span>
+
+
+<span class="sd">        :</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direccion</span><span class="o">=</span><span class="n">direccion</span>
+</div>
+<div class="viewcode-block" id="Sucursal.set_ID"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.set_ID">[docs]</a>    <span class="k">def</span> <span class="nf">set_ID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set ID sucursal</span>
+
+<span class="sd">        Cambia la ID de la sucursal al parametro introducido.</span>
+
+<span class="sd">        :param ID:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="o">=</span><span class="nb">id</span>
+</div>
+<div class="viewcode-block" id="Sucursal.get_salario_total"><a class="viewcode-back" href="../sucursal.html#Sucursal.Sucursal.get_salario_total">[docs]</a>    <span class="k">def</span> <span class="nf">get_salario_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get salario total</span>
+
+<span class="sd">        Calcula el salario total de los empleados de la sucursal.</span>
+
+<span class="sd">        :param</span>
+<span class="sd">        :return:salario total</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lista_emp</span><span class="p">:</span>
+             <span class="n">num</span> <span class="o">+=</span> <span class="n">i</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">num</span>
+</pre></div></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">GestionSucursales 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Grupo 6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
